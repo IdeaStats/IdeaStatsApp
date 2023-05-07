@@ -1,0 +1,29 @@
+.root {
+  background: var(--token-iQMwU0ZCn);
+  position: relative;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    justify-content: center;
+  }
+}
+.root:hover {
+  background: var(--token-sEleWH4Ot);
+}
+.root:active {
+  background: var(--token-E4GUulfgc);
+}
+.slotTargetChildren {
+  font-size: 25px;
+  color: #ffffff;
+  text-align: center;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .slotTargetChildren {
+    text-align: center;
+  }
+}
