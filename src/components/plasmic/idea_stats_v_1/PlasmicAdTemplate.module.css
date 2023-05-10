@@ -15,9 +15,7 @@
   width: 350px;
   height: 350px;
   max-width: none;
-  background: url("https://images.unsplash.com/photo-1682686579688-c2ba945eda0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80")
-      top 50% left 50% / cover repeat,
-    #ffffff;
+  background: none;
   flex-shrink: 0;
   padding: 8px;
 }
