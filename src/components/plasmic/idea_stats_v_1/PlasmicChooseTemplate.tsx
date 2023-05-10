@@ -33,6 +33,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import AdTemplate from "../../AdTemplate"; // plasmic-import: kwn848ytFs/component
+import Button2 from "../../Button2"; // plasmic-import: mqOKPI__U1C/component
 import SelectTemplate from "../../SelectTemplate"; // plasmic-import: cIG6OIuy1Z/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -40,6 +41,9 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import projectcss from "./plasmic_idea_stats_v_1.module.css"; // plasmic-import: iKm2w5zQkVZvuqT51PP4Eo/projectcss
 import sty from "./PlasmicChooseTemplate.module.css"; // plasmic-import: G7-ifMI2_6/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: SBvHu7dbLxB/icon
+import Icon38Icon from "./icons/PlasmicIcon__Icon38"; // plasmic-import: Dv0lahOnAgu/icon
 
 export type PlasmicChooseTemplate__VariantMembers = {};
 export type PlasmicChooseTemplate__VariantsArgs = {};
@@ -53,8 +57,9 @@ export const PlasmicChooseTemplate__ArgProps = new Array<ArgPropType>();
 export type PlasmicChooseTemplate__OverridesType = {
   root?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
-  freeBox?: p.Flex<"div">;
   columns?: p.Flex<"div">;
+  h2?: p.Flex<"h2">;
+  button2?: p.Flex<typeof Button2>;
   selectTemplate?: p.Flex<typeof SelectTemplate>;
 };
 
@@ -108,6 +113,15 @@ function PlasmicChooseTemplate__RenderFunc(props: {
             sty.root
           )}
         >
+          <div
+            className={classNames(
+              projectcss.all,
+              projectcss.__wab_text,
+              sty.text__gwXT
+            )}
+          >
+            {"Enter some text"}
+          </div>
           <h1
             data-plasmic-name={"h1"}
             data-plasmic-override={overrides.h1}
@@ -121,11 +135,7 @@ function PlasmicChooseTemplate__RenderFunc(props: {
             {"Choose An Ad Template"}
           </h1>
           {true ? (
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
-            >
+            <div className={classNames(projectcss.all, sty.freeBox__u6Tw)}>
               <p.Stack
                 as={"div"}
                 data-plasmic-name={"columns"}
@@ -140,7 +150,59 @@ function PlasmicChooseTemplate__RenderFunc(props: {
                         "__wab_instance",
                         sty.adTemplate__lMv2M
                       )}
-                    />
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.freeBox__mDezw
+                        )}
+                      >
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__qvflQ
+                          )}
+                        >
+                          <React.Fragment>
+                            <React.Fragment>{""}</React.Fragment>
+                            {
+                              <h2
+                                data-plasmic-name={"h2"}
+                                data-plasmic-override={overrides.h2}
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.h2,
+                                  projectcss.__wab_text,
+                                  sty.h2
+                                )}
+                              >
+                                {"Ad Title"}
+                              </h2>
+                            }
+                            <React.Fragment>{""}</React.Fragment>
+                          </React.Fragment>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__dhnBl
+                          )}
+                        >
+                          {
+                            "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
+                          }
+                        </div>
+                        <Button2
+                          data-plasmic-name={"button2"}
+                          data-plasmic-override={overrides.button2}
+                          className={classNames("__wab_instance", sty.button2)}
+                        >
+                          {"Call To Action"}
+                        </Button2>
+                      </div>
+                    </AdTemplate>
                   ) : null}
                 </div>
                 <div className={classNames(projectcss.all, sty.column__rvFvZ)}>
@@ -178,10 +240,11 @@ function PlasmicChooseTemplate__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "freeBox", "columns", "selectTemplate"],
+  root: ["root", "h1", "columns", "h2", "button2", "selectTemplate"],
   h1: ["h1"],
-  freeBox: ["freeBox", "columns", "selectTemplate"],
-  columns: ["columns"],
+  columns: ["columns", "h2", "button2"],
+  h2: ["h2"],
+  button2: ["button2"],
   selectTemplate: ["selectTemplate"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -190,8 +253,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   h1: "h1";
-  freeBox: "div";
   columns: "div";
+  h2: "h2";
+  button2: typeof Button2;
   selectTemplate: typeof SelectTemplate;
 };
 
@@ -256,8 +320,9 @@ export const PlasmicChooseTemplate = Object.assign(
   {
     // Helper components rendering sub-elements
     h1: makeNodeComponent("h1"),
-    freeBox: makeNodeComponent("freeBox"),
     columns: makeNodeComponent("columns"),
+    h2: makeNodeComponent("h2"),
+    button2: makeNodeComponent("button2"),
     selectTemplate: makeNodeComponent("selectTemplate"),
 
     // Metadata about props expected for PlasmicChooseTemplate
