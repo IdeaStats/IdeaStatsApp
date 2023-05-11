@@ -22,13 +22,6 @@
 :where(.root > *) {
   grid-column: 4;
 }
-.text__gwXT {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 0;
-}
 .h1 {
   position: relative;
   width: 100%;
@@ -37,7 +30,7 @@
   text-align: center;
   min-width: 0;
 }
-.freeBox__u6Tw {
+.freeBox {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -147,57 +140,8 @@
 .adTemplate__lMv2M:global(.__wab_instance) {
   position: relative;
 }
-.freeBox__mDezw {
-  display: flex;
+.adTemplate1:global(.__wab_instance) {
   position: relative;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  background: url("https://images.unsplash.com/photo-1504280317859-9c6cce36bca8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=786&q=80")
-      padding-box border-box,
-    #00000073;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  min-width: 0;
-  min-height: 0;
-  padding: 8px;
-}
-.text__qvflQ {
-  position: sticky;
-  width: 181px;
-  height: 84px;
-  max-width: 100%;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  flex-shrink: 0;
-}
-.h2 {
-  text-align: center;
-}
-.text__dhnBl {
-  position: relative;
-  width: 246px;
-  height: 143px;
-  max-width: 100%;
-  flex-shrink: 0;
-}
-.button2:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
-.svg___3Zlxx {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__aGvh {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
 }
 .column__rvFvZ {
   display: flex;
