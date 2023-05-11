@@ -383,6 +383,75 @@
           "cssFilePath": "plasmic/idea_stats_v_1/PlasmicAdTemplate1.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "zjXR6j2rv6",
+          "name": "CreateGoogleAd",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicCreateGoogleAd.tsx",
+          "importSpec": {
+            "modulePath": "CreateGoogleAd.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicCreateGoogleAd.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "AoV4HBbmR-X",
+          "name": "Select",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicSelect.tsx",
+          "importSpec": {
+            "modulePath": "Select.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicSelect.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "select"
+        },
+        {
+          "id": "1c6dN2zHje2",
+          "name": "Select__Option",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicSelect__Option.tsx",
+          "importSpec": {
+            "modulePath": "Select__Option.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicSelect__Option.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "select-option"
+        },
+        {
+          "id": "wxpOTScsLgX",
+          "name": "Select__OptionGroup",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicSelect__OptionGroup.tsx",
+          "importSpec": {
+            "modulePath": "Select__OptionGroup.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicSelect__OptionGroup.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "select-option-group"
+        },
+        {
+          "id": "RikpPBGkO_e",
+          "name": "Select__Overlay",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicSelect__Overlay.tsx",
+          "importSpec": {
+            "modulePath": "Select__Overlay.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicSelect__Overlay.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "triggered-overlay"
         }
       ],
       "icons": [
@@ -415,6 +484,16 @@
           "id": "BINpeFFuv2",
           "name": "Icon2Icon",
           "moduleFilePath": "plasmic/idea_stats_v_1/icons/PlasmicIcon__Icon2.tsx"
+        },
+        {
+          "id": "70VliLjA9aV",
+          "name": "ChevronDownsvgIcon",
+          "moduleFilePath": "plasmic/idea_stats_v_1/icons/PlasmicIcon__ChevronDownsvg.tsx"
+        },
+        {
+          "id": "oM_L1nAMeco",
+          "name": "ChevronUpsvgIcon",
+          "moduleFilePath": "plasmic/idea_stats_v_1/icons/PlasmicIcon__ChevronUpsvg.tsx"
         }
       ],
       "images": [
@@ -451,6 +530,6 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.274",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.274/dist/plasmic.schema.json"
+  "cliVersion": "0.1.275",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.275/dist/plasmic.schema.json"
 }

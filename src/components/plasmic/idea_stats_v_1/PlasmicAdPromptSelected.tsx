@@ -204,10 +204,12 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                                     role={"img"}
                                   />
                                 }
-                                value={p.generateStateValueProp($state, [
-                                  "textInput",
-                                  "value"
-                                ])}
+                                value={
+                                  p.generateStateValueProp($state, [
+                                    "textInput",
+                                    "value"
+                                  ]) ?? ""
+                                }
                               />
 
                               <GenerateButton

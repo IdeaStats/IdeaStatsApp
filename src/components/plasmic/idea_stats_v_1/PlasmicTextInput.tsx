@@ -296,7 +296,7 @@ function PlasmicTextInput__RenderFunc(props: {
         }}
         required={args.required}
         type={"text" as const}
-        value={p.generateStateValueProp($state, ["input", "value"])}
+        value={p.generateStateValueProp($state, ["input", "value"]) ?? ""}
       />
 
       {(hasVariant($state, "showEndIcon", "showEndIcon") ? true : true) ? (

@@ -95,24 +95,6 @@ function PlasmicHomepage__RenderFunc(props: {
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => ``
-      },
-      {
-        path: "textarea.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ``
-      },
-      {
-        path: "textarea.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ``
-      },
-      {
-        path: "textarea.value",
-        type: "private",
-        variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => ``
       }
     ],
     [$props, $ctx]
@@ -172,7 +154,9 @@ function PlasmicHomepage__RenderFunc(props: {
                 ref={ref => {
                   $refs["textarea"] = ref;
                 }}
-                value={p.generateStateValueProp($state, ["textarea", "value"])}
+                value={
+                  p.generateStateValueProp($state, ["textarea", "value"]) ?? ""
+                }
               />
 
               <GenerateButton
