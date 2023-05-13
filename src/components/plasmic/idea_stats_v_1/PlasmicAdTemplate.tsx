@@ -40,14 +40,14 @@ import projectcss from "./plasmic_idea_stats_v_1.module.css"; // plasmic-import:
 import sty from "./PlasmicAdTemplate.module.css"; // plasmic-import: kwn848ytFs/css
 
 export type PlasmicAdTemplate__VariantMembers = {
-  reaction: "selected";
+  selected: "selected";
 };
 export type PlasmicAdTemplate__VariantsArgs = {
-  reaction?: SingleChoiceArg<"selected">;
+  selected?: SingleBooleanChoiceArg<"selected">;
 };
 type VariantPropType = keyof PlasmicAdTemplate__VariantsArgs;
 export const PlasmicAdTemplate__VariantProps = new Array<VariantPropType>(
-  "reaction"
+  "selected"
 );
 
 export type PlasmicAdTemplate__ArgsType = {
@@ -63,7 +63,7 @@ export type PlasmicAdTemplate__OverridesType = {
 
 export interface DefaultAdTemplateProps {
   children?: React.ReactNode;
-  reaction?: SingleChoiceArg<"selected">;
+  selected?: SingleBooleanChoiceArg<"selected">;
   className?: string;
 }
 
@@ -97,10 +97,10 @@ function PlasmicAdTemplate__RenderFunc(props: {
   const stateSpecs = React.useMemo(
     () => [
       {
-        path: "reaction",
+        path: "selected",
         type: "private",
         variableType: "variant",
-        initFunc: ({ $props, $state, $queries, $ctx }) => $props.reaction
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.selected
       }
     ],
     [$props, $ctx]
@@ -128,11 +128,7 @@ function PlasmicAdTemplate__RenderFunc(props: {
           data-plasmic-name={"button"}
           data-plasmic-override={overrides.button}
           className={classNames(projectcss.all, projectcss.button, sty.button, {
-            [sty.buttonreaction_selected]: hasVariant(
-              $state,
-              "reaction",
-              "selected"
-            )
+            [sty.buttonselected]: hasVariant($state, "selected", "selected")
           })}
         >
           {p.renderPlasmicSlot({

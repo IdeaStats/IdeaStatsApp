@@ -19,7 +19,12 @@
   flex-shrink: 0;
   padding: 8px;
 }
-.buttonreaction_selected {
+.buttonselected {
+  width: 350px;
+  height: 350px;
+  max-width: none;
   background: var(--token-jxUdGuulQocs);
+  flex-shrink: 0;
+  padding: 8px;
   border: 1em solid var(--token-E4GUulfgc);
 }
