@@ -53,7 +53,7 @@ type ArgPropType = keyof PlasmicAdTemplate1__ArgsType;
 export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicAdTemplate1__OverridesType = {
-  root?: p.Flex<"div">;
+  root?: p.Flex<"button">;
   h2?: p.Flex<"h2">;
   button2?: p.Flex<typeof Button2>;
 };
@@ -91,13 +91,14 @@ function PlasmicAdTemplate1__RenderFunc(props: {
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
-    <div
+    <button
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
         projectcss.all,
+        projectcss.button,
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
@@ -105,6 +106,9 @@ function PlasmicAdTemplate1__RenderFunc(props: {
         plasmic_antd_5_hostless_css.plasmic_tokens,
         sty.root
       )}
+      onSelect={async event => {
+        const $steps = {};
+      }}
     >
       <div
         className={classNames(
@@ -150,7 +154,7 @@ function PlasmicAdTemplate1__RenderFunc(props: {
       >
         {"Call To Action"}
       </Button2>
-    </div>
+    </button>
   ) as React.ReactElement | null;
 }
 
@@ -163,7 +167,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "div";
+  root: "button";
   h2: "h2";
   button2: typeof Button2;
 };
