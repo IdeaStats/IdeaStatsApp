@@ -39,10 +39,16 @@ import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostl
 import projectcss from "./plasmic_idea_stats_v_1.module.css"; // plasmic-import: iKm2w5zQkVZvuqT51PP4Eo/projectcss
 import sty from "./PlasmicAdTemplate.module.css"; // plasmic-import: kwn848ytFs/css
 
-export type PlasmicAdTemplate__VariantMembers = {};
-export type PlasmicAdTemplate__VariantsArgs = {};
+export type PlasmicAdTemplate__VariantMembers = {
+  reaction: "selected";
+};
+export type PlasmicAdTemplate__VariantsArgs = {
+  reaction?: SingleChoiceArg<"selected">;
+};
 type VariantPropType = keyof PlasmicAdTemplate__VariantsArgs;
-export const PlasmicAdTemplate__VariantProps = new Array<VariantPropType>();
+export const PlasmicAdTemplate__VariantProps = new Array<VariantPropType>(
+  "reaction"
+);
 
 export type PlasmicAdTemplate__ArgsType = {
   children?: React.ReactNode;
@@ -52,11 +58,12 @@ export const PlasmicAdTemplate__ArgProps = new Array<ArgPropType>("children");
 
 export type PlasmicAdTemplate__OverridesType = {
   root?: p.Flex<"div">;
-  freeBox?: p.Flex<"div">;
+  button?: p.Flex<"button">;
 };
 
 export interface DefaultAdTemplateProps {
   children?: React.ReactNode;
+  reaction?: SingleChoiceArg<"selected">;
   className?: string;
 }
 
@@ -87,6 +94,18 @@ function PlasmicAdTemplate__RenderFunc(props: {
 
   const currentUser = p.useCurrentUser?.() || {};
   const [$queries, setDollarQueries] = React.useState({});
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "reaction",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.reaction
+      }
+    ],
+    [$props, $ctx]
+  );
+  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
 
   return (
     true ? (
@@ -105,31 +124,37 @@ function PlasmicAdTemplate__RenderFunc(props: {
           sty.root
         )}
       >
-        <div
-          data-plasmic-name={"freeBox"}
-          data-plasmic-override={overrides.freeBox}
-          className={classNames(projectcss.all, sty.freeBox)}
+        <button
+          data-plasmic-name={"button"}
+          data-plasmic-override={overrides.button}
+          className={classNames(projectcss.all, projectcss.button, sty.button, {
+            [sty.buttonreaction_selected]: hasVariant(
+              $state,
+              "reaction",
+              "selected"
+            )
+          })}
         >
           {p.renderPlasmicSlot({
             defaultContents: null,
             value: args.children
           })}
-        </div>
+        </button>
       </div>
     ) : null
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox"],
-  freeBox: ["freeBox"]
+  root: ["root", "button"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
+  button: "button";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -192,7 +217,7 @@ export const PlasmicAdTemplate = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicAdTemplate
     internalVariantProps: PlasmicAdTemplate__VariantProps,

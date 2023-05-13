@@ -47,20 +47,22 @@ export type PlasmicChooseTemplate__VariantsArgs = {};
 type VariantPropType = keyof PlasmicChooseTemplate__VariantsArgs;
 export const PlasmicChooseTemplate__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicChooseTemplate__ArgsType = {};
+export type PlasmicChooseTemplate__ArgsType = {
+  templates?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicChooseTemplate__ArgsType;
-export const PlasmicChooseTemplate__ArgProps = new Array<ArgPropType>();
+export const PlasmicChooseTemplate__ArgProps = new Array<ArgPropType>(
+  "templates"
+);
 
 export type PlasmicChooseTemplate__OverridesType = {
   root?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
-  freeBox?: p.Flex<"div">;
-  columns?: p.Flex<"div">;
-  adTemplate1?: p.Flex<typeof AdTemplate1>;
   selectTemplate?: p.Flex<typeof SelectTemplate>;
 };
 
 export interface DefaultChooseTemplateProps {
+  templates?: React.ReactNode;
   className?: string;
 }
 
@@ -123,58 +125,66 @@ function PlasmicChooseTemplate__RenderFunc(props: {
             {"Choose An Ad Template"}
           </h1>
           {true ? (
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
-            >
-              <p.Stack
-                as={"div"}
-                data-plasmic-name={"columns"}
-                data-plasmic-override={overrides.columns}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.columns)}
-              >
-                <div className={classNames(projectcss.all, sty.column__pAnBs)}>
-                  {true ? (
-                    <AdTemplate
-                      className={classNames(
-                        "__wab_instance",
-                        sty.adTemplate__lMv2M
-                      )}
+            <div className={classNames(projectcss.all, sty.freeBox__u6Tw)}>
+              <div className={classNames(projectcss.all, sty.freeBox__tnIj2)}>
+                {p.renderPlasmicSlot({
+                  defaultContents: (
+                    <p.Stack
+                      as={"div"}
+                      hasGap={true}
+                      className={classNames(projectcss.all, sty.columns__opYk9)}
                     >
-                      <AdTemplate1
-                        data-plasmic-name={"adTemplate1"}
-                        data-plasmic-override={overrides.adTemplate1}
+                      <div
                         className={classNames(
-                          "__wab_instance",
-                          sty.adTemplate1
+                          projectcss.all,
+                          sty.column__v26Ln
                         )}
-                      />
-                    </AdTemplate>
-                  ) : null}
-                </div>
-                <div className={classNames(projectcss.all, sty.column__rvFvZ)}>
-                  {true ? (
-                    <AdTemplate
-                      className={classNames(
-                        "__wab_instance",
-                        sty.adTemplate___3Yrcz
-                      )}
-                    />
-                  ) : null}
-                </div>
-                <div className={classNames(projectcss.all, sty.column__jNixa)}>
-                  {true ? (
-                    <AdTemplate
-                      className={classNames(
-                        "__wab_instance",
-                        sty.adTemplate__aweAy
-                      )}
-                    />
-                  ) : null}
-                </div>
-              </p.Stack>
+                      >
+                        <AdTemplate
+                          className={classNames(
+                            "__wab_instance",
+                            sty.adTemplate__ndMFl
+                          )}
+                        >
+                          <AdTemplate1
+                            className={classNames(
+                              "__wab_instance",
+                              sty.adTemplate1__mhI39
+                            )}
+                          />
+                        </AdTemplate>
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column___4WcWu
+                        )}
+                      >
+                        <AdTemplate
+                          className={classNames(
+                            "__wab_instance",
+                            sty.adTemplate__xVhK
+                          )}
+                        />
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          sty.column__etA1M
+                        )}
+                      >
+                        <AdTemplate
+                          className={classNames(
+                            "__wab_instance",
+                            sty.adTemplate__jgyQe
+                          )}
+                        />
+                      </div>
+                    </p.Stack>
+                  ),
+                  value: args.templates
+                })}
+              </div>
               <SelectTemplate
                 data-plasmic-name={"selectTemplate"}
                 data-plasmic-override={overrides.selectTemplate}
@@ -189,11 +199,8 @@ function PlasmicChooseTemplate__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "freeBox", "columns", "adTemplate1", "selectTemplate"],
+  root: ["root", "h1", "selectTemplate"],
   h1: ["h1"],
-  freeBox: ["freeBox", "columns", "adTemplate1", "selectTemplate"],
-  columns: ["columns", "adTemplate1"],
-  adTemplate1: ["adTemplate1"],
   selectTemplate: ["selectTemplate"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -202,9 +209,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   h1: "h1";
-  freeBox: "div";
-  columns: "div";
-  adTemplate1: typeof AdTemplate1;
   selectTemplate: typeof SelectTemplate;
 };
 
@@ -269,9 +273,6 @@ export const PlasmicChooseTemplate = Object.assign(
   {
     // Helper components rendering sub-elements
     h1: makeNodeComponent("h1"),
-    freeBox: makeNodeComponent("freeBox"),
-    columns: makeNodeComponent("columns"),
-    adTemplate1: makeNodeComponent("adTemplate1"),
     selectTemplate: makeNodeComponent("selectTemplate"),
 
     // Metadata about props expected for PlasmicChooseTemplate
