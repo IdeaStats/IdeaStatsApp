@@ -20,7 +20,9 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultAdTemplateProps altogether and have
 // total control over the props for your component.
-export interface AdTemplateProps extends DefaultAdTemplateProps {}
+export interface AdTemplateProps extends DefaultAdTemplateProps {
+  onClick?: () => void;
+}
 
 function AdTemplate_(props: AdTemplateProps, ref: HTMLElementRefOf<"div">) {
   // Use PlasmicAdTemplate to render this component as it was

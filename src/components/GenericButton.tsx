@@ -20,10 +20,12 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultGenericButtonProps altogether and have
 // total control over the props for your component.
-export interface GenericButtonProps extends DefaultGenericButtonProps {}
+export interface GenericButtonProps extends DefaultGenericButtonProps {
+  children? : React.ReactNode;
+}
 
 function GenericButton_(
-  props: GenericButtonProps,
+  {children , ...props}: GenericButtonProps,
   ref: HTMLElementRefOf<"button">
 ) {
   // Use PlasmicGenericButton to render this component as it was
@@ -41,7 +43,10 @@ function GenericButton_(
   // By default, we are just piping all GenericButtonProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicGenericButton root={{ ref }} {...props} />;
+  return <PlasmicGenericButton 
+    root={{ ref }}
+    children= {children}  
+    {...props} />;
 }
 
 const GenericButton = React.forwardRef(GenericButton_);

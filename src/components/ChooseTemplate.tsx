@@ -6,6 +6,9 @@ import {
   DefaultChooseTemplateProps
 } from "./plasmic/idea_stats_v_1/PlasmicChooseTemplate";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import AdTemplate1 from "./AdTemplate1";
+import AdTemplate from "./AdTemplate";
+import { useState } from "react";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -41,7 +44,57 @@ function ChooseTemplate_(
   // By default, we are just piping all ChooseTemplateProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicChooseTemplate root={{ ref }} {...props} />;
+  const [ad_1_selected, setAd1] = useState(false);
+  const [ad_2_selected, setAd2] = useState(false);
+  const [ad_3_selected, setAd3] = useState(false);
+
+  function DeselectAllTemplates(){
+    setAd1(false);
+    setAd2(false);
+    setAd3(false);
+  }
+  
+
+  return (
+    <PlasmicChooseTemplate 
+      root={{ ref }} 
+      child1 ={
+        <AdTemplate 
+          selected={ad_1_selected}
+
+          onClick={ () => {
+            DeselectAllTemplates();
+            setAd1(true);
+            
+          }}
+           
+          children={<AdTemplate1 />} 
+        />
+      }
+      
+      child2 ={
+        <AdTemplate 
+          selected={ad_2_selected}
+          onClick={ () => {
+            DeselectAllTemplates();
+            setAd2(true);
+          }} 
+          children={ <AdTemplate1 /> } 
+        />
+      }
+
+      child3 ={
+        <AdTemplate 
+          selected={ad_3_selected}
+          onClick={ () => {
+            DeselectAllTemplates();
+            setAd3(true);
+          }} 
+          children={ <AdTemplate1 /> } 
+        />
+      }
+      {...props} 
+    />);
 }
 
 const ChooseTemplate = React.forwardRef(ChooseTemplate_);

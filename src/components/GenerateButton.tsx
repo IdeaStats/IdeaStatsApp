@@ -20,7 +20,10 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultGenerateButtonProps altogether and have
 // total control over the props for your component.
-export interface GenerateButtonProps extends DefaultGenerateButtonProps {}
+export interface GenerateButtonProps extends DefaultGenerateButtonProps {
+  onClick?: () => void;
+  children? : any;
+}
 
 function GenerateButton_(
   props: GenerateButtonProps,
