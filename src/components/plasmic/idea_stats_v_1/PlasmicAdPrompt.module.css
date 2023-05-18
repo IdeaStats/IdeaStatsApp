@@ -114,3 +114,7 @@
   max-width: 100%;
   position: relative;
 }
+.text {
+  height: auto;
+  padding-left: 0px;
+}
