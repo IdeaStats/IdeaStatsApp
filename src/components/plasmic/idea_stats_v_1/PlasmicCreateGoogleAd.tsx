@@ -117,93 +117,95 @@ function PlasmicCreateGoogleAd__RenderFunc(props: {
 
   return (
     <React.Fragment>
-      <div
-        data-plasmic-name={"root"}
-        data-plasmic-override={overrides.root}
-        data-plasmic-root={true}
-        data-plasmic-for-node={forNode}
-        className={classNames(
-          projectcss.all,
-          projectcss.root_reset,
-          projectcss.plasmic_default_styles,
-          projectcss.plasmic_mixins,
-          projectcss.plasmic_tokens,
-          plasmic_antd_5_hostless_css.plasmic_tokens,
-          sty.root
-        )}
-      >
+      <div className={projectcss.plasmic_page_wrapper}>
         <div
-          data-plasmic-name={"freeBox"}
-          data-plasmic-override={overrides.freeBox}
-          className={classNames(projectcss.all, sty.freeBox)}
+          data-plasmic-name={"root"}
+          data-plasmic-override={overrides.root}
+          data-plasmic-root={true}
+          data-plasmic-for-node={forNode}
+          className={classNames(
+            projectcss.all,
+            projectcss.root_reset,
+            projectcss.plasmic_default_styles,
+            projectcss.plasmic_mixins,
+            projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
+            sty.root
+          )}
         >
-          <Select
-            data-plasmic-name={"select"}
-            data-plasmic-override={overrides.select}
-            className={classNames("__wab_instance", sty.select)}
-            onChange={(...eventArgs) => {
-              p.generateStateOnChangeProp($state, ["select", "value"])(
-                eventArgs[0]
-              );
-            }}
-            options={[
-              { value: "option1", label: "Option 1" },
-              { value: "option2", label: "Option 2" }
-            ]}
-            placeholder={"Select campaign type..."}
-            value={p.generateStateValueProp($state, ["select", "value"])}
-          />
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <Select
+              data-plasmic-name={"select"}
+              data-plasmic-override={overrides.select}
+              className={classNames("__wab_instance", sty.select)}
+              onChange={(...eventArgs) => {
+                p.generateStateOnChangeProp($state, ["select", "value"])(
+                  eventArgs[0]
+                );
+              }}
+              options={[
+                { value: "option1", label: "Option 1" },
+                { value: "option2", label: "Option 2" }
+              ]}
+              placeholder={"Select campaign type..."}
+              value={p.generateStateValueProp($state, ["select", "value"])}
+            />
 
-          <Select
-            data-plasmic-name={"select2"}
-            data-plasmic-override={overrides.select2}
-            className={classNames("__wab_instance", sty.select2)}
-            onChange={(...eventArgs) => {
-              p.generateStateOnChangeProp($state, ["select2", "value"])(
-                eventArgs[0]
-              );
-            }}
-            options={[
-              { value: "option1", label: "Option 1" },
-              { value: "option2", label: "Option 2" }
-            ]}
-            placeholder={"Select Location..."}
-            value={p.generateStateValueProp($state, ["select2", "value"])}
-          />
+            <Select
+              data-plasmic-name={"select2"}
+              data-plasmic-override={overrides.select2}
+              className={classNames("__wab_instance", sty.select2)}
+              onChange={(...eventArgs) => {
+                p.generateStateOnChangeProp($state, ["select2", "value"])(
+                  eventArgs[0]
+                );
+              }}
+              options={[
+                { value: "option1", label: "Option 1" },
+                { value: "option2", label: "Option 2" }
+              ]}
+              placeholder={"Select Location..."}
+              value={p.generateStateValueProp($state, ["select2", "value"])}
+            />
 
-          {(() => {
-            const child$Props = {
-              className: classNames("__wab_instance", sty.textArea),
-              onChange: p.generateStateOnChangePropForCodeComponents(
+            {(() => {
+              const child$Props = {
+                className: classNames("__wab_instance", sty.textArea),
+                onChange: p.generateStateOnChangePropForCodeComponents(
+                  $state,
+                  "value",
+                  ["textArea", "value"],
+                  AntdTextArea_Helpers
+                ),
+                placholder: "Enter relevant keywords..." as const,
+                value: p.generateStateValueProp($state, ["textArea", "value"])
+              };
+              p.initializeCodeComponentStates(
                 $state,
-                "value",
-                ["textArea", "value"],
-                AntdTextArea_Helpers
-              ),
-              placholder: "Enter relevant keywords..." as const,
-              value: p.generateStateValueProp($state, ["textArea", "value"])
-            };
-            p.initializeCodeComponentStates(
-              $state,
-              [
-                {
-                  name: "value",
-                  plasmicStateName: "textArea.value"
-                }
-              ],
-              [],
-              AntdTextArea_Helpers ?? {},
-              child$Props
-            );
+                [
+                  {
+                    name: "value",
+                    plasmicStateName: "textArea.value"
+                  }
+                ],
+                [],
+                AntdTextArea_Helpers ?? {},
+                child$Props
+              );
 
-            return (
-              <AntdTextArea
-                data-plasmic-name={"textArea"}
-                data-plasmic-override={overrides.textArea}
-                {...child$Props}
-              />
-            );
-          })()}
+              return (
+                <AntdTextArea
+                  data-plasmic-name={"textArea"}
+                  data-plasmic-override={overrides.textArea}
+                  {...child$Props}
+                />
+              );
+            })()}
+          </div>
         </div>
       </div>
     </React.Fragment>

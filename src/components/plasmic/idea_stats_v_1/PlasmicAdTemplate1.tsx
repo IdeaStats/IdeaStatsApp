@@ -151,6 +151,7 @@ function PlasmicAdTemplate1__RenderFunc(props: {
         data-plasmic-name={"button2"}
         data-plasmic-override={overrides.button2}
         className={classNames("__wab_instance", sty.button2)}
+        submitsForm={true}
       >
         {"Call To Action"}
       </Button2>

@@ -107,49 +107,6 @@ function PlasmicGenericButton__RenderFunc(props: {
       )}
       onClick={async event => {
         const $steps = {};
-        $steps["goToAdPromptSelected"] = true
-          ? (() => {
-              const actionArgs = {
-                destination: __wrapUserFunction(
-                  {
-                    type: "InteractionArgLoc",
-                    actionName: "navigation",
-                    interactionUuid: "jw8yTCqLJ",
-                    componentUuid: "rRlSjYLvCT",
-                    argName: "destination"
-                  },
-                  () => `/ad-prompt-2`
-                )
-              };
-              return __wrapUserFunction(
-                {
-                  type: "InteractionLoc",
-                  actionName: "navigation",
-                  interactionUuid: "jw8yTCqLJ",
-                  componentUuid: "rRlSjYLvCT"
-                },
-                () =>
-                  (({ destination }) => {
-                    location.assign(destination);
-                  })?.apply(null, [actionArgs]),
-                actionArgs
-              );
-            })()
-          : undefined;
-        if (
-          typeof $steps["goToAdPromptSelected"] === "object" &&
-          typeof $steps["goToAdPromptSelected"].then === "function"
-        ) {
-          $steps["goToAdPromptSelected"] = await __wrapUserPromise(
-            {
-              type: "InteractionLoc",
-              actionName: "navigation",
-              interactionUuid: "jw8yTCqLJ",
-              componentUuid: "rRlSjYLvCT"
-            },
-            $steps["goToAdPromptSelected"]
-          );
-        }
       }}
     >
       {p.renderPlasmicSlot({
