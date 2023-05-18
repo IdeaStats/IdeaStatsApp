@@ -99,7 +99,7 @@
   min-width: 0;
   margin: 10px 0px 0px;
 }
-.genericButton__u5Nyp:global(.__wab_instance) {
+.refreshButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
@@ -110,7 +110,7 @@
   width: 40px;
   height: 40px;
 }
-.genericButton___6X7Wz:global(.__wab_instance) {
+.selectButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }

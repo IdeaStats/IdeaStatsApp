@@ -61,6 +61,8 @@ export type PlasmicAdPrompt__OverridesType = {
   textInput?: p.Flex<typeof TextInput>;
   generateButton?: p.Flex<typeof GenerateButton>;
   img?: p.Flex<typeof p.PlasmicImg>;
+  refreshButton?: p.Flex<typeof GenericButton>;
+  selectButton?: p.Flex<typeof GenericButton>;
   text?: p.Flex<"div">;
 };
 
@@ -195,10 +197,9 @@ function PlasmicAdPrompt__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox___2Wc5U)}
                 >
                   <GenericButton
-                    className={classNames(
-                      "__wab_instance",
-                      sty.genericButton__u5Nyp
-                    )}
+                    data-plasmic-name={"refreshButton"}
+                    data-plasmic-override={overrides.refreshButton}
+                    className={classNames("__wab_instance", sty.refreshButton)}
                   >
                     <IconIcon
                       className={classNames(projectcss.all, sty.svg__hsWLa)}
@@ -206,10 +207,9 @@ function PlasmicAdPrompt__RenderFunc(props: {
                     />
                   </GenericButton>
                   <GenericButton
-                    className={classNames(
-                      "__wab_instance",
-                      sty.genericButton___6X7Wz
-                    )}
+                    data-plasmic-name={"selectButton"}
+                    data-plasmic-override={overrides.selectButton}
+                    className={classNames("__wab_instance", sty.selectButton)}
                   >
                     <div
                       data-plasmic-name={"text"}
@@ -234,11 +234,22 @@ function PlasmicAdPrompt__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "textInput", "generateButton", "img", "text"],
+  root: [
+    "root",
+    "h1",
+    "textInput",
+    "generateButton",
+    "img",
+    "refreshButton",
+    "selectButton",
+    "text"
+  ],
   h1: ["h1"],
   textInput: ["textInput"],
   generateButton: ["generateButton"],
   img: ["img"],
+  refreshButton: ["refreshButton"],
+  selectButton: ["selectButton", "text"],
   text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -250,6 +261,8 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   generateButton: typeof GenerateButton;
   img: typeof p.PlasmicImg;
+  refreshButton: typeof GenericButton;
+  selectButton: typeof GenericButton;
   text: "div";
 };
 
@@ -317,6 +330,8 @@ export const PlasmicAdPrompt = Object.assign(
     textInput: makeNodeComponent("textInput"),
     generateButton: makeNodeComponent("generateButton"),
     img: makeNodeComponent("img"),
+    refreshButton: makeNodeComponent("refreshButton"),
+    selectButton: makeNodeComponent("selectButton"),
     text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicAdPrompt
