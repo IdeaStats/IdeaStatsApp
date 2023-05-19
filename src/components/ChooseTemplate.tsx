@@ -9,6 +9,7 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import AdTemplate1 from "./AdTemplate1";
 import AdTemplate from "./AdTemplate";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -43,6 +44,8 @@ function ChooseTemplate_(
   //
   // By default, we are just piping all ChooseTemplateProps here, but feel free
   // to do whatever works for you.
+
+  let navigate = useNavigate();
 
   const [ad_1_selected, setAd1] = useState(false);
   const [ad_2_selected, setAd2] = useState(false);
@@ -93,6 +96,13 @@ function ChooseTemplate_(
           children={ <AdTemplate1 /> } 
         />
       }
+
+      selectTemplate={{
+        onClick: () => {
+          navigate("/ad-prompt-2");
+        }
+      }}
+
       {...props} 
     />);
 }
