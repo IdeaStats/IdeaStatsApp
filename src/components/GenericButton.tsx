@@ -22,6 +22,7 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 // total control over the props for your component.
 export interface GenericButtonProps extends DefaultGenericButtonProps {
   children? : React.ReactNode;
+  onClick?: () => void;
 }
 
 function GenericButton_(
