@@ -181,7 +181,6 @@ function PlasmicCreateGoogleAd__RenderFunc(props: {
                   ["textArea", "value"],
                   AntdTextArea_Helpers
                 ),
-                placholder: "Enter relevant keywords..." as const,
                 value: p.generateStateValueProp($state, ["textArea", "value"])
               };
               p.initializeCodeComponentStates(

@@ -189,9 +189,13 @@
           "id": "Zzbfw0tfhA",
           "name": "UploadWrapper",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerUpload"
+        },
+        {
+          "id": "-gkBqPikhk",
+          "name": "AntdSwitch",
+          "componentImportPath": "@plasmicpkgs/antd5/skinny/registerSwitch"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
@@ -530,6 +534,6 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.281",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.281/dist/plasmic.schema.json"
+  "cliVersion": "0.1.283",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.283/dist/plasmic.schema.json"
 }

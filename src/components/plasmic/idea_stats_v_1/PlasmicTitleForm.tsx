@@ -57,7 +57,7 @@ export const PlasmicTitleForm__ArgProps = new Array<ArgPropType>("children");
 
 export type PlasmicTitleForm__OverridesType = {
   form?: p.Flex<typeof FormWrapper>;
-  formItem?: p.Flex<typeof FormItemWrapper>;
+  formField?: p.Flex<typeof FormItemWrapper>;
   freeBox?: p.Flex<"div">;
   input?: p.Flex<typeof AntdInput>;
   button?: p.Flex<typeof AntdButton>;
@@ -139,9 +139,9 @@ function PlasmicTitleForm__RenderFunc(props: {
       wrapperCol={{ span: 16, horizontalOnly: true }}
     >
       <FormItemWrapper
-        data-plasmic-name={"formItem"}
-        data-plasmic-override={overrides.formItem}
-        className={classNames("__wab_instance", sty.formItem)}
+        data-plasmic-name={"formField"}
+        data-plasmic-override={overrides.formField}
+        className={classNames("__wab_instance", sty.formField)}
         label={
           <div
             data-plasmic-name={"freeBox"}
@@ -217,8 +217,8 @@ function PlasmicTitleForm__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  form: ["form", "formItem", "freeBox", "input", "button", "text"],
-  formItem: ["formItem", "freeBox", "input"],
+  form: ["form", "formField", "freeBox", "input", "button", "text"],
+  formField: ["formField", "freeBox", "input"],
   freeBox: ["freeBox"],
   input: ["input"],
   button: ["button", "text"],
@@ -229,7 +229,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   form: typeof FormWrapper;
-  formItem: typeof FormItemWrapper;
+  formField: typeof FormItemWrapper;
   freeBox: "div";
   input: typeof AntdInput;
   button: typeof AntdButton;
@@ -296,7 +296,7 @@ export const PlasmicTitleForm = Object.assign(
   makeNodeComponent("form"),
   {
     // Helper components rendering sub-elements
-    formItem: makeNodeComponent("formItem"),
+    formField: makeNodeComponent("formField"),
     freeBox: makeNodeComponent("freeBox"),
     input: makeNodeComponent("input"),
     button: makeNodeComponent("button"),
