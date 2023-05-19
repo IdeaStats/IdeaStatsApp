@@ -6,8 +6,7 @@ import {
   DefaultHomepageProps
 } from "./plasmic/idea_stats_v_1/PlasmicHomepage";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import GenerateButton from "./GenerateButton";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -45,11 +44,13 @@ function Homepage_(props: HomepageProps, ref: HTMLElementRefOf<"div">) {
   return <PlasmicHomepage 
             root={{ ref }} 
             
-          generateButton={{
-            onClick: () =>{
-                navigate("ad-prompt");
-            }
-          }} {...props} />;
+            generateButton={{
+              onClick: () =>{
+                  navigate("ad-prompt");
+              }
+            }} 
+            
+            {...props} />;
 }
 
 const Homepage = React.forwardRef(Homepage_);
