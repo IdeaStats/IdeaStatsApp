@@ -6,6 +6,7 @@ import {
   DefaultRunAdsProps
 } from "./plasmic/idea_stats_v_1/PlasmicRunAds";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import { useState } from "react";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -21,6 +22,14 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 // You can also stop extending from DefaultRunAdsProps altogether and have
 // total control over the props for your component.
 export interface RunAdsProps extends DefaultRunAdsProps {}
+
+function getTotalCost(cost_per_day: number, number_of_days: number): number{
+  return cost_per_day * number_of_days;
+}
+
+function getTotalCostDisplay(cost_per_day: number, number_of_days: number): string{
+  return "USD$ " + getTotalCost(cost_per_day , number_of_days).toString();
+}
 
 function RunAds_(props: RunAdsProps, ref: HTMLElementRefOf<"div">) {
   // Use PlasmicRunAds to render this component as it was
@@ -38,7 +47,65 @@ function RunAds_(props: RunAdsProps, ref: HTMLElementRefOf<"div">) {
   // By default, we are just piping all RunAdsProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicRunAds root={{ ref }} {...props} />;
+  const IS_GOOGLE_SELECTED_DEFAULT = false;
+  const PER_DAY_COST_DEFAULT = 30;
+  const DAYS_TO_RUN_DEFAULT = 3;
+
+  const [is_google_selected, setIsGoogleSelected] = useState(IS_GOOGLE_SELECTED_DEFAULT);
+  const [per_day_cost, setPerDayCost] = useState(0);
+  const [days_to_run, setDaysToRun] = useState(0);
+
+  return <PlasmicRunAds root={{ ref }} 
+
+  checkbox={{
+    isChecked : is_google_selected,
+    onChange(isSelected) {
+        if (isSelected){
+          setIsGoogleSelected(true);
+          setPerDayCost(PER_DAY_COST_DEFAULT);
+          setDaysToRun(DAYS_TO_RUN_DEFAULT);
+          
+        }else{
+          // Alert user that totals will be unset.
+          if (window.confirm("Deselect Google Ads?\nYour infomation will be reset")) {
+            setIsGoogleSelected(false);
+            setPerDayCost(0);
+            setDaysToRun(0);
+          }else{
+            console.log("No reset");
+            setIsGoogleSelected(true);
+          }
+        }
+    },
+  }}
+
+  googleAdsOptions={{
+    style: {
+      display: is_google_selected ? "inline" : "none"
+    }
+  }} 
+  
+  dailyCost={{
+    value : per_day_cost.toString(),
+    onChange (event){
+      const cost = Number(event.currentTarget.value)
+      setPerDayCost(cost);
+    }
+  }}
+
+  daysRunning={{
+    value : days_to_run.toString(),
+    onChange (event){
+      const days = Number(event.currentTarget.value)
+      setDaysToRun(days);
+    }
+  }}
+
+  googleTotal= { getTotalCostDisplay(per_day_cost, days_to_run) }
+
+  allTotal= { getTotalCostDisplay(per_day_cost, days_to_run) }
+
+  {...props} />;
 }
 
 const RunAds = React.forwardRef(RunAds_);

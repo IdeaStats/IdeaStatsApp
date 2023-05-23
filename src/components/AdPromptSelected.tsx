@@ -6,6 +6,7 @@ import {
   DefaultAdPromptSelectedProps
 } from "./plasmic/idea_stats_v_1/PlasmicAdPromptSelected";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import { useNavigate } from "react-router-dom";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -41,7 +42,16 @@ function AdPromptSelected_(
   // By default, we are just piping all AdPromptSelectedProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicAdPromptSelected root={{ ref }} {...props} />;
+  let navigate = useNavigate();
+
+  return <PlasmicAdPromptSelected root={{ ref }} 
+    selectButton={{
+      onClick: () => {
+        navigate("/run-ads");
+      }
+    }} 
+    
+    {...props} />;
 }
 
 const AdPromptSelected = React.forwardRef(AdPromptSelected_);
