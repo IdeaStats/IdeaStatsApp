@@ -37,6 +37,7 @@ import Button2 from "../../Button2"; // plasmic-import: mqOKPI__U1C/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
+import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic_plasmic_rich_components.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic_idea_stats_v_1.module.css"; // plasmic-import: iKm2w5zQkVZvuqT51PP4Eo/projectcss
 import sty from "./PlasmicAdTemplate1.module.css"; // plasmic-import: mz5eL8luPc/css
 
@@ -48,9 +49,13 @@ export type PlasmicAdTemplate1__VariantsArgs = {};
 type VariantPropType = keyof PlasmicAdTemplate1__VariantsArgs;
 export const PlasmicAdTemplate1__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicAdTemplate1__ArgsType = {};
+export type PlasmicAdTemplate1__ArgsType = {
+  backgroundImage?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicAdTemplate1__ArgsType;
-export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>();
+export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>(
+  "backgroundImage"
+);
 
 export type PlasmicAdTemplate1__OverridesType = {
   root?: p.Flex<"button">;
@@ -59,6 +64,7 @@ export type PlasmicAdTemplate1__OverridesType = {
 };
 
 export interface DefaultAdTemplate1Props {
+  backgroundImage?: React.ReactNode;
   className?: string;
 }
 
@@ -104,12 +110,37 @@ function PlasmicAdTemplate1__RenderFunc(props: {
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
         plasmic_antd_5_hostless_css.plasmic_tokens,
+        plasmic_plasmic_rich_components_css.plasmic_tokens,
         sty.root
       )}
       onSelect={async event => {
         const $steps = {};
       }}
     >
+      <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <p.PlasmicImg
+              alt={""}
+              className={classNames(sty.img__deiOq)}
+              displayHeight={"100%" as const}
+              displayMaxHeight={"none" as const}
+              displayMaxWidth={"none" as const}
+              displayMinHeight={"0" as const}
+              displayMinWidth={"0" as const}
+              displayWidth={"100%" as const}
+              loading={"lazy" as const}
+              src={
+                "https://images.unsplash.com/photo-1682695795255-b236b1f1267d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" as const
+              }
+            />
+          ),
+
+          value: args.backgroundImage
+        })}
+      </div>
+      <div className={classNames(projectcss.all, sty.freeBox__qI4Qw)} />
+
       <div
         className={classNames(
           projectcss.all,
@@ -153,7 +184,15 @@ function PlasmicAdTemplate1__RenderFunc(props: {
         className={classNames("__wab_instance", sty.button2)}
         submitsForm={true}
       >
-        {"Call To Action"}
+        <div
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text__brEk
+          )}
+        >
+          {"Call To Action"}
+        </div>
       </Button2>
     </button>
   ) as React.ReactElement | null;

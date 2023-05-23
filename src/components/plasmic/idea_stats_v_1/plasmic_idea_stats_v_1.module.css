@@ -9,6 +9,8 @@
   --plasmic-token-primary-button-hover: var(--token-sEleWH4Ot);
   --token-E4GUulfgc: #2f928c;
   --plasmic-token-primary-button-clicked: var(--token-E4GUulfgc);
+  --token-Bk31Q-boTwvF: var(--antd-colorBgMask);
+  --plasmic-token-system-bg-mask: var(--token-Bk31Q-boTwvF);
 }
 
 .plasmic_tokens {
