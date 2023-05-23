@@ -91,7 +91,7 @@ function ChooseTemplate_(
       selectTemplate={{
         onClick: () => {
           if ( templateSelected(selected_template) ){
-            navigate("/ad-prompt-2");
+            navigate("/customize-ad");
           }
           
         }
