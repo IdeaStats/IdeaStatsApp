@@ -93,6 +93,7 @@
   max-width: 100%;
   object-fit: cover;
   position: relative;
+  color: var(--token-kzT08fQBAHgz);
 }
 .freeBox__fUzNi {
   display: flex;

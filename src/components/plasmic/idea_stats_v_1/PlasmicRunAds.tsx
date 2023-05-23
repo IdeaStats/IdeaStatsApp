@@ -238,7 +238,12 @@ function PlasmicRunAds__RenderFunc(props: {
                       "value"
                     ])(eventArgs[0]);
                   }}
-                  options={[{ value: "option1", label: "Option 1" }]}
+                  options={(() => {
+                    const __composite = [{ value: null, label: null }];
+                    __composite["0"]["value"] = "WebsiteTraffic";
+                    __composite["0"]["label"] = "Drive website traffic";
+                    return __composite;
+                  })()}
                   placeholder={"Select campaign type..."}
                   value={p.generateStateValueProp($state, [
                     "selectCampaign",
@@ -287,7 +292,7 @@ function PlasmicRunAds__RenderFunc(props: {
                       AntdTextArea_Helpers
                     ),
                     placeholder:
-                      'Add keywords here like "consulting", "clothing" etc.' as const,
+                      'Add keywords separated by commas e.g. "consulting, clothing"' as const,
                     value: p.generateStateValueProp($state, [
                       "keyWords",
                       "value"
