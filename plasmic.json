@@ -390,19 +390,6 @@
           "componentType": "component"
         },
         {
-          "id": "zjXR6j2rv6",
-          "name": "CreateGoogleAd",
-          "type": "managed",
-          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
-          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicCreateGoogleAd.tsx",
-          "importSpec": {
-            "modulePath": "CreateGoogleAd.tsx"
-          },
-          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicCreateGoogleAd.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "AoV4HBbmR-X",
           "name": "Select",
           "type": "managed",
@@ -457,6 +444,33 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "triggered-overlay"
+        },
+        {
+          "id": "zjXR6j2rv6",
+          "name": "RunAds",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicRunAds.tsx",
+          "importSpec": {
+            "modulePath": "RunAds.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicRunAds.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "RPyurRAYUmZ",
+          "name": "Checkbox",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicCheckbox.tsx",
+          "importSpec": {
+            "modulePath": "Checkbox.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicCheckbox.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "checkbox"
         }
       ],
       "icons": [
@@ -499,6 +513,26 @@
           "id": "oM_L1nAMeco",
           "name": "ChevronUpsvgIcon",
           "moduleFilePath": "plasmic/idea_stats_v_1/icons/PlasmicIcon__ChevronUpsvg.tsx"
+        },
+        {
+          "id": "aHGPt-BE0NL",
+          "name": "SquaresvgIcon",
+          "moduleFilePath": "plasmic/idea_stats_v_1/icons/PlasmicIcon__Squaresvg.tsx"
+        },
+        {
+          "id": "g-d2Xfww5GI",
+          "name": "SquareCheckFilledsvgIcon",
+          "moduleFilePath": "plasmic/idea_stats_v_1/icons/PlasmicIcon__SquareCheckFilledsvg.tsx"
+        },
+        {
+          "id": "wz6v6Rc_ubf",
+          "name": "SquareMinussvgIcon",
+          "moduleFilePath": "plasmic/idea_stats_v_1/icons/PlasmicIcon__SquareMinussvg.tsx"
+        },
+        {
+          "id": "eUwkeFQMmR",
+          "name": "Icon3Icon",
+          "moduleFilePath": "plasmic/idea_stats_v_1/icons/PlasmicIcon__Icon3.tsx"
         }
       ],
       "images": [
@@ -522,6 +556,40 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ]
+    },
+    {
+      "projectId": "jkU633o1Cz7HrJdwdxhVHk",
+      "projectApiToken": "RNOKYUdvtFBrgxbf09RPjYgL9LzpnT4pIsOrtpsqlLDYBRxYynkAo8OY9YRWPdoaSnRAwOO2e5PWfuVNypw",
+      "projectName": "plasmic-rich-components",
+      "version": "14.0.0",
+      "cssFilePath": "plasmic/plasmic_rich_components/plasmic_plasmic_rich_components.module.css",
+      "components": [],
+      "icons": [],
+      "images": [],
+      "indirect": true,
+      "globalContextsFilePath": "",
+      "codeComponents": [
+        {
+          "id": "FNIk-CnxQYXU",
+          "name": "RichLayout",
+          "componentImportPath": "@plasmicpkgs/plasmic-rich-components"
+        },
+        {
+          "id": "k4RvFQUTZKCU",
+          "name": "RichTable",
+          "componentImportPath": "@plasmicpkgs/plasmic-rich-components",
+          "helper": {
+            "name": "tableHelpers",
+            "importPath": "@plasmicpkgs/plasmic-rich-components"
+          }
+        },
+        {
+          "id": "zV8WqibK3ZnC",
+          "name": "RichDetails",
+          "componentImportPath": "@plasmicpkgs/plasmic-rich-components"
+        }
+      ],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {
