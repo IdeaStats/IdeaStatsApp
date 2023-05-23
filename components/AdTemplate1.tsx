@@ -41,7 +41,7 @@ function AdTemplate1_(props: AdTemplate1Props, ref: HTMLElementRefOf<"button">) 
   // to do whatever works for you.
 
   return <PlasmicAdTemplate1 
-    root={{ ref }} style={{
+    root={{ ref }} style ={{
       backgroundImage: "url(/assets/random_img.png)"
     
     }} {...props} />;

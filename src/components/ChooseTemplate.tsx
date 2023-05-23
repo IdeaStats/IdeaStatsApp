@@ -11,6 +11,10 @@ import AdTemplate from "./AdTemplate";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+function templateSelected(selected_template: number){
+  return [1, 2, 3].indexOf(selected_template) > -1;
+}
+
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
 // attach to named nodes in your component.
@@ -47,28 +51,17 @@ function ChooseTemplate_(
 
   let navigate = useNavigate();
 
-  const [ad_1_selected, setAd1] = useState(false);
-  const [ad_2_selected, setAd2] = useState(false);
-  const [ad_3_selected, setAd3] = useState(false);
-
-  function DeselectAllTemplates(){
-    setAd1(false);
-    setAd2(false);
-    setAd3(false);
-  }
-  
+  const [selected_template, setSelectedTemplate] = useState(0);
 
   return (
     <PlasmicChooseTemplate 
       root={{ ref }} 
       child1 ={
         <AdTemplate 
-          selected={ad_1_selected}
+          selected={selected_template === 1 ? true : false}
 
           onClick={ () => {
-            DeselectAllTemplates();
-            setAd1(true);
-            
+            setSelectedTemplate(1);
           }}
            
           children={<AdTemplate1 />} 
@@ -77,10 +70,9 @@ function ChooseTemplate_(
       
       child2 ={
         <AdTemplate 
-          selected={ad_2_selected}
+          selected={selected_template === 2 ? true : false}
           onClick={ () => {
-            DeselectAllTemplates();
-            setAd2(true);
+            setSelectedTemplate(2);
           }} 
           children={ <AdTemplate1 /> } 
         />
@@ -88,10 +80,9 @@ function ChooseTemplate_(
 
       child3 ={
         <AdTemplate 
-          selected={ad_3_selected}
+          selected={selected_template === 3 ? true : false}
           onClick={ () => {
-            DeselectAllTemplates();
-            setAd3(true);
+            setSelectedTemplate(3);
           }} 
           children={ <AdTemplate1 /> } 
         />
@@ -99,7 +90,10 @@ function ChooseTemplate_(
 
       selectTemplate={{
         onClick: () => {
-          navigate("/ad-prompt-2");
+          if ( templateSelected(selected_template) ){
+            navigate("/ad-prompt-2");
+          }
+          
         }
       }}
 
