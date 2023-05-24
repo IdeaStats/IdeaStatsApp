@@ -76,7 +76,9 @@ export type PlasmicRunAds__OverridesType = {
   keyWords?: p.Flex<typeof AntdTextArea>;
   dailyCost?: p.Flex<typeof TextInput>;
   daysRunning?: p.Flex<typeof TextInput>;
+  genericButton?: p.Flex<typeof GenericButton>;
   svg?: p.Flex<"svg">;
+  confirmButton?: p.Flex<typeof GenericButton>;
 };
 
 export interface DefaultRunAdsProps {
@@ -452,10 +454,9 @@ function PlasmicRunAds__RenderFunc(props: {
             {true ? (
               <div className={classNames(projectcss.all, sty.freeBox__gdWJ)}>
                 <GenericButton
-                  className={classNames(
-                    "__wab_instance",
-                    sty.genericButton__thbH9
-                  )}
+                  data-plasmic-name={"genericButton"}
+                  data-plasmic-override={overrides.genericButton}
+                  className={classNames("__wab_instance", sty.genericButton)}
                 >
                   <Icon3Icon
                     data-plasmic-name={"svg"}
@@ -465,10 +466,9 @@ function PlasmicRunAds__RenderFunc(props: {
                   />
                 </GenericButton>
                 <GenericButton
-                  className={classNames(
-                    "__wab_instance",
-                    sty.genericButton__jQesJ
-                  )}
+                  data-plasmic-name={"confirmButton"}
+                  data-plasmic-override={overrides.confirmButton}
+                  className={classNames("__wab_instance", sty.confirmButton)}
                 >
                   {"Confirm"}
                 </GenericButton>
@@ -493,7 +493,9 @@ const PlasmicDescendants = {
     "keyWords",
     "dailyCost",
     "daysRunning",
-    "svg"
+    "genericButton",
+    "svg",
+    "confirmButton"
   ],
   h1: ["h1"],
   h2: ["h2"],
@@ -511,7 +513,9 @@ const PlasmicDescendants = {
   keyWords: ["keyWords"],
   dailyCost: ["dailyCost"],
   daysRunning: ["daysRunning"],
-  svg: ["svg"]
+  genericButton: ["genericButton", "svg"],
+  svg: ["svg"],
+  confirmButton: ["confirmButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -527,7 +531,9 @@ type NodeDefaultElementType = {
   keyWords: typeof AntdTextArea;
   dailyCost: typeof TextInput;
   daysRunning: typeof TextInput;
+  genericButton: typeof GenericButton;
   svg: "svg";
+  confirmButton: typeof GenericButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -599,7 +605,9 @@ export const PlasmicRunAds = Object.assign(
     keyWords: makeNodeComponent("keyWords"),
     dailyCost: makeNodeComponent("dailyCost"),
     daysRunning: makeNodeComponent("daysRunning"),
+    genericButton: makeNodeComponent("genericButton"),
     svg: makeNodeComponent("svg"),
+    confirmButton: makeNodeComponent("confirmButton"),
 
     // Metadata about props expected for PlasmicRunAds
     internalVariantProps: PlasmicRunAds__VariantProps,

@@ -292,7 +292,7 @@
   min-width: 0;
   padding: 0px;
 }
-.genericButton__thbH9:global(.__wab_instance) {
+.genericButton:global(.__wab_instance) {
   max-width: 100%;
 }
 .svg {
@@ -302,7 +302,7 @@
   width: 30px;
   height: 30px;
 }
-.genericButton__jQesJ:global(.__wab_instance) {
+.confirmButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
