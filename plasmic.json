@@ -195,8 +195,7 @@
           "name": "AntdSwitch",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerSwitch"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
@@ -471,6 +470,32 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "checkbox"
+        },
+        {
+          "id": "EB7ppsy1rez",
+          "name": "AnalyticsPage",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicAnalyticsPage.tsx",
+          "importSpec": {
+            "modulePath": "AnalyticsPage.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicAnalyticsPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "gnVJgCSe6k",
+          "name": "GraphSelectButton",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicGraphSelectButton.tsx",
+          "importSpec": {
+            "modulePath": "GraphSelectButton.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicGraphSelectButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
