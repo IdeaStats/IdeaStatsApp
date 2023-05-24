@@ -8,6 +8,7 @@ import AdPrompt from './components/AdPrompt';
 import AdPromptSelected from './components/AdPromptSelected';
 import reportWebVitals from './reportWebVitals';
 import RunAds from './components/RunAds';
+import AnalyticsPage from './components/AnalyticsPage';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/ad-prompt" element={<AdPrompt />}></Route>
         <Route path="/customize-ad" element={<AdPromptSelected />}></Route>
         <Route path="/run-ads" element={<RunAds />}></Route>
+        <Route path="/analytics" element={<AnalyticsPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
