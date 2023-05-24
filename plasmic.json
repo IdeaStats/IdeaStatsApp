@@ -195,7 +195,8 @@
           "name": "AntdSwitch",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerSwitch"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "iKm2w5zQkVZvuqT51PP4Eo",

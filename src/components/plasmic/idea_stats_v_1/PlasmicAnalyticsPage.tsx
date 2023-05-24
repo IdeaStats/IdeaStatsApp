@@ -49,9 +49,11 @@ export type PlasmicAnalyticsPage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicAnalyticsPage__VariantsArgs;
 export const PlasmicAnalyticsPage__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicAnalyticsPage__ArgsType = {};
+export type PlasmicAnalyticsPage__ArgsType = {
+  graph?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicAnalyticsPage__ArgsType;
-export const PlasmicAnalyticsPage__ArgProps = new Array<ArgPropType>();
+export const PlasmicAnalyticsPage__ArgProps = new Array<ArgPropType>("graph");
 
 export type PlasmicAnalyticsPage__OverridesType = {
   root?: p.Flex<"div">;
@@ -62,6 +64,7 @@ export type PlasmicAnalyticsPage__OverridesType = {
 };
 
 export interface DefaultAnalyticsPageProps {
+  graph?: React.ReactNode;
   className?: string;
 }
 
@@ -127,9 +130,12 @@ function PlasmicAnalyticsPage__RenderFunc(props: {
                 {"Analytics"}
               </h1>
               {true ? (
-                <div
-                  className={classNames(projectcss.all, sty.freeBox__hsdQv)}
-                />
+                <div className={classNames(projectcss.all, sty.freeBox__hsdQv)}>
+                  {p.renderPlasmicSlot({
+                    defaultContents: null,
+                    value: args.graph
+                  })}
+                </div>
               ) : null}
               {true ? (
                 <p.Stack
