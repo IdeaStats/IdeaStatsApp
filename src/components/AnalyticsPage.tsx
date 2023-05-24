@@ -87,7 +87,32 @@ function AnalyticsPage_(
   // By default, we are just piping all AnalyticsPageProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicAnalyticsPage root={{ ref }} {...props} />;
+  return <PlasmicAnalyticsPage 
+            root={{ ref }}
+            graph={ 
+            // <ResponsiveContainer width="700px" height="700px">
+        <LineChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+        </LineChart>
+      // </ResponsiveContainer>
+    }
+       {...props} />;
 }
 
 const AnalyticsPage = React.forwardRef(AnalyticsPage_);

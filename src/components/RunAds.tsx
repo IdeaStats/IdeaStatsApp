@@ -7,6 +7,7 @@ import {
 } from "./plasmic/idea_stats_v_1/PlasmicRunAds";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -46,6 +47,8 @@ function RunAds_(props: RunAdsProps, ref: HTMLElementRefOf<"div">) {
   //
   // By default, we are just piping all RunAdsProps here, but feel free
   // to do whatever works for you.
+
+  let navigate = useNavigate();
 
   const IS_GOOGLE_SELECTED_DEFAULT = false;
   const PER_DAY_COST_DEFAULT = 30;
@@ -104,6 +107,12 @@ function RunAds_(props: RunAdsProps, ref: HTMLElementRefOf<"div">) {
   googleTotal= { getTotalCostDisplay(per_day_cost, days_to_run) }
 
   allTotal= { getTotalCostDisplay(per_day_cost, days_to_run) }
+
+  confirmButton={{
+    onClick() {
+        navigate("/analytics");
+    },
+  }}
 
   {...props} />;
 }
