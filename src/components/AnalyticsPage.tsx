@@ -6,7 +6,7 @@ import {
   DefaultAnalyticsPageProps
 } from "./plasmic/idea_stats_v_1/PlasmicAnalyticsPage";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const data = [
   {
@@ -53,6 +53,27 @@ const data = [
   },
 ];
 
+const adsData = [
+  {
+    weekText: "Week of Apr 2, 2023",
+    date: 17,
+    clicks: 127,
+    impressions: 1657
+  },
+  {
+    weekText: "Week of Apr 17, 2023",
+    date: 2,
+    clicks: 23,
+    impressions: 200
+  },
+  {
+    weekText: "Week of May 5, 2023",
+    date: 2,
+    clicks: 1000,
+    impressions: 23900
+  }
+]
+
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
 // attach to named nodes in your component.
@@ -89,12 +110,11 @@ function AnalyticsPage_(
 
   return <PlasmicAnalyticsPage 
             root={{ ref }}
-            graph={ 
-            // <ResponsiveContainer width="700px" height="700px">
+            graph={
         <LineChart
           width={500}
           height={300}
-          data={data}
+          data={adsData}
           margin={{
             top: 5,
             right: 30,
@@ -103,14 +123,13 @@ function AnalyticsPage_(
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="weekText" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="clicks" stroke="#8884d8" />
+          <Line type="monotone" dataKey="impressions" stroke="#82ca9d" />
         </LineChart>
-      // </ResponsiveContainer>
     }
        {...props} />;
 }
