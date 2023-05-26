@@ -38,7 +38,6 @@ import GenericButton from "../../GenericButton"; // plasmic-import: rRlSjYLvCT/c
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic_antd_5_hostless.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
-import plasmic_plasmic_rich_components_css from "../plasmic_rich_components/plasmic_plasmic_rich_components.module.css"; // plasmic-import: jkU633o1Cz7HrJdwdxhVHk/projectcss
 import projectcss from "./plasmic_idea_stats_v_1.module.css"; // plasmic-import: iKm2w5zQkVZvuqT51PP4Eo/projectcss
 import sty from "./PlasmicAnalyticsPage.module.css"; // plasmic-import: EB7ppsy1rez/css
 
@@ -58,6 +57,9 @@ export const PlasmicAnalyticsPage__ArgProps = new Array<ArgPropType>("graph");
 export type PlasmicAnalyticsPage__OverridesType = {
   root?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
+  impressionsButton?: p.Flex<typeof GraphSelectButton>;
+  clicksButton?: p.Flex<typeof GraphSelectButton>;
+  cpcButton?: p.Flex<typeof GraphSelectButton>;
   refreshButton?: p.Flex<typeof GenericButton>;
   svg?: p.Flex<"svg">;
   selectButton?: p.Flex<typeof GenericButton>;
@@ -94,6 +96,7 @@ function PlasmicAnalyticsPage__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
@@ -111,7 +114,6 @@ function PlasmicAnalyticsPage__RenderFunc(props: {
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
             plasmic_antd_5_hostless_css.plasmic_tokens,
-            plasmic_plasmic_rich_components_css.plasmic_tokens,
             sty.root
           )}
         >
@@ -144,17 +146,18 @@ function PlasmicAnalyticsPage__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox__tkxiH)}
                 >
                   <GraphSelectButton
+                    data-plasmic-name={"impressionsButton"}
+                    data-plasmic-override={overrides.impressionsButton}
                     className={classNames(
                       "__wab_instance",
-                      sty.graphSelectButton__mo1C
+                      sty.impressionsButton
                     )}
                   />
 
                   <GraphSelectButton
-                    className={classNames(
-                      "__wab_instance",
-                      sty.graphSelectButton__tgPiq
-                    )}
+                    data-plasmic-name={"clicksButton"}
+                    data-plasmic-override={overrides.clicksButton}
+                    className={classNames("__wab_instance", sty.clicksButton)}
                     dataName={
                       <div
                         className={classNames(
@@ -189,10 +192,9 @@ function PlasmicAnalyticsPage__RenderFunc(props: {
                   />
 
                   <GraphSelectButton
-                    className={classNames(
-                      "__wab_instance",
-                      sty.graphSelectButton__seeop
-                    )}
+                    data-plasmic-name={"cpcButton"}
+                    data-plasmic-override={overrides.cpcButton}
+                    className={classNames("__wab_instance", sty.cpcButton)}
                     dataName={
                       <div
                         className={classNames(
@@ -249,8 +251,20 @@ function PlasmicAnalyticsPage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "refreshButton", "svg", "selectButton"],
+  root: [
+    "root",
+    "h1",
+    "impressionsButton",
+    "clicksButton",
+    "cpcButton",
+    "refreshButton",
+    "svg",
+    "selectButton"
+  ],
   h1: ["h1"],
+  impressionsButton: ["impressionsButton"],
+  clicksButton: ["clicksButton"],
+  cpcButton: ["cpcButton"],
   refreshButton: ["refreshButton", "svg"],
   svg: ["svg"],
   selectButton: ["selectButton"]
@@ -261,6 +275,9 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   h1: "h1";
+  impressionsButton: typeof GraphSelectButton;
+  clicksButton: typeof GraphSelectButton;
+  cpcButton: typeof GraphSelectButton;
   refreshButton: typeof GenericButton;
   svg: "svg";
   selectButton: typeof GenericButton;
@@ -327,6 +344,9 @@ export const PlasmicAnalyticsPage = Object.assign(
   {
     // Helper components rendering sub-elements
     h1: makeNodeComponent("h1"),
+    impressionsButton: makeNodeComponent("impressionsButton"),
+    clicksButton: makeNodeComponent("clicksButton"),
+    cpcButton: makeNodeComponent("cpcButton"),
     refreshButton: makeNodeComponent("refreshButton"),
     svg: makeNodeComponent("svg"),
     selectButton: makeNodeComponent("selectButton"),

@@ -83,12 +83,12 @@
   > img {
   margin-left: 8px;
 }
-.graphSelectButton__mo1C:global(.__wab_instance) {
+.impressionsButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   flex-shrink: 0;
 }
-.graphSelectButton__tgPiq:global(.__wab_instance) {
+.clicksButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   flex-shrink: 0;
@@ -98,7 +98,7 @@
   text-align: left;
   min-width: 0;
 }
-.graphSelectButton__seeop:global(.__wab_instance) {
+.cpcButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
   flex-shrink: 0;

@@ -195,8 +195,7 @@
           "name": "AntdSwitch",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerSwitch"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
@@ -614,8 +613,7 @@
           "name": "RichDetails",
           "componentImportPath": "@plasmicpkgs/plasmic-rich-components"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     }
   ],
   "globalVariants": {
@@ -629,6 +627,6 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.284",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.284/dist/plasmic.schema.json"
+  "cliVersion": "0.1.285",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.285/dist/plasmic.schema.json"
 }
