@@ -195,7 +195,8 @@
           "name": "AntdSwitch",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerSwitch"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     },
     {
       "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
@@ -573,11 +574,13 @@
         {
           "id": "ZGbDKmsoORqT_",
           "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
           "componentImportPath": "@plasmicapp/react-web"
         },
         {
           "id": "IhuzSOZXT_6M3",
           "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ]
@@ -613,7 +616,8 @@
           "name": "RichDetails",
           "componentImportPath": "@plasmicpkgs/plasmic-rich-components"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {
@@ -627,6 +631,6 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.285",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.285/dist/plasmic.schema.json"
+  "cliVersion": "0.1.286",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.286/dist/plasmic.schema.json"
 }
