@@ -20,7 +20,10 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultGraphSelectButtonProps altogether and have
 // total control over the props for your component.
-export interface GraphSelectButtonProps extends DefaultGraphSelectButtonProps {}
+export interface GraphSelectButtonProps extends DefaultGraphSelectButtonProps {
+  style?: React.CSSProperties;
+  onClick?: () => void;
+}
 
 function GraphSelectButton_(
   props: GraphSelectButtonProps,

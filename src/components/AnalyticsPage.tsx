@@ -7,6 +7,7 @@ import {
 } from "./plasmic/idea_stats_v_1/PlasmicAnalyticsPage";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { NONE } from "@plasmicapp/react-web/dist/react-utils";
 
 const data = [
   {
@@ -58,19 +59,22 @@ const adsData = [
     weekText: "Week of Apr 2, 2023",
     date: 17,
     clicks: 127,
-    impressions: 1657
+    impressions: 1657,
+    cpc: 2
   },
   {
     weekText: "Week of Apr 17, 2023",
     date: 2,
     clicks: 23,
-    impressions: 200
+    impressions: 200,
+    cpc: 4
   },
   {
     weekText: "Week of May 5, 2023",
     date: 2,
-    clicks: 1000,
-    impressions: 23900
+    clicks: 260,
+    impressions: 2900,
+    cpc: 7
   }
 ]
 
@@ -108,30 +112,68 @@ function AnalyticsPage_(
   // By default, we are just piping all AnalyticsPageProps here, but feel free
   // to do whatever works for you.
 
+  const [impressionsSelected, setImpressionsSelected] = React.useState(true);
+  const [clicksSelected, setClicksSelected] = React.useState(true);
+  const [cpcSelected, setCpcSelected] = React.useState(true);
+
   return <PlasmicAnalyticsPage 
             root={{ ref }}
             graph={
-        <LineChart
-          width={500}
-          height={300}
-          data={adsData}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="weekText" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="clicks" stroke="#8884d8" />
-          <Line type="monotone" dataKey="impressions" stroke="#82ca9d" />
-        </LineChart>
-    }
-       {...props} />;
+                <LineChart
+                  width={700}
+                  height={400}
+                  data={adsData}
+                  margin={{
+                    top: 5,
+                    right: 40,
+                    left: 20,
+                    bottom: 5,
+                  }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="weekText" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  
+                  <Line display={ impressionsSelected ? "inline" : "none" } type="monotone" dataKey="impressions" stroke="#1677ff" />
+                  <Line display={ clicksSelected ? "inline" : "none" } type="monotone" dataKey="clicks" stroke="#ff5154" />
+                  <Line display={ cpcSelected ? "inline" : "none" } type="monotone" dataKey="cpc" stroke="#f6ad06" />
+                </LineChart>
+            }
+
+            impressionsButton={{
+              style: {
+                background: impressionsSelected ? "#1677ff" : "#d1d1d1"
+              },
+              onClick() {
+                // Toggle impressionsSelected.
+                setImpressionsSelected( impressionsSelected ? false : true );
+              }
+            }}
+
+            clicksButton={{
+              style: {
+                background: clicksSelected ? "#ff5154" : "#d1d1d1"
+              },
+              onClick() {
+                // Toggle impressionsSelected.
+                setClicksSelected( clicksSelected ? false : true );
+              }
+            }}
+
+            cpcButton={{
+              style: {
+                background: cpcSelected ? "#f6ad06" : "#d1d1d1"
+              },
+              onClick() {
+                // Toggle impressionsSelected.
+                setCpcSelected( cpcSelected ? false : true );
+              }
+            }}
+
+
+          {...props} />;
 }
 
 const AnalyticsPage = React.forwardRef(AnalyticsPage_);
