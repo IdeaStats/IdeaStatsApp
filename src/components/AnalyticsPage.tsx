@@ -6,8 +6,7 @@ import {
   DefaultAnalyticsPageProps
 } from "./plasmic/idea_stats_v_1/PlasmicAnalyticsPage";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { NONE } from "@plasmicapp/react-web/dist/react-utils";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
   {
@@ -119,6 +118,9 @@ function AnalyticsPage_(
   return <PlasmicAnalyticsPage 
             root={{ ref }}
             graph={
+              // <ResponsiveContainer 
+              // width="100%" height="100%"
+              // >
                 <LineChart
                   width={700}
                   height={400}
@@ -140,6 +142,7 @@ function AnalyticsPage_(
                   <Line display={ clicksSelected ? "inline" : "none" } type="monotone" dataKey="clicks" stroke="#ff5154" />
                   <Line display={ cpcSelected ? "inline" : "none" } type="monotone" dataKey="cpc" stroke="#f6ad06" />
                 </LineChart>
+                // </ResponsiveContainer>
             }
 
             impressionsButton={{
