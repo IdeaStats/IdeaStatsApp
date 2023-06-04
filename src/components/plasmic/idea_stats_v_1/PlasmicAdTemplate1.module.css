@@ -57,7 +57,7 @@
   min-height: 0;
   padding: 8px;
 }
-.text__dPAqD {
+.freeBox__dPAqD {
   position: sticky;
   width: 181px;
   height: 84px;
@@ -65,21 +65,27 @@
   left: 0px;
   top: 0px;
   z-index: 1;
+  display: flex;
+  flex-direction: row;
   flex-shrink: 0;
 }
-.h2 {
+.h2__iyu0N {
   text-align: center;
   color: #ffffff;
 }
-.text__oeZcI {
+.freeBox__oeZcI {
   position: relative;
   width: 246px;
   height: 143px;
   max-width: 100%;
-  color: #ffffff;
+  display: flex;
+  flex-direction: row;
   flex-shrink: 0;
 }
-.button2:global(.__wab_instance) {
+.slotTargetBody {
+  color: #ffffff;
+}
+.callToAction:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
@@ -89,7 +95,7 @@
   width: 1em;
   height: 1em;
 }
-.text__brEk {
+.text {
   color: #ededec;
 }
 .svg___5CT6D {

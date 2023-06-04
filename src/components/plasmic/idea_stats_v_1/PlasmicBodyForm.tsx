@@ -131,9 +131,13 @@ function PlasmicBodyForm__RenderFunc(props: {
         "form",
         "value"
       ])}
+      formItems={[
+        { label: "Name", name: "name", inputType: "Text" },
+        { label: "Message", name: "message", inputType: "Text Area" }
+      ]}
       labelCol={{ span: 8, horizontalOnly: true }}
       layout={"vertical" as const}
-      mode={true}
+      mode={undefined}
       wrapperCol={{ span: 16, horizontalOnly: true }}
     >
       <FormItemWrapper

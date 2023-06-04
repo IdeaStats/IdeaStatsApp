@@ -307,6 +307,9 @@
 .rootcolor_link:hover .slotTargetChildrencolor_link > :global(.__wab_text),
 .rootcolor_link:hover
   .slotTargetChildrencolor_link
+  > :global(.__wab_expr_html_text),
+.rootcolor_link:hover
+  .slotTargetChildrencolor_link
   > :global(.__wab_slot-string-wrapper),
 .rootcolor_link:hover
   .slotTargetChildrencolor_link
@@ -315,6 +318,10 @@
 .rootcolor_link:hover
   .slotTargetChildrencolor_link
   > :global(.__wab_slot)
+  > :global(.__wab_expr_html_text),
+.rootcolor_link:hover
+  .slotTargetChildrencolor_link
+  > :global(.__wab_slot)
   > :global(.__wab_slot-string-wrapper),
 .rootcolor_link:hover
   .slotTargetChildrencolor_link
@@ -325,6 +332,11 @@
   .slotTargetChildrencolor_link
   > :global(.__wab_slot)
   > :global(.__wab_slot)
+  > :global(.__wab_expr_html_text),
+.rootcolor_link:hover
+  .slotTargetChildrencolor_link
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
   > :global(.__wab_slot-string-wrapper),
 .rootcolor_link:hover
   .slotTargetChildrencolor_link
@@ -332,6 +344,12 @@
   > :global(.__wab_slot)
   > :global(.__wab_slot)
   > :global(.__wab_text),
+.rootcolor_link:hover
+  .slotTargetChildrencolor_link
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_expr_html_text),
 .rootcolor_link:hover
   .slotTargetChildrencolor_link
   > :global(.__wab_slot)
