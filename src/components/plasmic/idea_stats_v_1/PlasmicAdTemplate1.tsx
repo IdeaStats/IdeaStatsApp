@@ -49,13 +49,13 @@ type VariantPropType = keyof PlasmicAdTemplate1__VariantsArgs;
 export const PlasmicAdTemplate1__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicAdTemplate1__ArgsType = {
-  backgroundImage?: React.ReactNode;
+  adImage?: React.ReactNode;
   title?: React.ReactNode;
   body?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicAdTemplate1__ArgsType;
 export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>(
-  "backgroundImage",
+  "adImage",
   "title",
   "body"
 );
@@ -67,7 +67,7 @@ export type PlasmicAdTemplate1__OverridesType = {
 };
 
 export interface DefaultAdTemplate1Props {
-  backgroundImage?: React.ReactNode;
+  adImage?: React.ReactNode;
   title?: React.ReactNode;
   body?: React.ReactNode;
   className?: string;
@@ -141,7 +141,7 @@ function PlasmicAdTemplate1__RenderFunc(props: {
             />
           ),
 
-          value: args.backgroundImage
+          value: args.adImage
         })}
       </div>
       <div className={classNames(projectcss.all, sty.freeBox__qI4Qw)} />
