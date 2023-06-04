@@ -140,6 +140,10 @@
 .img___7UhDi > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
+.h2__zBSgq {
+  text-align: center;
+  color: #ffffff;
+}
 .column__rvFvZ {
   display: flex;
   position: relative;

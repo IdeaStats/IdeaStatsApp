@@ -346,7 +346,7 @@ function PlasmicTextInput__RenderFunc(props: {
   ) as React.ReactElement | null;
 }
 
-function useBehavior<P extends pp.BaseTextInputProps>(
+function useBehavior<P extends pp.PlumeTextInputProps>(
   props: P,
   ref: pp.TextInputRef
 ) {
