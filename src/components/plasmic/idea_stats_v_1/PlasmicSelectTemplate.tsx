@@ -82,6 +82,7 @@ function PlasmicSelectTemplate__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
@@ -103,49 +104,6 @@ function PlasmicSelectTemplate__RenderFunc(props: {
       )}
       onClick={async event => {
         const $steps = {};
-        $steps["goToAdPrompt"] = true
-          ? (() => {
-              const actionArgs = {
-                destination: __wrapUserFunction(
-                  {
-                    type: "InteractionArgLoc",
-                    actionName: "navigation",
-                    interactionUuid: "n187EVVl4",
-                    componentUuid: "cIG6OIuy1Z",
-                    argName: "destination"
-                  },
-                  () => `/ad-prompt`
-                )
-              };
-              return __wrapUserFunction(
-                {
-                  type: "InteractionLoc",
-                  actionName: "navigation",
-                  interactionUuid: "n187EVVl4",
-                  componentUuid: "cIG6OIuy1Z"
-                },
-                () =>
-                  (({ destination }) => {
-                    location.assign(destination);
-                  })?.apply(null, [actionArgs]),
-                actionArgs
-              );
-            })()
-          : undefined;
-        if (
-          typeof $steps["goToAdPrompt"] === "object" &&
-          typeof $steps["goToAdPrompt"].then === "function"
-        ) {
-          $steps["goToAdPrompt"] = await __wrapUserPromise(
-            {
-              type: "InteractionLoc",
-              actionName: "navigation",
-              interactionUuid: "n187EVVl4",
-              componentUuid: "cIG6OIuy1Z"
-            },
-            $steps["goToAdPrompt"]
-          );
-        }
       }}
     >
       {"Select"}

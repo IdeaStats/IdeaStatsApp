@@ -20,7 +20,9 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 //
 // You can also stop extending from DefaultSelectTemplateProps altogether and have
 // total control over the props for your component.
-export interface SelectTemplateProps extends DefaultSelectTemplateProps {}
+export interface SelectTemplateProps extends DefaultSelectTemplateProps {
+  onClick?: () => void;
+}
 
 function SelectTemplate_(
   props: SelectTemplateProps,

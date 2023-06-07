@@ -72,6 +72,8 @@ export type PlasmicAdPromptSelected__OverridesType = {
   textInput?: p.Flex<typeof TextInput>;
   generateButton?: p.Flex<typeof GenerateButton>;
   img?: p.Flex<typeof p.PlasmicImg>;
+  resetButton?: p.Flex<typeof GenericButton>;
+  selectButton?: p.Flex<typeof GenericButton>;
   bodyForm?: p.Flex<typeof BodyForm>;
 };
 
@@ -107,7 +109,9 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
   const [$queries, setDollarQueries] = React.useState({});
+
   const stateSpecs = React.useMemo(
     () => [
       {
@@ -247,9 +251,11 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                               )}
                             >
                               <GenericButton
+                                data-plasmic-name={"resetButton"}
+                                data-plasmic-override={overrides.resetButton}
                                 className={classNames(
                                   "__wab_instance",
-                                  sty.genericButton__nlwsH
+                                  sty.resetButton
                                 )}
                               >
                                 <IconIcon
@@ -261,9 +267,11 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                                 />
                               </GenericButton>
                               <GenericButton
+                                data-plasmic-name={"selectButton"}
+                                data-plasmic-override={overrides.selectButton}
                                 className={classNames(
                                   "__wab_instance",
-                                  sty.genericButton__jLeKh
+                                  sty.selectButton
                                 )}
                               >
                                 {"Select"}
@@ -416,13 +424,25 @@ const PlasmicDescendants = {
     "textInput",
     "generateButton",
     "img",
+    "resetButton",
+    "selectButton",
     "bodyForm"
   ],
   h1: ["h1"],
-  columns: ["columns", "textInput", "generateButton", "img", "bodyForm"],
+  columns: [
+    "columns",
+    "textInput",
+    "generateButton",
+    "img",
+    "resetButton",
+    "selectButton",
+    "bodyForm"
+  ],
   textInput: ["textInput"],
   generateButton: ["generateButton"],
   img: ["img"],
+  resetButton: ["resetButton"],
+  selectButton: ["selectButton"],
   bodyForm: ["bodyForm"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -435,6 +455,8 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   generateButton: typeof GenerateButton;
   img: typeof p.PlasmicImg;
+  resetButton: typeof GenericButton;
+  selectButton: typeof GenericButton;
   bodyForm: typeof BodyForm;
 };
 
@@ -503,6 +525,8 @@ export const PlasmicAdPromptSelected = Object.assign(
     textInput: makeNodeComponent("textInput"),
     generateButton: makeNodeComponent("generateButton"),
     img: makeNodeComponent("img"),
+    resetButton: makeNodeComponent("resetButton"),
+    selectButton: makeNodeComponent("selectButton"),
     bodyForm: makeNodeComponent("bodyForm"),
 
     // Metadata about props expected for PlasmicAdPromptSelected

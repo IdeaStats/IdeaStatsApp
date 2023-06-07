@@ -55,7 +55,7 @@ export const PlasmicBodyForm__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicBodyForm__OverridesType = {
   form?: p.Flex<typeof FormWrapper>;
-  formItem?: p.Flex<typeof FormItemWrapper>;
+  formField?: p.Flex<typeof FormItemWrapper>;
   textArea?: p.Flex<typeof AntdTextArea>;
   button?: p.Flex<typeof AntdButton>;
 };
@@ -90,7 +90,9 @@ function PlasmicBodyForm__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
   const [$queries, setDollarQueries] = React.useState({});
+
   const stateSpecs = React.useMemo(
     () => [
       {
@@ -129,14 +131,19 @@ function PlasmicBodyForm__RenderFunc(props: {
         "form",
         "value"
       ])}
+      formItems={[
+        { label: "Name", name: "name", inputType: "Text" },
+        { label: "Message", name: "message", inputType: "Text Area" }
+      ]}
       labelCol={{ span: 8, horizontalOnly: true }}
       layout={"vertical" as const}
+      mode={undefined}
       wrapperCol={{ span: 16, horizontalOnly: true }}
     >
       <FormItemWrapper
-        data-plasmic-name={"formItem"}
-        data-plasmic-override={overrides.formItem}
-        className={classNames("__wab_instance", sty.formItem)}
+        data-plasmic-name={"formField"}
+        data-plasmic-override={overrides.formField}
+        className={classNames("__wab_instance", sty.formField)}
         label={
           <div
             className={classNames(
@@ -205,8 +212,8 @@ function PlasmicBodyForm__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  form: ["form", "formItem", "textArea", "button"],
-  formItem: ["formItem", "textArea"],
+  form: ["form", "formField", "textArea", "button"],
+  formField: ["formField", "textArea"],
   textArea: ["textArea"],
   button: ["button"]
 } as const;
@@ -215,7 +222,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   form: typeof FormWrapper;
-  formItem: typeof FormItemWrapper;
+  formField: typeof FormItemWrapper;
   textArea: typeof AntdTextArea;
   button: typeof AntdButton;
 };
@@ -280,7 +287,7 @@ export const PlasmicBodyForm = Object.assign(
   makeNodeComponent("form"),
   {
     // Helper components rendering sub-elements
-    formItem: makeNodeComponent("formItem"),
+    formField: makeNodeComponent("formField"),
     textArea: makeNodeComponent("textArea"),
     button: makeNodeComponent("button"),
 

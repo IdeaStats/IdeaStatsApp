@@ -10,7 +10,7 @@
   min-width: 0;
   padding: 8px;
 }
-.freeBox {
+.button {
   display: block;
   width: 350px;
   height: 350px;
@@ -18,4 +18,13 @@
   background: none;
   flex-shrink: 0;
   padding: 8px;
+}
+.buttonselected {
+  width: 350px;
+  height: 350px;
+  max-width: none;
+  background: var(--token-Bk31Q-boTwvF);
+  flex-shrink: 0;
+  padding: 8px;
+  border: 1em solid var(--token-E4GUulfgc);
 }

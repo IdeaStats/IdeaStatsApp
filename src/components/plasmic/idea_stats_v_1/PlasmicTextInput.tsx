@@ -137,7 +137,9 @@ function PlasmicTextInput__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
   const [$queries, setDollarQueries] = React.useState({});
+
   const stateSpecs = React.useMemo(
     () => [
       {
@@ -344,7 +346,7 @@ function PlasmicTextInput__RenderFunc(props: {
   ) as React.ReactElement | null;
 }
 
-function useBehavior<P extends pp.BaseTextInputProps>(
+function useBehavior<P extends pp.PlumeTextInputProps>(
   props: P,
   ref: pp.TextInputRef
 ) {

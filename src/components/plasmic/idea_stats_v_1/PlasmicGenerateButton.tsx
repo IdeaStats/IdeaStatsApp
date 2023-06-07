@@ -82,6 +82,7 @@ function PlasmicGenerateButton__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
@@ -103,49 +104,6 @@ function PlasmicGenerateButton__RenderFunc(props: {
       )}
       onClick={async event => {
         const $steps = {};
-        $steps["goToChooseTemplate"] = true
-          ? (() => {
-              const actionArgs = {
-                destination: __wrapUserFunction(
-                  {
-                    type: "InteractionArgLoc",
-                    actionName: "navigation",
-                    interactionUuid: "vNaW8xJJw",
-                    componentUuid: "Fs5OtDdX5n",
-                    argName: "destination"
-                  },
-                  () => `/choose-template`
-                )
-              };
-              return __wrapUserFunction(
-                {
-                  type: "InteractionLoc",
-                  actionName: "navigation",
-                  interactionUuid: "vNaW8xJJw",
-                  componentUuid: "Fs5OtDdX5n"
-                },
-                () =>
-                  (({ destination }) => {
-                    location.assign(destination);
-                  })?.apply(null, [actionArgs]),
-                actionArgs
-              );
-            })()
-          : undefined;
-        if (
-          typeof $steps["goToChooseTemplate"] === "object" &&
-          typeof $steps["goToChooseTemplate"].then === "function"
-        ) {
-          $steps["goToChooseTemplate"] = await __wrapUserPromise(
-            {
-              type: "InteractionLoc",
-              actionName: "navigation",
-              interactionUuid: "vNaW8xJJw",
-              componentUuid: "Fs5OtDdX5n"
-            },
-            $steps["goToChooseTemplate"]
-          );
-        }
       }}
     >
       {"Generate"}

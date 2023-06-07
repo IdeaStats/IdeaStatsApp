@@ -48,17 +48,28 @@ export type PlasmicAdTemplate1__VariantsArgs = {};
 type VariantPropType = keyof PlasmicAdTemplate1__VariantsArgs;
 export const PlasmicAdTemplate1__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicAdTemplate1__ArgsType = {};
+export type PlasmicAdTemplate1__ArgsType = {
+  adImage?: React.ReactNode;
+  title?: React.ReactNode;
+  body?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicAdTemplate1__ArgsType;
-export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>();
+export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>(
+  "adImage",
+  "title",
+  "body"
+);
 
 export type PlasmicAdTemplate1__OverridesType = {
-  root?: p.Flex<"div">;
-  h2?: p.Flex<"h2">;
-  button2?: p.Flex<typeof Button2>;
+  root?: p.Flex<"button">;
+  callToAction?: p.Flex<typeof Button2>;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultAdTemplate1Props {
+  adImage?: React.ReactNode;
+  title?: React.ReactNode;
+  body?: React.ReactNode;
   className?: string;
 }
 
@@ -88,16 +99,18 @@ function PlasmicAdTemplate1__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
-    <div
+    <button
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
         projectcss.all,
+        projectcss.button,
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
@@ -105,67 +118,107 @@ function PlasmicAdTemplate1__RenderFunc(props: {
         plasmic_antd_5_hostless_css.plasmic_tokens,
         sty.root
       )}
+      onSelect={async event => {
+        const $steps = {};
+      }}
     >
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__dPAqD
-        )}
-      >
-        <React.Fragment>
-          <React.Fragment>{""}</React.Fragment>
-          {
-            <h2
-              data-plasmic-name={"h2"}
-              data-plasmic-override={overrides.h2}
+      <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <p.PlasmicImg
+              alt={""}
+              className={classNames(sty.img__deiOq)}
+              displayHeight={"100%" as const}
+              displayMaxHeight={"none" as const}
+              displayMaxWidth={"none" as const}
+              displayMinHeight={"0" as const}
+              displayMinWidth={"0" as const}
+              displayWidth={"100%" as const}
+              loading={"lazy" as const}
+              src={
+                "https://images.unsplash.com/photo-1682695795255-b236b1f1267d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" as const
+              }
+            />
+          ),
+
+          value: args.adImage
+        })}
+      </div>
+      <div className={classNames(projectcss.all, sty.freeBox__qI4Qw)} />
+
+      <div className={classNames(projectcss.all, sty.freeBox__dPAqD)}>
+        {p.renderPlasmicSlot({
+          defaultContents: (
+            <div
               className={classNames(
                 projectcss.all,
-                projectcss.h2,
                 projectcss.__wab_text,
-                sty.h2
+                sty.text__cereG
               )}
             >
-              {"Ad Title"}
-            </h2>
-          }
-          <React.Fragment>{""}</React.Fragment>
-        </React.Fragment>
+              <React.Fragment>
+                <React.Fragment>{""}</React.Fragment>
+                {
+                  <h2
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h2,
+                      projectcss.__wab_text,
+                      sty.h2__iyu0N
+                    )}
+                  >
+                    {"Ad Title"}
+                  </h2>
+                }
+                <React.Fragment>{""}</React.Fragment>
+              </React.Fragment>
+            </div>
+          ),
+          value: args.title
+        })}
       </div>
-      <div
-        className={classNames(
-          projectcss.all,
-          projectcss.__wab_text,
-          sty.text__oeZcI
-        )}
-      >
-        {
-          "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
-        }
+      <div className={classNames(projectcss.all, sty.freeBox__oeZcI)}>
+        {p.renderPlasmicSlot({
+          defaultContents:
+            "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n",
+          value: args.body,
+          className: classNames(sty.slotTargetBody)
+        })}
       </div>
       <Button2
-        data-plasmic-name={"button2"}
-        data-plasmic-override={overrides.button2}
-        className={classNames("__wab_instance", sty.button2)}
+        data-plasmic-name={"callToAction"}
+        data-plasmic-override={overrides.callToAction}
+        className={classNames("__wab_instance", sty.callToAction)}
+        submitsForm={true}
       >
-        {"Call To Action"}
+        <div
+          data-plasmic-name={"text"}
+          data-plasmic-override={overrides.text}
+          className={classNames(
+            projectcss.all,
+            projectcss.__wab_text,
+            sty.text
+          )}
+        >
+          {"Call To Action"}
+        </div>
       </Button2>
-    </div>
+    </button>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h2", "button2"],
-  h2: ["h2"],
-  button2: ["button2"]
+  root: ["root", "callToAction", "text"],
+  callToAction: ["callToAction", "text"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "div";
-  h2: "h2";
-  button2: typeof Button2;
+  root: "button";
+  callToAction: typeof Button2;
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -228,8 +281,8 @@ export const PlasmicAdTemplate1 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    h2: makeNodeComponent("h2"),
-    button2: makeNodeComponent("button2"),
+    callToAction: makeNodeComponent("callToAction"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicAdTemplate1
     internalVariantProps: PlasmicAdTemplate1__VariantProps,

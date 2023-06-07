@@ -1,0 +1,13 @@
+.root {
+  background: var(--token-iQMwU0ZCn);
+  color: #ffffff;
+  font-size: 25px;
+  position: relative;
+  padding: 10px;
+}
+.root:hover {
+  background: var(--token-sEleWH4Ot);
+}
+.root:active {
+  background: var(--token-E4GUulfgc);
+}

@@ -141,10 +141,14 @@
   white-space: pre;
 }
 .slotTargetSelectedContent > :global(.__wab_text),
+.slotTargetSelectedContent > :global(.__wab_expr_html_text),
 .slotTargetSelectedContent > :global(.__wab_slot-string-wrapper),
 .slotTargetSelectedContent > :global(.__wab_slot) > :global(.__wab_text),
 .slotTargetSelectedContent
   > :global(.__wab_slot)
+  > :global(.__wab_expr_html_text),
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
   > :global(.__wab_slot-string-wrapper),
 .slotTargetSelectedContent
   > :global(.__wab_slot)
@@ -153,12 +157,21 @@
 .slotTargetSelectedContent
   > :global(.__wab_slot)
   > :global(.__wab_slot)
+  > :global(.__wab_expr_html_text),
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
   > :global(.__wab_slot-string-wrapper),
 .slotTargetSelectedContent
   > :global(.__wab_slot)
   > :global(.__wab_slot)
   > :global(.__wab_slot)
   > :global(.__wab_text),
+.slotTargetSelectedContent
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_expr_html_text),
 .slotTargetSelectedContent
   > :global(.__wab_slot)
   > :global(.__wab_slot)
@@ -252,8 +265,10 @@
   color: #706f6c;
 }
 .slotTargetPlaceholder > :global(.__wab_text),
+.slotTargetPlaceholder > :global(.__wab_expr_html_text),
 .slotTargetPlaceholder > :global(.__wab_slot-string-wrapper),
 .slotTargetPlaceholder > :global(.__wab_slot) > :global(.__wab_text),
+.slotTargetPlaceholder > :global(.__wab_slot) > :global(.__wab_expr_html_text),
 .slotTargetPlaceholder
   > :global(.__wab_slot)
   > :global(.__wab_slot-string-wrapper),
@@ -264,12 +279,21 @@
 .slotTargetPlaceholder
   > :global(.__wab_slot)
   > :global(.__wab_slot)
+  > :global(.__wab_expr_html_text),
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
   > :global(.__wab_slot-string-wrapper),
 .slotTargetPlaceholder
   > :global(.__wab_slot)
   > :global(.__wab_slot)
   > :global(.__wab_slot)
   > :global(.__wab_text),
+.slotTargetPlaceholder
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_slot)
+  > :global(.__wab_expr_html_text),
 .slotTargetPlaceholder
   > :global(.__wab_slot)
   > :global(.__wab_slot)

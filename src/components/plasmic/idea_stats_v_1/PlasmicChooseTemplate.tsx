@@ -47,20 +47,30 @@ export type PlasmicChooseTemplate__VariantsArgs = {};
 type VariantPropType = keyof PlasmicChooseTemplate__VariantsArgs;
 export const PlasmicChooseTemplate__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicChooseTemplate__ArgsType = {};
+export type PlasmicChooseTemplate__ArgsType = {
+  child1?: React.ReactNode;
+  child2?: React.ReactNode;
+  child3?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicChooseTemplate__ArgsType;
-export const PlasmicChooseTemplate__ArgProps = new Array<ArgPropType>();
+export const PlasmicChooseTemplate__ArgProps = new Array<ArgPropType>(
+  "child1",
+  "child2",
+  "child3"
+);
 
 export type PlasmicChooseTemplate__OverridesType = {
   root?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
   freeBox?: p.Flex<"div">;
   columns?: p.Flex<"div">;
-  adTemplate1?: p.Flex<typeof AdTemplate1>;
   selectTemplate?: p.Flex<typeof SelectTemplate>;
 };
 
 export interface DefaultChooseTemplateProps {
+  child1?: React.ReactNode;
+  child2?: React.ReactNode;
+  child3?: React.ReactNode;
   className?: string;
 }
 
@@ -90,6 +100,7 @@ function PlasmicChooseTemplate__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
@@ -136,43 +147,52 @@ function PlasmicChooseTemplate__RenderFunc(props: {
                 className={classNames(projectcss.all, sty.columns)}
               >
                 <div className={classNames(projectcss.all, sty.column__pAnBs)}>
-                  {true ? (
-                    <AdTemplate
-                      className={classNames(
-                        "__wab_instance",
-                        sty.adTemplate__lMv2M
-                      )}
-                    >
-                      <AdTemplate1
-                        data-plasmic-name={"adTemplate1"}
-                        data-plasmic-override={overrides.adTemplate1}
+                  {p.renderPlasmicSlot({
+                    defaultContents: (
+                      <AdTemplate
                         className={classNames(
                           "__wab_instance",
-                          sty.adTemplate1
+                          sty.adTemplate__vuYbw
                         )}
-                      />
-                    </AdTemplate>
-                  ) : null}
+                      >
+                        <AdTemplate1
+                          className={classNames(
+                            "__wab_instance",
+                            sty.adTemplate1__go9N
+                          )}
+                        />
+                      </AdTemplate>
+                    ),
+                    value: args.child1
+                  })}
                 </div>
                 <div className={classNames(projectcss.all, sty.column__rvFvZ)}>
-                  {true ? (
-                    <AdTemplate
-                      className={classNames(
-                        "__wab_instance",
-                        sty.adTemplate___3Yrcz
-                      )}
-                    />
-                  ) : null}
+                  {p.renderPlasmicSlot({
+                    defaultContents: (
+                      <AdTemplate
+                        className={classNames(
+                          "__wab_instance",
+                          sty.adTemplate__g5Sip
+                        )}
+                      />
+                    ),
+
+                    value: args.child2
+                  })}
                 </div>
                 <div className={classNames(projectcss.all, sty.column__jNixa)}>
-                  {true ? (
-                    <AdTemplate
-                      className={classNames(
-                        "__wab_instance",
-                        sty.adTemplate__aweAy
-                      )}
-                    />
-                  ) : null}
+                  {p.renderPlasmicSlot({
+                    defaultContents: (
+                      <AdTemplate
+                        className={classNames(
+                          "__wab_instance",
+                          sty.adTemplate__cp53C
+                        )}
+                      />
+                    ),
+
+                    value: args.child3
+                  })}
                 </div>
               </p.Stack>
               <SelectTemplate
@@ -189,11 +209,10 @@ function PlasmicChooseTemplate__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "freeBox", "columns", "adTemplate1", "selectTemplate"],
+  root: ["root", "h1", "freeBox", "columns", "selectTemplate"],
   h1: ["h1"],
-  freeBox: ["freeBox", "columns", "adTemplate1", "selectTemplate"],
-  columns: ["columns", "adTemplate1"],
-  adTemplate1: ["adTemplate1"],
+  freeBox: ["freeBox", "columns", "selectTemplate"],
+  columns: ["columns"],
   selectTemplate: ["selectTemplate"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -204,7 +223,6 @@ type NodeDefaultElementType = {
   h1: "h1";
   freeBox: "div";
   columns: "div";
-  adTemplate1: typeof AdTemplate1;
   selectTemplate: typeof SelectTemplate;
 };
 
@@ -271,7 +289,6 @@ export const PlasmicChooseTemplate = Object.assign(
     h1: makeNodeComponent("h1"),
     freeBox: makeNodeComponent("freeBox"),
     columns: makeNodeComponent("columns"),
-    adTemplate1: makeNodeComponent("adTemplate1"),
     selectTemplate: makeNodeComponent("selectTemplate"),
 
     // Metadata about props expected for PlasmicChooseTemplate
