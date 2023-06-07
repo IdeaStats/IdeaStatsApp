@@ -22,9 +22,9 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 // total control over the props for your component.
 export interface AdTemplate1Props extends DefaultAdTemplate1Props {
   onClick?: () => void;
-  title: string | undefined;
-  body: string;
-  buttonText: string;
+  title?: string | undefined;
+  body?: string;
+  buttonText?: string;
 }
 
 function AdTemplate1_({title, body, buttonText, ...props}: AdTemplate1Props, ref: HTMLElementRefOf<"button">) {
@@ -44,7 +44,15 @@ function AdTemplate1_({title, body, buttonText, ...props}: AdTemplate1Props, ref
   // to do whatever works for you.
 
   return <PlasmicAdTemplate1 
-    root={{ ref }} children={<text>"Hello World"</text>} style ={{
+    root={{ ref }}
+    
+    // title={title}
+
+    // body={body}
+
+    // callToAction={buttonText}
+
+    style ={{
       backgroundImage: "url(/assets/random_img.png)"
     
     }} {...props} />;
