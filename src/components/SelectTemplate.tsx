@@ -41,7 +41,7 @@ function SelectTemplate_(
   // By default, we are just piping all SelectTemplateProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicSelectTemplate root={{ ref }} {...props} />;
+  return <PlasmicSelectTemplate root={{ ref }}  {...props} />;
 }
 
 const SelectTemplate = React.forwardRef(SelectTemplate_);
