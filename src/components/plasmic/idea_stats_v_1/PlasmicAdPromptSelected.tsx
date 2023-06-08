@@ -34,6 +34,7 @@ import {
 } from "@plasmicapp/react-web";
 import TextInput from "../../TextInput"; // plasmic-import: LW1ZHmZtc1I/component
 import GenerateButton from "../../GenerateButton"; // plasmic-import: Fs5OtDdX5n/component
+import AdTemplate1 from "../../AdTemplate1"; // plasmic-import: mz5eL8luPc/component
 import GenericButton from "../../GenericButton"; // plasmic-import: rRlSjYLvCT/component
 import TitleForm from "../../TitleForm"; // plasmic-import: shf87k89kA/component
 import BodyForm from "../../BodyForm"; // plasmic-import: R61mrCin7_P/component
@@ -71,10 +72,19 @@ export type PlasmicAdPromptSelected__OverridesType = {
   columns?: p.Flex<"div">;
   textInput?: p.Flex<typeof TextInput>;
   generateButton?: p.Flex<typeof GenerateButton>;
+  adTemplate1?: p.Flex<typeof AdTemplate1>;
   img?: p.Flex<typeof p.PlasmicImg>;
   resetButton?: p.Flex<typeof GenericButton>;
   selectButton?: p.Flex<typeof GenericButton>;
-  bodyForm?: p.Flex<typeof BodyForm>;
+  componentList?: p.Flex<"div">;
+  collapseAble1?: p.Flex<typeof GenericButton>;
+  form1?: p.Flex<typeof TitleForm>;
+  collapseAble2?: p.Flex<typeof GenericButton>;
+  form2?: p.Flex<typeof BodyForm>;
+  collapseAble3?: p.Flex<typeof GenericButton>;
+  form3?: p.Flex<typeof TitleForm>;
+  collapseAble4?: p.Flex<typeof GenericButton>;
+  form4?: p.Flex<typeof TitleForm>;
 };
 
 export interface DefaultAdPromptSelectedProps {
@@ -226,21 +236,44 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                               />
                             </div>
                           ) : null}
-                          <p.PlasmicImg
-                            data-plasmic-name={"img"}
-                            data-plasmic-override={overrides.img}
-                            alt={""}
-                            className={classNames(sty.img)}
-                            displayHeight={"100%" as const}
-                            displayMaxHeight={"none" as const}
-                            displayMaxWidth={"100%" as const}
-                            displayMinHeight={"0" as const}
-                            displayMinWidth={"0" as const}
-                            displayWidth={"100%" as const}
-                            loading={"lazy" as const}
-                            src={
-                              "https://images.unsplash.com/photo-1655720840699-67e72c0909d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80" as const
+                          <AdTemplate1
+                            data-plasmic-name={"adTemplate1"}
+                            data-plasmic-override={overrides.adTemplate1}
+                            adImage={
+                              <p.PlasmicImg
+                                data-plasmic-name={"img"}
+                                data-plasmic-override={overrides.img}
+                                alt={""}
+                                className={classNames(sty.img)}
+                                displayHeight={"100%" as const}
+                                displayMaxHeight={"none" as const}
+                                displayMaxWidth={"none" as const}
+                                displayMinHeight={"0" as const}
+                                displayMinWidth={"0" as const}
+                                displayWidth={"100%" as const}
+                                loading={"lazy" as const}
+                                src={
+                                  "https://images.unsplash.com/photo-1682695795255-b236b1f1267d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" as const
+                                }
+                              />
                             }
+                            body={
+                              <div
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.__wab_text,
+                                  sty.text__edznr
+                                )}
+                              >
+                                {
+                                  "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
+                                }
+                              </div>
+                            }
+                            className={classNames(
+                              "__wab_instance",
+                              sty.adTemplate1
+                            )}
                           />
 
                           {true ? (
@@ -285,12 +318,16 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                 </div>
                 <div className={classNames(projectcss.all, sty.column__r2LNa)}>
                   <div
-                    className={classNames(projectcss.all, sty.freeBox__m19Gk)}
+                    data-plasmic-name={"componentList"}
+                    data-plasmic-override={overrides.componentList}
+                    className={classNames(projectcss.all, sty.componentList)}
                   >
                     <GenericButton
+                      data-plasmic-name={"collapseAble1"}
+                      data-plasmic-override={overrides.collapseAble1}
                       className={classNames(
                         "__wab_instance",
-                        sty.genericButton__jdpD
+                        sty.collapseAble1
                       )}
                     >
                       <Icon2Icon
@@ -309,10 +346,9 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                       </div>
                     </GenericButton>
                     <TitleForm
-                      className={classNames(
-                        "__wab_instance",
-                        sty.titleForm__syH6F
-                      )}
+                      data-plasmic-name={"form1"}
+                      data-plasmic-override={overrides.form1}
+                      className={classNames("__wab_instance", sty.form1)}
                     >
                       {p.renderPlasmicSlot({
                         defaultContents: "Title",
@@ -320,9 +356,11 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                       })}
                     </TitleForm>
                     <GenericButton
+                      data-plasmic-name={"collapseAble2"}
+                      data-plasmic-override={overrides.collapseAble2}
                       className={classNames(
                         "__wab_instance",
-                        sty.genericButton__m2Brt
+                        sty.collapseAble2
                       )}
                     >
                       <Icon2Icon
@@ -341,15 +379,17 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                       </div>
                     </GenericButton>
                     <BodyForm
-                      data-plasmic-name={"bodyForm"}
-                      data-plasmic-override={overrides.bodyForm}
-                      className={classNames("__wab_instance", sty.bodyForm)}
+                      data-plasmic-name={"form2"}
+                      data-plasmic-override={overrides.form2}
+                      className={classNames("__wab_instance", sty.form2)}
                     />
 
                     <GenericButton
+                      data-plasmic-name={"collapseAble3"}
+                      data-plasmic-override={overrides.collapseAble3}
                       className={classNames(
                         "__wab_instance",
-                        sty.genericButton__pn5Qn
+                        sty.collapseAble3
                       )}
                     >
                       <Icon2Icon
@@ -368,10 +408,9 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                       </div>
                     </GenericButton>
                     <TitleForm
-                      className={classNames(
-                        "__wab_instance",
-                        sty.titleForm__gZ1FY
-                      )}
+                      data-plasmic-name={"form3"}
+                      data-plasmic-override={overrides.form3}
+                      className={classNames("__wab_instance", sty.form3)}
                     >
                       {p.renderPlasmicSlot({
                         defaultContents: "Image Prompt",
@@ -379,9 +418,11 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                       })}
                     </TitleForm>
                     <GenericButton
+                      data-plasmic-name={"collapseAble4"}
+                      data-plasmic-override={overrides.collapseAble4}
                       className={classNames(
                         "__wab_instance",
-                        sty.genericButton__nvRpj
+                        sty.collapseAble4
                       )}
                     >
                       <Icon2Icon
@@ -400,10 +441,9 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                       </div>
                     </GenericButton>
                     <TitleForm
-                      className={classNames(
-                        "__wab_instance",
-                        sty.titleForm__nl114
-                      )}
+                      data-plasmic-name={"form4"}
+                      data-plasmic-override={overrides.form4}
+                      className={classNames("__wab_instance", sty.form4)}
                     />
                   </div>
                 </div>
@@ -423,27 +463,64 @@ const PlasmicDescendants = {
     "columns",
     "textInput",
     "generateButton",
+    "adTemplate1",
     "img",
     "resetButton",
     "selectButton",
-    "bodyForm"
+    "componentList",
+    "collapseAble1",
+    "form1",
+    "collapseAble2",
+    "form2",
+    "collapseAble3",
+    "form3",
+    "collapseAble4",
+    "form4"
   ],
   h1: ["h1"],
   columns: [
     "columns",
     "textInput",
     "generateButton",
+    "adTemplate1",
     "img",
     "resetButton",
     "selectButton",
-    "bodyForm"
+    "componentList",
+    "collapseAble1",
+    "form1",
+    "collapseAble2",
+    "form2",
+    "collapseAble3",
+    "form3",
+    "collapseAble4",
+    "form4"
   ],
   textInput: ["textInput"],
   generateButton: ["generateButton"],
+  adTemplate1: ["adTemplate1", "img"],
   img: ["img"],
   resetButton: ["resetButton"],
   selectButton: ["selectButton"],
-  bodyForm: ["bodyForm"]
+  componentList: [
+    "componentList",
+    "collapseAble1",
+    "form1",
+    "collapseAble2",
+    "form2",
+    "collapseAble3",
+    "form3",
+    "collapseAble4",
+    "form4"
+  ],
+  collapseAble1: ["collapseAble1"],
+  form1: ["form1"],
+  collapseAble2: ["collapseAble2"],
+  form2: ["form2"],
+  collapseAble3: ["collapseAble3"],
+  form3: ["form3"],
+  collapseAble4: ["collapseAble4"],
+  form4: ["form4"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -454,10 +531,19 @@ type NodeDefaultElementType = {
   columns: "div";
   textInput: typeof TextInput;
   generateButton: typeof GenerateButton;
+  adTemplate1: typeof AdTemplate1;
   img: typeof p.PlasmicImg;
   resetButton: typeof GenericButton;
   selectButton: typeof GenericButton;
-  bodyForm: typeof BodyForm;
+  componentList: "div";
+  collapseAble1: typeof GenericButton;
+  form1: typeof TitleForm;
+  collapseAble2: typeof GenericButton;
+  form2: typeof BodyForm;
+  collapseAble3: typeof GenericButton;
+  form3: typeof TitleForm;
+  collapseAble4: typeof GenericButton;
+  form4: typeof TitleForm;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -524,10 +610,19 @@ export const PlasmicAdPromptSelected = Object.assign(
     columns: makeNodeComponent("columns"),
     textInput: makeNodeComponent("textInput"),
     generateButton: makeNodeComponent("generateButton"),
+    adTemplate1: makeNodeComponent("adTemplate1"),
     img: makeNodeComponent("img"),
     resetButton: makeNodeComponent("resetButton"),
     selectButton: makeNodeComponent("selectButton"),
-    bodyForm: makeNodeComponent("bodyForm"),
+    componentList: makeNodeComponent("componentList"),
+    collapseAble1: makeNodeComponent("collapseAble1"),
+    form1: makeNodeComponent("form1"),
+    collapseAble2: makeNodeComponent("collapseAble2"),
+    form2: makeNodeComponent("form2"),
+    collapseAble3: makeNodeComponent("collapseAble3"),
+    form3: makeNodeComponent("form3"),
+    collapseAble4: makeNodeComponent("collapseAble4"),
+    form4: makeNodeComponent("form4"),
 
     // Metadata about props expected for PlasmicAdPromptSelected
     internalVariantProps: PlasmicAdPromptSelected__VariantProps,

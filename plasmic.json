@@ -231,8 +231,7 @@
           "displayName": "plasmic-antd5-date-picker",
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerDatePicker"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
@@ -533,6 +532,19 @@
           "cssFilePath": "plasmic/idea_stats_v_1/PlasmicGraphSelectButton.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "OXgNvGfpFJH",
+          "name": "GetStarted",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicGetStarted.tsx",
+          "importSpec": {
+            "modulePath": "GetStarted.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicGetStarted.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -676,6 +688,6 @@
     ]
   },
   "wrapPagesWithGlobalContexts": true,
-  "cliVersion": "0.1.289",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.289/dist/plasmic.schema.json"
+  "cliVersion": "0.1.292",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.292/dist/plasmic.schema.json"
 }

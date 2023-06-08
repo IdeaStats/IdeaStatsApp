@@ -122,87 +122,90 @@ function PlasmicAdTemplate1__RenderFunc(props: {
         const $steps = {};
       }}
     >
-      <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
-        {p.renderPlasmicSlot({
-          defaultContents: (
-            <p.PlasmicImg
-              alt={""}
-              className={classNames(sty.img__deiOq)}
-              displayHeight={"100%" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"none" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"100%" as const}
-              loading={"lazy" as const}
-              src={
-                "https://images.unsplash.com/photo-1682695795255-b236b1f1267d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" as const
-              }
-            />
-          ),
+      {true ? (
+        <div className={classNames(projectcss.all, sty.freeBox__fFmT)}>
+          <div className={classNames(projectcss.all, sty.freeBox__dPAqD)}>
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__cereG
+                  )}
+                >
+                  <React.Fragment>
+                    <React.Fragment>{""}</React.Fragment>
+                    {
+                      <h2
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.h2,
+                          projectcss.__wab_text,
+                          sty.h2__iyu0N
+                        )}
+                      >
+                        {"Ad Title"}
+                      </h2>
+                    }
+                    <React.Fragment>{""}</React.Fragment>
+                  </React.Fragment>
+                </div>
+              ),
+              value: args.title
+            })}
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__deiOq)}
+                  displayHeight={"100%" as const}
+                  displayMaxHeight={"none" as const}
+                  displayMaxWidth={"none" as const}
+                  displayMinHeight={"0" as const}
+                  displayMinWidth={"0" as const}
+                  displayWidth={"100%" as const}
+                  loading={"lazy" as const}
+                  src={
+                    "https://images.unsplash.com/photo-1682695795255-b236b1f1267d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" as const
+                  }
+                />
+              ),
 
-          value: args.adImage
-        })}
-      </div>
-      <div className={classNames(projectcss.all, sty.freeBox__qI4Qw)} />
-
-      <div className={classNames(projectcss.all, sty.freeBox__dPAqD)}>
-        {p.renderPlasmicSlot({
-          defaultContents: (
+              value: args.adImage
+            })}
+          </div>
+          <div className={classNames(projectcss.all, sty.freeBox__oeZcI)}>
+            {p.renderPlasmicSlot({
+              defaultContents:
+                "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n",
+              value: args.body,
+              className: classNames(sty.slotTargetBody)
+            })}
+          </div>
+          <Button2
+            data-plasmic-name={"callToAction"}
+            data-plasmic-override={overrides.callToAction}
+            className={classNames("__wab_instance", sty.callToAction)}
+            submitsForm={true}
+          >
             <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__cereG
+                sty.text
               )}
             >
-              <React.Fragment>
-                <React.Fragment>{""}</React.Fragment>
-                {
-                  <h2
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.h2,
-                      projectcss.__wab_text,
-                      sty.h2__iyu0N
-                    )}
-                  >
-                    {"Ad Title"}
-                  </h2>
-                }
-                <React.Fragment>{""}</React.Fragment>
-              </React.Fragment>
+              {"Call To Action"}
             </div>
-          ),
-          value: args.title
-        })}
-      </div>
-      <div className={classNames(projectcss.all, sty.freeBox__oeZcI)}>
-        {p.renderPlasmicSlot({
-          defaultContents:
-            "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n",
-          value: args.body,
-          className: classNames(sty.slotTargetBody)
-        })}
-      </div>
-      <Button2
-        data-plasmic-name={"callToAction"}
-        data-plasmic-override={overrides.callToAction}
-        className={classNames("__wab_instance", sty.callToAction)}
-        submitsForm={true}
-      >
-        <div
-          data-plasmic-name={"text"}
-          data-plasmic-override={overrides.text}
-          className={classNames(
-            projectcss.all,
-            projectcss.__wab_text,
-            sty.text
-          )}
-        >
-          {"Call To Action"}
+          </Button2>
+          <div className={classNames(projectcss.all, sty.freeBox__qI4Qw)} />
         </div>
-      </Button2>
+      ) : null}
     </button>
   ) as React.ReactElement | null;
 }

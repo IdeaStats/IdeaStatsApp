@@ -31,7 +31,8 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  min-width: 0;
+  grid-column-start: 2;
+  grid-column-end: -2;
   padding: 8px;
 }
 .h1 {

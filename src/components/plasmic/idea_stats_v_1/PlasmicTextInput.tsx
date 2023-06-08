@@ -72,6 +72,16 @@ export type PlasmicTextInput__ArgsType = {
   required?: boolean;
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  type?:
+    | "text"
+    | "password"
+    | "hidden"
+    | "number"
+    | "date"
+    | "datetime-local"
+    | "time"
+    | "email"
+    | "tel";
 };
 type ArgPropType = keyof PlasmicTextInput__ArgsType;
 export const PlasmicTextInput__ArgProps = new Array<ArgPropType>(
@@ -82,7 +92,8 @@ export const PlasmicTextInput__ArgProps = new Array<ArgPropType>(
   "name",
   "required",
   "aria-label",
-  "aria-labelledby"
+  "aria-labelledby",
+  "type"
 );
 
 export type PlasmicTextInput__OverridesType = {
@@ -99,6 +110,16 @@ export interface DefaultTextInputProps extends pp.BaseTextInputProps {
   required?: boolean;
   "aria-label"?: string;
   "aria-labelledby"?: string;
+  type?:
+    | "text"
+    | "password"
+    | "hidden"
+    | "number"
+    | "date"
+    | "datetime-local"
+    | "time"
+    | "email"
+    | "tel";
   color?: SingleChoiceArg<"dark">;
 }
 
