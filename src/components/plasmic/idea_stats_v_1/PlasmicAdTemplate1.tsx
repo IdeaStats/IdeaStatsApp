@@ -49,28 +49,29 @@ type VariantPropType = keyof PlasmicAdTemplate1__VariantsArgs;
 export const PlasmicAdTemplate1__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicAdTemplate1__ArgsType = {
-  adImage?: React.ReactNode;
   title?: React.ReactNode;
   body?: React.ReactNode;
+  adImgSrc?: React.ComponentProps<typeof p.PlasmicImg>["src"];
 };
 type ArgPropType = keyof PlasmicAdTemplate1__ArgsType;
 export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>(
-  "adImage",
   "title",
-  "body"
+  "body",
+  "adImgSrc"
 );
 
 export type PlasmicAdTemplate1__OverridesType = {
   root?: p.Flex<"button">;
+  img?: p.Flex<typeof p.PlasmicImg>;
   callToAction?: p.Flex<typeof Button2>;
   text?: p.Flex<"div">;
   screenCover?: p.Flex<"div">;
 };
 
 export interface DefaultAdTemplate1Props {
-  adImage?: React.ReactNode;
   title?: React.ReactNode;
   body?: React.ReactNode;
+  adImgSrc?: React.ComponentProps<typeof p.PlasmicImg>["src"];
   className?: string;
 }
 
@@ -91,7 +92,17 @@ function PlasmicAdTemplate1__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {
+          adImgSrc:
+            "https://images.unsplash.com/photo-1682695795255-b236b1f1267d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" as const
+        },
+        props.args
+      ),
+    [props.args]
+  );
   const $props = {
     ...args,
     ...variants
@@ -157,26 +168,20 @@ function PlasmicAdTemplate1__RenderFunc(props: {
             })}
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
-            {p.renderPlasmicSlot({
-              defaultContents: (
-                <p.PlasmicImg
-                  alt={""}
-                  className={classNames(sty.img__deiOq)}
-                  displayHeight={"100%" as const}
-                  displayMaxHeight={"none" as const}
-                  displayMaxWidth={"none" as const}
-                  displayMinHeight={"0" as const}
-                  displayMinWidth={"0" as const}
-                  displayWidth={"100%" as const}
-                  loading={"lazy" as const}
-                  src={
-                    "https://images.unsplash.com/photo-1682695795255-b236b1f1267d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" as const
-                  }
-                />
-              ),
-
-              value: args.adImage
-            })}
+            <p.PlasmicImg
+              data-plasmic-name={"img"}
+              data-plasmic-override={overrides.img}
+              alt={""}
+              className={classNames(sty.img)}
+              displayHeight={"100%" as const}
+              displayMaxHeight={"none" as const}
+              displayMaxWidth={"none" as const}
+              displayMinHeight={"0" as const}
+              displayMinWidth={"0" as const}
+              displayWidth={"100%" as const}
+              loading={"lazy" as const}
+              src={args.adImgSrc}
+            />
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__oeZcI)}>
             {p.renderPlasmicSlot({
@@ -218,7 +223,8 @@ function PlasmicAdTemplate1__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "callToAction", "text", "screenCover"],
+  root: ["root", "img", "callToAction", "text", "screenCover"],
+  img: ["img"],
   callToAction: ["callToAction", "text"],
   text: ["text"],
   screenCover: ["screenCover"]
@@ -228,6 +234,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "button";
+  img: typeof p.PlasmicImg;
   callToAction: typeof Button2;
   text: "div";
   screenCover: "div";
@@ -293,6 +300,7 @@ export const PlasmicAdTemplate1 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    img: makeNodeComponent("img"),
     callToAction: makeNodeComponent("callToAction"),
     text: makeNodeComponent("text"),
     screenCover: makeNodeComponent("screenCover"),
