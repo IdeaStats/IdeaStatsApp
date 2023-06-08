@@ -6,7 +6,7 @@ import {
   DefaultAdPromptSelectedProps
 } from "./plasmic/idea_stats_v_1/PlasmicAdPromptSelected";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -43,8 +43,24 @@ function AdPromptSelected_(
   // to do whatever works for you.
 
   let navigate = useNavigate();
+  let location = useLocation();
 
-  return <PlasmicAdPromptSelected root={{ ref }} 
+  let imgSrc = process.env.REACT_APP_DEFAULT_AD_IMG;
+  if ("adImgSrc" in location.state){
+    imgSrc =  location.state.adImgSrc;
+  } 
+
+  return <PlasmicAdPromptSelected 
+  
+    root={{ ref }}
+
+    adTemplate1={{
+      adImage : 
+        <img src={imgSrc} 
+                width={"100px"}
+                 />
+    }}
+    
     selectButton={{
       onClick: () => {
         navigate("/run-ads");

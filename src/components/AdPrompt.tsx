@@ -7,6 +7,12 @@ import {
 } from "./plasmic/idea_stats_v_1/PlasmicAdPrompt";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useNavigate } from "react-router-dom";
+import { Configuration, OpenAIApi } from "openai";
+
+const configuration = new Configuration({
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -41,11 +47,40 @@ function AdPrompt_(props: AdPromptProps, ref: HTMLElementRefOf<"div">) {
 
   let navigate = useNavigate();
 
-  return <PlasmicAdPrompt root={{ ref }} selectButton={{
-    onClick: () => {
-      navigate("/choose-template")
+  const [prompt, setPrompt] = React.useState("");
+  const [imgSrc, setImgSrc] = React.useState(process.env.REACT_APP_DEFAULT_AD_IMG);
+
+  return <PlasmicAdPrompt root={{ ref }}
+
+  textInput={{
+    placeholder: "A beautiful mountain range with some people hiking...",
+    onChange ( event) {
+      setPrompt(event.target.value);
     }
-  }} {...props} />;
+  }}
+  
+  img={ {
+    src: imgSrc
+  }}
+
+  selectButton={{
+    onClick: () => {
+      navigate("/customize-ad", {state: {adImgSrc: imgSrc}})
+    }
+  }}
+
+  generateButton={{
+    onClick: async () =>{
+      const response = await openai.createImage({
+        prompt: prompt,
+        n: 1,
+        size: "1024x1024",
+      });
+      setImgSrc(response.data.data[0].url!);
+    }
+  }}
+  
+  {...props} />;
 }
 
 const AdPrompt = React.forwardRef(AdPrompt_);

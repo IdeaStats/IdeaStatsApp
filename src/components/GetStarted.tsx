@@ -6,6 +6,7 @@ import {
   DefaultGetStartedProps
 } from "./plasmic/idea_stats_v_1/PlasmicGetStarted";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import { useNavigate } from "react-router";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -38,7 +39,19 @@ function GetStarted_(props: GetStartedProps, ref: HTMLElementRefOf<"div">) {
   // By default, we are just piping all GetStartedProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicGetStarted root={{ ref }} {...props} />;
+  let navigate = useNavigate();
+
+  return <PlasmicGetStarted 
+    root={{ ref }}
+
+    genericButton={{
+      onClick() {
+        navigate("ad-prompt");
+      },
+    }}
+
+    {...props} 
+    />;
 }
 
 const GetStarted = React.forwardRef(GetStarted_);

@@ -2,19 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css';
-import Homepage from './components/Homepage';
 import ChooseTemplate from './components/ChooseTemplate';
 import AdPrompt from './components/AdPrompt';
 import AdPromptSelected from './components/AdPromptSelected';
 import reportWebVitals from './reportWebVitals';
 import RunAds from './components/RunAds';
 import AnalyticsPage from './components/AnalyticsPage';
+import GetStarted from './components/GetStarted';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/" element={<GetStarted />}></Route>
         <Route path="/choose-template" element={<ChooseTemplate />}></Route>
         <Route path="/ad-prompt" element={<AdPrompt />}></Route>
         <Route path="/customize-ad" element={<AdPromptSelected />}></Route>
