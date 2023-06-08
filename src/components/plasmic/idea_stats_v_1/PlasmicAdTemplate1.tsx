@@ -64,6 +64,7 @@ export type PlasmicAdTemplate1__OverridesType = {
   root?: p.Flex<"button">;
   callToAction?: p.Flex<typeof Button2>;
   text?: p.Flex<"div">;
+  screenCover?: p.Flex<"div">;
 };
 
 export interface DefaultAdTemplate1Props {
@@ -203,7 +204,13 @@ function PlasmicAdTemplate1__RenderFunc(props: {
               {"Call To Action"}
             </div>
           </Button2>
-          <div className={classNames(projectcss.all, sty.freeBox__qI4Qw)} />
+          {true ? (
+            <div
+              data-plasmic-name={"screenCover"}
+              data-plasmic-override={overrides.screenCover}
+              className={classNames(projectcss.all, sty.screenCover)}
+            />
+          ) : null}
         </div>
       ) : null}
     </button>
@@ -211,9 +218,10 @@ function PlasmicAdTemplate1__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "callToAction", "text"],
+  root: ["root", "callToAction", "text", "screenCover"],
   callToAction: ["callToAction", "text"],
-  text: ["text"]
+  text: ["text"],
+  screenCover: ["screenCover"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -222,6 +230,7 @@ type NodeDefaultElementType = {
   root: "button";
   callToAction: typeof Button2;
   text: "div";
+  screenCover: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -286,6 +295,7 @@ export const PlasmicAdTemplate1 = Object.assign(
     // Helper components rendering sub-elements
     callToAction: makeNodeComponent("callToAction"),
     text: makeNodeComponent("text"),
+    screenCover: makeNodeComponent("screenCover"),
 
     // Metadata about props expected for PlasmicAdTemplate1
     internalVariantProps: PlasmicAdTemplate1__VariantProps,

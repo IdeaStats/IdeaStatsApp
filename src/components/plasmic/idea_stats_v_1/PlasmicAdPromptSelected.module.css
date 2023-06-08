@@ -204,9 +204,10 @@
 .img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
-.h2__yJ1Zk {
+.h2 {
   text-align: center;
   color: #ffffff;
+  font-size: 58px;
 }
 .text__edznr {
   text-align: center;
