@@ -57,7 +57,7 @@
   min-width: 0;
   min-height: 0;
 }
-.img__deiOq {
+.img {
   position: relative;
   object-fit: cover;
   max-width: none;
@@ -69,10 +69,10 @@
   min-width: 0;
   min-height: 0;
 }
-.img__deiOq > picture > img {
+.img > picture > img {
   object-fit: cover;
 }
-.img__deiOq > :global(.__wab_img-spacer) > img {
+.img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .freeBox__oeZcI {
