@@ -546,6 +546,19 @@
           "cssFilePath": "plasmic/idea_stats_v_1/PlasmicGetStarted.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "59BY5_2uYqZ",
+          "name": "FinishedAd",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicFinishedAd.tsx",
+          "importSpec": {
+            "modulePath": "FinishedAd.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicFinishedAd.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
