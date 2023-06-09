@@ -124,6 +124,30 @@ function PlasmicFinishedAd__RenderFunc(props: {
               <AdTemplate1
                 data-plasmic-name={"finalAdTemplate"}
                 data-plasmic-override={overrides.finalAdTemplate}
+                body={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__yG7Yy
+                    )}
+                  >
+                    {
+                      "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    }
+                  </div>
+                }
+                callToAction={
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__wmW95
+                    )}
+                  >
+                    {"Call To Action"}
+                  </div>
+                }
                 className={classNames("__wab_instance", sty.finalAdTemplate)}
               />
 

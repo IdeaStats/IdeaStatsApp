@@ -278,7 +278,7 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                                 )}
                               >
                                 {
-                                  "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n"
+                                  "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                                 }
                               </div>
                             }
