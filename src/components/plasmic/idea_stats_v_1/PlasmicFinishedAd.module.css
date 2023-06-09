@@ -57,8 +57,16 @@
   text-align: center;
   color: #ffffff;
 }
+.text__yG7Yy {
+  color: #ffffff;
+  font-weight: 600;
+}
 .text__wmW95 {
   color: #ededec;
+  position: relative;
+  left: auto;
+  top: auto;
+  z-index: 1;
 }
 .freeBox__b3Fg9 {
   display: flex;

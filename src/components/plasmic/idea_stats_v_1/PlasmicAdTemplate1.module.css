@@ -14,15 +14,15 @@
 }
 .freeBox__fFmT {
   display: flex;
-  position: absolute;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   max-width: 100%;
-  top: 0px;
-  left: 0px;
+  top: auto;
+  left: auto;
   min-width: 500px;
   min-height: 0;
   padding: 8px;
@@ -75,16 +75,32 @@
 .img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
+.screenCover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000000e6;
+  opacity: 0.5;
+  flex-shrink: 1;
+  position: absolute;
+  left: auto;
+  top: auto;
+  min-width: 0;
+  min-height: 0;
+  padding: 8px;
+}
 .freeBox__oeZcI {
-  position: relative;
+  position: sticky;
   width: auto;
   height: auto;
   max-width: 60%;
   display: flex;
   flex-direction: row;
-  align-self: auto;
   justify-content: center;
   align-items: center;
+  left: 267px;
+  top: 271px;
+  z-index: 1;
   padding: 0px;
   margin: 10px;
 }
@@ -99,6 +115,7 @@
   left: auto;
   top: auto;
   z-index: 1;
+  align-self: center;
 }
 .svg__l1AVi {
   position: relative;
@@ -114,18 +131,4 @@
   object-fit: cover;
   width: 1em;
   height: 1em;
-}
-.screenCover {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: #000000e6;
-  opacity: 0.5;
-  flex-shrink: 1;
-  position: absolute;
-  left: auto;
-  top: auto;
-  min-width: 0;
-  min-height: 0;
-  padding: 8px;
 }
