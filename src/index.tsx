@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import RunAds from './components/RunAds';
 import AnalyticsPage from './components/AnalyticsPage';
 import GetStarted from './components/GetStarted';
+import FinishedAd from './components/FinishedAd';
 
 export default function App() {
   return (
@@ -18,8 +19,8 @@ export default function App() {
         <Route path="/choose-template" element={<ChooseTemplate />}></Route>
         <Route path="/ad-prompt" element={<AdPrompt />}></Route>
         <Route path="/customize-ad" element={<AdPromptSelected />}></Route>
-        <Route path="/run-ads" element={<RunAds />}></Route>
-        <Route path="/analytics" element={<AnalyticsPage />}></Route>
+        <Route path="/finished-ad" element={<FinishedAd />}></Route>
+        {/* <Route path="/analytics" element={<AnalyticsPage />}></Route> */}
       </Routes>
     </BrowserRouter>
   );

@@ -6,6 +6,8 @@ import {
   DefaultFinishedAdProps
 } from "./plasmic/idea_stats_v_1/PlasmicFinishedAd";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
+import { useLocation } from "react-router";
+import {getAdImg} from "../utils/SharedDataTools"
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -38,7 +40,18 @@ function FinishedAd_(props: FinishedAdProps, ref: HTMLElementRefOf<"div">) {
   // By default, we are just piping all FinishedAdProps here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicFinishedAd root={{ ref }} {...props} />;
+  let location = useLocation();
+
+  let adImgSrc = getAdImg(location);
+
+  return <PlasmicFinishedAd 
+          root={{ ref }}
+          
+          img={{
+            src: adImgSrc
+          }}
+
+          {...props} />;
 }
 
 const FinishedAd = React.forwardRef(FinishedAd_);

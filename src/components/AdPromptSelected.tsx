@@ -7,6 +7,7 @@ import {
 } from "./plasmic/idea_stats_v_1/PlasmicAdPromptSelected";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useLocation, useNavigate } from "react-router-dom";
+import TextInput from "./TextInput";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -48,24 +49,37 @@ function AdPromptSelected_(
   let imgSrc = process.env.REACT_APP_DEFAULT_AD_IMG;
   if ("adImgSrc" in location.state){
     imgSrc =  location.state.adImgSrc;
-  } 
+  }
+
+  let [titleString, setTitleString] = React.useState("Hello");
+  let [bodyString, setBodyString] = React.useState("Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
+  let [callToActionString, setCallToActionString] = React.useState("Sign Up");
+  
 
   return <PlasmicAdPromptSelected 
   
     root={{ ref }}
 
     adTemplate1={{
-      adImage : 
-        <img src={imgSrc} 
-                width={"100px"}
-                 />
+      adImgSrc: imgSrc,
+
+      // Customization in template.
+      title: <h2 className="plasmic_idea_stats_v_1_all__vC+pC plasmic_idea_stats_v_1_h2__TiAPZ PlasmicAdPromptSelected_h2__xlLfB">{titleString}</h2>,
+      body: <div className="plasmic_idea_stats_v_1_all__vC+pC PlasmicAdPromptSelected_text__edznr__A+5F-">{bodyString}</div>,
+      callToAction: {
+        children: callToActionString
+      }
     }}
     
     selectButton={{
       onClick: () => {
-        navigate("/run-ads");
+        navigate("/finished-ad");
       }
-    }} 
+    }}
+
+    form1={{
+      children: <TextInput onChange={ (event) => { setTitleString(event.target.value) } } ></TextInput>
+    }}
     
     {...props} />;
 }
