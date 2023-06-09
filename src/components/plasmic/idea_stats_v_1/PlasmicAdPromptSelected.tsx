@@ -79,7 +79,7 @@ export type PlasmicAdPromptSelected__OverridesType = {
   bodyArea?: p.Flex<typeof AntdTextArea>;
   changeButton?: p.Flex<"div">;
   collapseAble13?: p.Flex<typeof GenericButton>;
-  titleInput2?: p.Flex<typeof TextInput>;
+  buttonIntput?: p.Flex<typeof TextInput>;
   changeImage?: p.Flex<"div">;
   collapseAble12?: p.Flex<typeof GenericButton>;
   generateImgInput?: p.Flex<typeof TextInput>;
@@ -155,7 +155,7 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
       },
       {
-        path: "titleInput2.value",
+        path: "buttonIntput.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
@@ -522,21 +522,21 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                           </div>
                         </GenericButton>
                         <TextInput
-                          data-plasmic-name={"titleInput2"}
-                          data-plasmic-override={overrides.titleInput2}
+                          data-plasmic-name={"buttonIntput"}
+                          data-plasmic-override={overrides.buttonIntput}
                           className={classNames(
                             "__wab_instance",
-                            sty.titleInput2
+                            sty.buttonIntput
                           )}
                           onChange={(...eventArgs) => {
                             p.generateStateOnChangeProp($state, [
-                              "titleInput2",
+                              "buttonIntput",
                               "value"
                             ])((e => e.target?.value).apply(null, eventArgs));
                           }}
                           value={
                             p.generateStateValueProp($state, [
-                              "titleInput2",
+                              "buttonIntput",
                               "value"
                             ]) ?? ""
                           }
@@ -707,7 +707,7 @@ const PlasmicDescendants = {
     "bodyArea",
     "changeButton",
     "collapseAble13",
-    "titleInput2",
+    "buttonIntput",
     "changeImage",
     "collapseAble12",
     "generateImgInput",
@@ -734,7 +734,7 @@ const PlasmicDescendants = {
     "bodyArea",
     "changeButton",
     "collapseAble13",
-    "titleInput2",
+    "buttonIntput",
     "changeImage",
     "collapseAble12",
     "generateImgInput",
@@ -759,7 +759,7 @@ const PlasmicDescendants = {
     "bodyArea",
     "changeButton",
     "collapseAble13",
-    "titleInput2",
+    "buttonIntput",
     "changeImage",
     "collapseAble12",
     "generateImgInput",
@@ -774,9 +774,9 @@ const PlasmicDescendants = {
   changeBody: ["changeBody", "collapseAble", "bodyArea"],
   collapseAble: ["collapseAble"],
   bodyArea: ["bodyArea"],
-  changeButton: ["changeButton", "collapseAble13", "titleInput2"],
+  changeButton: ["changeButton", "collapseAble13", "buttonIntput"],
   collapseAble13: ["collapseAble13"],
-  titleInput2: ["titleInput2"],
+  buttonIntput: ["buttonIntput"],
   changeImage: [
     "changeImage",
     "collapseAble12",
@@ -816,7 +816,7 @@ type NodeDefaultElementType = {
   bodyArea: typeof AntdTextArea;
   changeButton: "div";
   collapseAble13: typeof GenericButton;
-  titleInput2: typeof TextInput;
+  buttonIntput: typeof TextInput;
   changeImage: "div";
   collapseAble12: typeof GenericButton;
   generateImgInput: typeof TextInput;
@@ -903,7 +903,7 @@ export const PlasmicAdPromptSelected = Object.assign(
     bodyArea: makeNodeComponent("bodyArea"),
     changeButton: makeNodeComponent("changeButton"),
     collapseAble13: makeNodeComponent("collapseAble13"),
-    titleInput2: makeNodeComponent("titleInput2"),
+    buttonIntput: makeNodeComponent("buttonIntput"),
     changeImage: makeNodeComponent("changeImage"),
     collapseAble12: makeNodeComponent("collapseAble12"),
     generateImgInput: makeNodeComponent("generateImgInput"),
