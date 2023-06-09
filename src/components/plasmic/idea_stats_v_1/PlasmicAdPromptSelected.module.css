@@ -198,6 +198,9 @@
   flex-grow: 0;
   min-width: 0;
 }
+.text__aexHb {
+  color: #ededec;
+}
 .freeBox__g8XkX {
   display: flex;
   position: relative;
@@ -330,6 +333,51 @@
   flex-shrink: 0;
   margin: 8px;
 }
+.changeButton {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  padding: 0px;
+}
+.collapseAble13:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.svg__zjnWo {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 35px;
+  height: 35px;
+}
+.titleInput2:global(.__wab_instance) {
+  max-width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.svg__eAm20 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__x66K6 {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
 .changeImage {
   display: flex;
   position: relative;
@@ -358,27 +406,39 @@
   width: 35px;
   height: 35px;
 }
-.generateImgInput:global(.__wab_instance) {
+.freeBox___1K5Rv {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
   max-width: 100%;
   margin-top: 8px;
   margin-bottom: 8px;
-}
-.svg___11ZBa {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.svg__qSgDl {
-  position: relative;
-  object-fit: cover;
-  width: 1em;
-  height: 1em;
-}
-.genericButton:global(.__wab_instance) {
-  position: relative;
-  width: 100%;
   min-width: 0;
+  padding: 0px;
+}
+.generateImgInput:global(.__wab_instance) {
+  max-width: 100%;
+}
+.svg__m8Sit {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__znQ8E {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.getImgButton:global(.__wab_instance) {
+  position: relative;
+  width: 50px;
+  flex-shrink: 0;
 }
 .changeDestination {
   display: flex;

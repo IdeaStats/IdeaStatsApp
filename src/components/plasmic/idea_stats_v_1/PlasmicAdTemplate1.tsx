@@ -52,19 +52,20 @@ export type PlasmicAdTemplate1__ArgsType = {
   title?: React.ReactNode;
   body?: React.ReactNode;
   adImgSrc?: React.ComponentProps<typeof p.PlasmicImg>["src"];
+  callToAction?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicAdTemplate1__ArgsType;
 export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>(
   "title",
   "body",
-  "adImgSrc"
+  "adImgSrc",
+  "callToAction"
 );
 
 export type PlasmicAdTemplate1__OverridesType = {
   root?: p.Flex<"button">;
   img?: p.Flex<typeof p.PlasmicImg>;
   callToAction?: p.Flex<typeof Button2>;
-  text?: p.Flex<"div">;
   screenCover?: p.Flex<"div">;
 };
 
@@ -72,6 +73,7 @@ export interface DefaultAdTemplate1Props {
   title?: React.ReactNode;
   body?: React.ReactNode;
   adImgSrc?: React.ComponentProps<typeof p.PlasmicImg>["src"];
+  callToAction?: React.ReactNode;
   className?: string;
 }
 
@@ -197,17 +199,20 @@ function PlasmicAdTemplate1__RenderFunc(props: {
             className={classNames("__wab_instance", sty.callToAction)}
             submitsForm={true}
           >
-            <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text
-              )}
-            >
-              {"Call To Action"}
-            </div>
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__xwhmp
+                  )}
+                >
+                  {"Call To Action"}
+                </div>
+              ),
+              value: args.callToAction
+            })}
           </Button2>
           {true ? (
             <div
@@ -223,10 +228,9 @@ function PlasmicAdTemplate1__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "callToAction", "text", "screenCover"],
+  root: ["root", "img", "callToAction", "screenCover"],
   img: ["img"],
-  callToAction: ["callToAction", "text"],
-  text: ["text"],
+  callToAction: ["callToAction"],
   screenCover: ["screenCover"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -236,7 +240,6 @@ type NodeDefaultElementType = {
   root: "button";
   img: typeof p.PlasmicImg;
   callToAction: typeof Button2;
-  text: "div";
   screenCover: "div";
 };
 
@@ -302,7 +305,6 @@ export const PlasmicAdTemplate1 = Object.assign(
     // Helper components rendering sub-elements
     img: makeNodeComponent("img"),
     callToAction: makeNodeComponent("callToAction"),
-    text: makeNodeComponent("text"),
     screenCover: makeNodeComponent("screenCover"),
 
     // Metadata about props expected for PlasmicAdTemplate1

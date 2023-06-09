@@ -77,10 +77,13 @@ export type PlasmicAdPromptSelected__OverridesType = {
   changeBody?: p.Flex<"div">;
   collapseAble?: p.Flex<typeof GenericButton>;
   bodyArea?: p.Flex<typeof AntdTextArea>;
+  changeButton?: p.Flex<"div">;
+  collapseAble13?: p.Flex<typeof GenericButton>;
+  titleInput2?: p.Flex<typeof TextInput>;
   changeImage?: p.Flex<"div">;
   collapseAble12?: p.Flex<typeof GenericButton>;
   generateImgInput?: p.Flex<typeof TextInput>;
-  genericButton?: p.Flex<typeof GenericButton>;
+  getImgButton?: p.Flex<typeof GenericButton>;
   changeDestination?: p.Flex<"div">;
   collapseAble2?: p.Flex<typeof GenericButton>;
   destinationLinkInput?: p.Flex<typeof TextInput>;
@@ -147,6 +150,12 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
       },
       {
         path: "destinationLinkInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "titleInput2.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
@@ -482,6 +491,60 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                     ) : null}
                     {true ? (
                       <div
+                        data-plasmic-name={"changeButton"}
+                        data-plasmic-override={overrides.changeButton}
+                        className={classNames(projectcss.all, sty.changeButton)}
+                      >
+                        <GenericButton
+                          data-plasmic-name={"collapseAble13"}
+                          data-plasmic-override={overrides.collapseAble13}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.collapseAble13
+                          )}
+                        >
+                          <Icon2Icon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__zjnWo
+                            )}
+                            role={"img"}
+                          />
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__gVoOz
+                            )}
+                          >
+                            {"Change Button"}
+                          </div>
+                        </GenericButton>
+                        <TextInput
+                          data-plasmic-name={"titleInput2"}
+                          data-plasmic-override={overrides.titleInput2}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.titleInput2
+                          )}
+                          onChange={(...eventArgs) => {
+                            p.generateStateOnChangeProp($state, [
+                              "titleInput2",
+                              "value"
+                            ])((e => e.target?.value).apply(null, eventArgs));
+                          }}
+                          value={
+                            p.generateStateValueProp($state, [
+                              "titleInput2",
+                              "value"
+                            ]) ?? ""
+                          }
+                        />
+                      </div>
+                    ) : null}
+                    {true ? (
+                      <div
                         data-plasmic-name={"changeImage"}
                         data-plasmic-override={overrides.changeImage}
                         className={classNames(projectcss.all, sty.changeImage)}
@@ -512,35 +575,48 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                             {"Change Image"}
                           </div>
                         </GenericButton>
-                        <TextInput
-                          data-plasmic-name={"generateImgInput"}
-                          data-plasmic-override={overrides.generateImgInput}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.generateImgInput
-                          )}
-                          onChange={(...eventArgs) => {
-                            p.generateStateOnChangeProp($state, [
-                              "generateImgInput",
-                              "value"
-                            ])((e => e.target?.value).apply(null, eventArgs));
-                          }}
-                          value={
-                            p.generateStateValueProp($state, [
-                              "generateImgInput",
-                              "value"
-                            ]) ?? ""
-                          }
-                        />
+                        {true ? (
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.freeBox___1K5Rv
+                            )}
+                          >
+                            <TextInput
+                              data-plasmic-name={"generateImgInput"}
+                              data-plasmic-override={overrides.generateImgInput}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.generateImgInput
+                              )}
+                              onChange={(...eventArgs) => {
+                                p.generateStateOnChangeProp($state, [
+                                  "generateImgInput",
+                                  "value"
+                                ])(
+                                  (e => e.target?.value).apply(null, eventArgs)
+                                );
+                              }}
+                              value={
+                                p.generateStateValueProp($state, [
+                                  "generateImgInput",
+                                  "value"
+                                ]) ?? ""
+                              }
+                            />
 
-                        <GenericButton
-                          data-plasmic-name={"genericButton"}
-                          data-plasmic-override={overrides.genericButton}
-                          className={classNames(
-                            "__wab_instance",
-                            sty.genericButton
-                          )}
-                        />
+                            <GenericButton
+                              data-plasmic-name={"getImgButton"}
+                              data-plasmic-override={overrides.getImgButton}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.getImgButton
+                              )}
+                            >
+                              {"->"}
+                            </GenericButton>
+                          </div>
+                        ) : null}
                       </div>
                     ) : null}
                     {true ? (
@@ -629,10 +705,13 @@ const PlasmicDescendants = {
     "changeBody",
     "collapseAble",
     "bodyArea",
+    "changeButton",
+    "collapseAble13",
+    "titleInput2",
     "changeImage",
     "collapseAble12",
     "generateImgInput",
-    "genericButton",
+    "getImgButton",
     "changeDestination",
     "collapseAble2",
     "destinationLinkInput"
@@ -653,10 +732,13 @@ const PlasmicDescendants = {
     "changeBody",
     "collapseAble",
     "bodyArea",
+    "changeButton",
+    "collapseAble13",
+    "titleInput2",
     "changeImage",
     "collapseAble12",
     "generateImgInput",
-    "genericButton",
+    "getImgButton",
     "changeDestination",
     "collapseAble2",
     "destinationLinkInput"
@@ -675,10 +757,13 @@ const PlasmicDescendants = {
     "changeBody",
     "collapseAble",
     "bodyArea",
+    "changeButton",
+    "collapseAble13",
+    "titleInput2",
     "changeImage",
     "collapseAble12",
     "generateImgInput",
-    "genericButton",
+    "getImgButton",
     "changeDestination",
     "collapseAble2",
     "destinationLinkInput"
@@ -689,15 +774,18 @@ const PlasmicDescendants = {
   changeBody: ["changeBody", "collapseAble", "bodyArea"],
   collapseAble: ["collapseAble"],
   bodyArea: ["bodyArea"],
+  changeButton: ["changeButton", "collapseAble13", "titleInput2"],
+  collapseAble13: ["collapseAble13"],
+  titleInput2: ["titleInput2"],
   changeImage: [
     "changeImage",
     "collapseAble12",
     "generateImgInput",
-    "genericButton"
+    "getImgButton"
   ],
   collapseAble12: ["collapseAble12"],
   generateImgInput: ["generateImgInput"],
-  genericButton: ["genericButton"],
+  getImgButton: ["getImgButton"],
   changeDestination: [
     "changeDestination",
     "collapseAble2",
@@ -726,10 +814,13 @@ type NodeDefaultElementType = {
   changeBody: "div";
   collapseAble: typeof GenericButton;
   bodyArea: typeof AntdTextArea;
+  changeButton: "div";
+  collapseAble13: typeof GenericButton;
+  titleInput2: typeof TextInput;
   changeImage: "div";
   collapseAble12: typeof GenericButton;
   generateImgInput: typeof TextInput;
-  genericButton: typeof GenericButton;
+  getImgButton: typeof GenericButton;
   changeDestination: "div";
   collapseAble2: typeof GenericButton;
   destinationLinkInput: typeof TextInput;
@@ -810,10 +901,13 @@ export const PlasmicAdPromptSelected = Object.assign(
     changeBody: makeNodeComponent("changeBody"),
     collapseAble: makeNodeComponent("collapseAble"),
     bodyArea: makeNodeComponent("bodyArea"),
+    changeButton: makeNodeComponent("changeButton"),
+    collapseAble13: makeNodeComponent("collapseAble13"),
+    titleInput2: makeNodeComponent("titleInput2"),
     changeImage: makeNodeComponent("changeImage"),
     collapseAble12: makeNodeComponent("collapseAble12"),
     generateImgInput: makeNodeComponent("generateImgInput"),
-    genericButton: makeNodeComponent("genericButton"),
+    getImgButton: makeNodeComponent("getImgButton"),
     changeDestination: makeNodeComponent("changeDestination"),
     collapseAble2: makeNodeComponent("collapseAble2"),
     destinationLinkInput: makeNodeComponent("destinationLinkInput"),
