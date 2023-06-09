@@ -27,9 +27,12 @@ const openai = new OpenAIApi(configuration);
 //
 // You can also stop extending from DefaultAdPromptProps altogether and have
 // total control over the props for your component.
-export interface AdPromptProps extends DefaultAdPromptProps {}
+export interface AdPromptProps extends DefaultAdPromptProps {
+  adImgSrc: string;
+  setAdImgSrc: any;
+}
 
-function AdPrompt_(props: AdPromptProps, ref: HTMLElementRefOf<"div">) {
+function AdPrompt_( { adImgSrc, setAdImgSrc, ...props}: AdPromptProps, ref: HTMLElementRefOf<"div">) {
   // Use PlasmicAdPrompt to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -48,7 +51,6 @@ function AdPrompt_(props: AdPromptProps, ref: HTMLElementRefOf<"div">) {
   let navigate = useNavigate();
 
   const [prompt, setPrompt] = React.useState("");
-  const [imgSrc, setImgSrc] = React.useState(process.env.REACT_APP_DEFAULT_AD_IMG);
 
   return <PlasmicAdPrompt root={{ ref }}
 
@@ -60,12 +62,12 @@ function AdPrompt_(props: AdPromptProps, ref: HTMLElementRefOf<"div">) {
   }}
   
   img={ {
-    src: imgSrc
+    src: adImgSrc
   }}
 
   selectButton={{
     onClick: () => {
-      navigate("/customize-ad", {state: {adImgSrc: imgSrc}})
+      navigate("/customize-ad", {state: {adImgSrc: adImgSrc}})
     }
   }}
 
@@ -76,7 +78,7 @@ function AdPrompt_(props: AdPromptProps, ref: HTMLElementRefOf<"div">) {
         n: 1,
         size: "1024x1024",
       });
-      setImgSrc(response.data.data[0].url!);
+      setAdImgSrc(response.data.data[0].url!);
     }
   }}
   

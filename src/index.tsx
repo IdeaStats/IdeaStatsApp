@@ -14,14 +14,15 @@ import FinishedAd from './components/FinishedAd';
 export default function App() {
 
   const [selectedAdTemplate, setSelectedAdTemplate] = useState({});
+  const [adImgSrc, setAdImgSrc] = useState(process.env.REACT_APP_DEFAULT_AD_IMG);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<GetStarted />}></Route>
         <Route path="/choose-template" element={<ChooseTemplate />}></Route>
-        <Route path="/ad-prompt" element={<AdPrompt />}></Route>
-        <Route path="/customize-ad" element={<AdPromptSelected setSelectedAdTemplate={setSelectedAdTemplate} />}></Route>
+        <Route path="/ad-prompt" element={<AdPrompt adImgSrc={adImgSrc!} setAdImgSrc={setAdImgSrc} />}></Route>
+        <Route path="/customize-ad" element={<AdPromptSelected adImgSrc={adImgSrc!} setAdImgSrc={setAdImgSrc} selectedAdTemplate={selectedAdTemplate} setSelectedAdTemplate={setSelectedAdTemplate} />}></Route>
         <Route path="/finished-ad" element={<FinishedAd selectedAdTemplate={selectedAdTemplate} />}></Route>
         {/* <Route path="/analytics" element={<AnalyticsPage />}></Route> */}
       </Routes>

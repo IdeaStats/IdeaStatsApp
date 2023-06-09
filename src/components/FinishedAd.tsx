@@ -7,7 +7,7 @@ import {
 } from "./plasmic/idea_stats_v_1/PlasmicFinishedAd";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useLocation } from "react-router";
-import {getAdImg} from "../utils/SharedDataTools"
+import {getAdImg, renderTemplate1} from "../utils/SharedDataTools"
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -49,9 +49,7 @@ function FinishedAd_({selectedAdTemplate, ...props}: FinishedAdProps, ref: HTMLE
   return <PlasmicFinishedAd 
           root={{ ref }}
           
-          img={{
-            src: adImgSrc
-          }}
+          finalAdTemplate={ renderTemplate1( selectedAdTemplate)}
 
           {...props} />;
 }

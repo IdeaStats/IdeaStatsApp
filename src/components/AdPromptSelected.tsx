@@ -7,7 +7,7 @@ import {
 } from "./plasmic/idea_stats_v_1/PlasmicAdPromptSelected";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { useLocation, useNavigate } from "react-router-dom";
-import {getAdImg} from "../utils/SharedDataTools"
+import {getAdImg, renderTemplate1} from "../utils/SharedDataTools"
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -23,11 +23,14 @@ import {getAdImg} from "../utils/SharedDataTools"
 // You can also stop extending from DefaultAdPromptSelectedProps altogether and have
 // total control over the props for your component.
 export interface AdPromptSelectedProps extends DefaultAdPromptSelectedProps {
+  adImgSrc: string;
+  setAdImgSrc: any;
+  selectedAdTemplate: any;
   setSelectedAdTemplate: any;
 }
 
 function AdPromptSelected_(
-  {setSelectedAdTemplate , ...props}: AdPromptSelectedProps,
+  {adImgSrc, setAdImgSrc, selectedAdTemplate, setSelectedAdTemplate, ...props}: AdPromptSelectedProps,
   ref: HTMLElementRefOf<"div">
 ) {
   // Use PlasmicAdPromptSelected to render this component as it was
@@ -46,37 +49,40 @@ function AdPromptSelected_(
   // to do whatever works for you.
 
   let navigate = useNavigate();
-  let location = useLocation();
 
-  let imgSrc = getAdImg(location);
+  let imgSrc = adImgSrc;
 
   let [titleString, setTitleString] = React.useState("Hello");
   let [bodyString, setBodyString] = React.useState("Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
   let [callToActionString, setCallToActionString] = React.useState("Sign Up");
 
+  let templateData = {
+    title: titleString,
+    body: bodyString,
+    callToAction: callToActionString,
+    adImgSrc: imgSrc
+  }
 
-  let adTemplate = {
-    adImgSrc: imgSrc, 
-
-    // Customization in template.
-    title: <h2 className="plasmic_idea_stats_v_1_all__vC+pC plasmic_idea_stats_v_1_h2__TiAPZ PlasmicAdPromptSelected_h2__xlLfB">{titleString}</h2>,
-    body: <div className="plasmic_idea_stats_v_1_all__vC+pC PlasmicAdPromptSelected_text__edznr__A+5F-">{bodyString}</div>,
-    callToAction: callToActionString
-    
-  };
+  // Do this only once on startup.
+  React.useEffect(() => {
+    if (Object.keys( selectedAdTemplate).length > 0){
+      console.log("data:" ,selectedAdTemplate.title)
+      setTitleString(selectedAdTemplate.title);
+      setBodyString(selectedAdTemplate.body);
+      setCallToActionString(selectedAdTemplate.callToAction);
+    }
+  }, [])
   
 
   return <PlasmicAdPromptSelected 
   
     root={{ ref }}
 
-    
-
-    adTemplate1={adTemplate}
+    adTemplate1={renderTemplate1(templateData)}
     
     selectButton={{
       onClick: () => {
-        setSelectedAdTemplate(adTemplate); 
+        setSelectedAdTemplate(templateData); 
         navigate("/finished-ad", {state:{ adImgSrc: imgSrc }});
       }
     }}
