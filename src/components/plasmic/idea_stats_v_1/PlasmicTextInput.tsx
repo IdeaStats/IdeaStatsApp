@@ -144,7 +144,7 @@ function PlasmicTextInput__RenderFunc(props: {
     () =>
       Object.assign(
         {
-          placeholder: "Enter something…" as const
+          placeholder: "Enter something..." as const
         },
         props.args
       ),

@@ -249,6 +249,19 @@
   min-width: 0;
   padding: 8px;
 }
+.changeTitle {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  padding: 0px;
+}
 .collapseAble1:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
@@ -264,68 +277,151 @@
   width: 35px;
   height: 35px;
 }
-.form1:global(.__wab_instance):global(.__wab_instance) {
+.titleInput:global(.__wab_instance) {
+  max-width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.svg__eedcF {
   position: relative;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__acRyA {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.changeBody {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  padding: 0px;
+}
+.collapseAble:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.svg__bkbl5 {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 35px;
+  height: 35px;
+}
+.bodyArea:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  height: 161px;
+  flex-shrink: 0;
+  margin: 8px;
+}
+.changeImage {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 18px;
+  min-width: 0;
+  padding: 0px;
+}
+.collapseAble12:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.svg__oxXll {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  width: 35px;
+  height: 35px;
+}
+.generateImgInput:global(.__wab_instance) {
+  max-width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.svg___11ZBa {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__qSgDl {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.genericButton:global(.__wab_instance) {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.changeDestination {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 12px;
+  min-width: 0;
+  padding: 0px;
 }
 .collapseAble2:global(.__wab_instance) {
-  max-width: none;
+  max-width: 100%;
   position: relative;
   width: 100%;
   height: 100%;
   min-width: 0;
   min-height: 0;
 }
-.svg__liZeG {
+.svg__rFbie {
   position: relative;
   object-fit: cover;
   max-width: 100%;
   width: 35px;
   height: 35px;
 }
-.form2:global(.__wab_instance):global(.__wab_instance) {
+.destinationLinkInput:global(.__wab_instance) {
   max-width: 100%;
-  position: relative;
-  margin-bottom: 22px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
-.collapseAble3:global(.__wab_instance) {
-  max-width: none;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-  min-height: 0;
-}
-.svg__waDo {
+.svg__kpSkv {
   position: relative;
   object-fit: cover;
-  max-width: 100%;
-  width: 35px;
-  height: 35px;
+  width: 1em;
+  height: 1em;
 }
-.form3:global(.__wab_instance):global(.__wab_instance) {
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.collapseAble4:global(.__wab_instance) {
-  max-width: none;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-  min-height: 0;
-}
-.svg___61T3I {
+.svg___2NT3W {
   position: relative;
   object-fit: cover;
-  max-width: 100%;
-  width: 35px;
-  height: 35px;
-}
-.form4:global(.__wab_instance):global(.__wab_instance) {
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  width: 1em;
+  height: 1em;
 }

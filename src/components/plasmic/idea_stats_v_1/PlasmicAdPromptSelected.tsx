@@ -36,8 +36,8 @@ import TextInput from "../../TextInput"; // plasmic-import: LW1ZHmZtc1I/componen
 import GenerateButton from "../../GenerateButton"; // plasmic-import: Fs5OtDdX5n/component
 import AdTemplate1 from "../../AdTemplate1"; // plasmic-import: mz5eL8luPc/component
 import GenericButton from "../../GenericButton"; // plasmic-import: rRlSjYLvCT/component
-import TitleForm from "../../TitleForm"; // plasmic-import: shf87k89kA/component
-import BodyForm from "../../BodyForm"; // plasmic-import: R61mrCin7_P/component
+import { AntdTextArea } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: pTzGlMptTxd/codeComponent
+import { inputHelpers as AntdTextArea_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput"; // plasmic-import: pTzGlMptTxd/codeComponentHelper
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -56,15 +56,9 @@ type VariantPropType = keyof PlasmicAdPromptSelected__VariantsArgs;
 export const PlasmicAdPromptSelected__VariantProps =
   new Array<VariantPropType>();
 
-export type PlasmicAdPromptSelected__ArgsType = {
-  children?: React.ReactNode;
-  slot?: React.ReactNode;
-};
+export type PlasmicAdPromptSelected__ArgsType = {};
 type ArgPropType = keyof PlasmicAdPromptSelected__ArgsType;
-export const PlasmicAdPromptSelected__ArgProps = new Array<ArgPropType>(
-  "children",
-  "slot"
-);
+export const PlasmicAdPromptSelected__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicAdPromptSelected__OverridesType = {
   root?: p.Flex<"div">;
@@ -77,19 +71,22 @@ export type PlasmicAdPromptSelected__OverridesType = {
   resetButton?: p.Flex<typeof GenericButton>;
   selectButton?: p.Flex<typeof GenericButton>;
   componentList?: p.Flex<"div">;
+  changeTitle?: p.Flex<"div">;
   collapseAble1?: p.Flex<typeof GenericButton>;
-  form1?: p.Flex<typeof TitleForm>;
+  titleInput?: p.Flex<typeof TextInput>;
+  changeBody?: p.Flex<"div">;
+  collapseAble?: p.Flex<typeof GenericButton>;
+  bodyArea?: p.Flex<typeof AntdTextArea>;
+  changeImage?: p.Flex<"div">;
+  collapseAble12?: p.Flex<typeof GenericButton>;
+  generateImgInput?: p.Flex<typeof TextInput>;
+  genericButton?: p.Flex<typeof GenericButton>;
+  changeDestination?: p.Flex<"div">;
   collapseAble2?: p.Flex<typeof GenericButton>;
-  form2?: p.Flex<typeof BodyForm>;
-  collapseAble3?: p.Flex<typeof GenericButton>;
-  form3?: p.Flex<typeof TitleForm>;
-  collapseAble4?: p.Flex<typeof GenericButton>;
-  form4?: p.Flex<typeof TitleForm>;
+  destinationLinkInput?: p.Flex<typeof TextInput>;
 };
 
 export interface DefaultAdPromptSelectedProps {
-  children?: React.ReactNode;
-  slot?: React.ReactNode;
   className?: string;
 }
 
@@ -126,6 +123,30 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
     () => [
       {
         path: "textInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "titleInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "bodyArea.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "generateImgInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+      },
+      {
+        path: "destinationLinkInput.value",
         type: "private",
         variableType: "text",
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
@@ -332,129 +353,253 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                     data-plasmic-override={overrides.componentList}
                     className={classNames(projectcss.all, sty.componentList)}
                   >
-                    <GenericButton
-                      data-plasmic-name={"collapseAble1"}
-                      data-plasmic-override={overrides.collapseAble1}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.collapseAble1
-                      )}
-                    >
-                      <Icon2Icon
-                        className={classNames(projectcss.all, sty.svg__ze4KL)}
-                        role={"img"}
-                      />
-
+                    {true ? (
                       <div
+                        data-plasmic-name={"changeTitle"}
+                        data-plasmic-override={overrides.changeTitle}
+                        className={classNames(projectcss.all, sty.changeTitle)}
+                      >
+                        <GenericButton
+                          data-plasmic-name={"collapseAble1"}
+                          data-plasmic-override={overrides.collapseAble1}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.collapseAble1
+                          )}
+                        >
+                          <Icon2Icon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__ze4KL
+                            )}
+                            role={"img"}
+                          />
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__zMubc
+                            )}
+                          >
+                            {"Change Title"}
+                          </div>
+                        </GenericButton>
+                        <TextInput
+                          data-plasmic-name={"titleInput"}
+                          data-plasmic-override={overrides.titleInput}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.titleInput
+                          )}
+                          onChange={(...eventArgs) => {
+                            p.generateStateOnChangeProp($state, [
+                              "titleInput",
+                              "value"
+                            ])((e => e.target?.value).apply(null, eventArgs));
+                          }}
+                          value={
+                            p.generateStateValueProp($state, [
+                              "titleInput",
+                              "value"
+                            ]) ?? ""
+                          }
+                        />
+                      </div>
+                    ) : null}
+                    {true ? (
+                      <div
+                        data-plasmic-name={"changeBody"}
+                        data-plasmic-override={overrides.changeBody}
+                        className={classNames(projectcss.all, sty.changeBody)}
+                      >
+                        <GenericButton
+                          data-plasmic-name={"collapseAble"}
+                          data-plasmic-override={overrides.collapseAble}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.collapseAble
+                          )}
+                        >
+                          <Icon2Icon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__bkbl5
+                            )}
+                            role={"img"}
+                          />
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__qhdQw
+                            )}
+                          >
+                            {"Change Body"}
+                          </div>
+                        </GenericButton>
+                        {(() => {
+                          const child$Props = {
+                            className: classNames(
+                              "__wab_instance",
+                              sty.bodyArea
+                            ),
+                            onChange:
+                              p.generateStateOnChangePropForCodeComponents(
+                                $state,
+                                "value",
+                                ["bodyArea", "value"],
+                                AntdTextArea_Helpers
+                              ),
+                            value: p.generateStateValueProp($state, [
+                              "bodyArea",
+                              "value"
+                            ])
+                          };
+                          p.initializeCodeComponentStates(
+                            $state,
+                            [
+                              {
+                                name: "value",
+                                plasmicStateName: "bodyArea.value"
+                              }
+                            ],
+                            [],
+                            AntdTextArea_Helpers ?? {},
+                            child$Props
+                          );
+
+                          return (
+                            <AntdTextArea
+                              data-plasmic-name={"bodyArea"}
+                              data-plasmic-override={overrides.bodyArea}
+                              {...child$Props}
+                            />
+                          );
+                        })()}
+                      </div>
+                    ) : null}
+                    {true ? (
+                      <div
+                        data-plasmic-name={"changeImage"}
+                        data-plasmic-override={overrides.changeImage}
+                        className={classNames(projectcss.all, sty.changeImage)}
+                      >
+                        <GenericButton
+                          data-plasmic-name={"collapseAble12"}
+                          data-plasmic-override={overrides.collapseAble12}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.collapseAble12
+                          )}
+                        >
+                          <Icon2Icon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__oxXll
+                            )}
+                            role={"img"}
+                          />
+
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__xfsae
+                            )}
+                          >
+                            {"Change Image"}
+                          </div>
+                        </GenericButton>
+                        <TextInput
+                          data-plasmic-name={"generateImgInput"}
+                          data-plasmic-override={overrides.generateImgInput}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.generateImgInput
+                          )}
+                          onChange={(...eventArgs) => {
+                            p.generateStateOnChangeProp($state, [
+                              "generateImgInput",
+                              "value"
+                            ])((e => e.target?.value).apply(null, eventArgs));
+                          }}
+                          value={
+                            p.generateStateValueProp($state, [
+                              "generateImgInput",
+                              "value"
+                            ]) ?? ""
+                          }
+                        />
+
+                        <GenericButton
+                          data-plasmic-name={"genericButton"}
+                          data-plasmic-override={overrides.genericButton}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.genericButton
+                          )}
+                        />
+                      </div>
+                    ) : null}
+                    {true ? (
+                      <div
+                        data-plasmic-name={"changeDestination"}
+                        data-plasmic-override={overrides.changeDestination}
                         className={classNames(
                           projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__zMubc
+                          sty.changeDestination
                         )}
                       >
-                        {"Change Title"}
-                      </div>
-                    </GenericButton>
-                    <TitleForm
-                      data-plasmic-name={"form1"}
-                      data-plasmic-override={overrides.form1}
-                      className={classNames("__wab_instance", sty.form1)}
-                    >
-                      {p.renderPlasmicSlot({
-                        defaultContents: "Title",
-                        value: args.slot
-                      })}
-                    </TitleForm>
-                    <GenericButton
-                      data-plasmic-name={"collapseAble2"}
-                      data-plasmic-override={overrides.collapseAble2}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.collapseAble2
-                      )}
-                    >
-                      <Icon2Icon
-                        className={classNames(projectcss.all, sty.svg__liZeG)}
-                        role={"img"}
-                      />
+                        <GenericButton
+                          data-plasmic-name={"collapseAble2"}
+                          data-plasmic-override={overrides.collapseAble2}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.collapseAble2
+                          )}
+                        >
+                          <Icon2Icon
+                            className={classNames(
+                              projectcss.all,
+                              sty.svg__rFbie
+                            )}
+                            role={"img"}
+                          />
 
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__cctqz
-                        )}
-                      >
-                        {"Change Body"}
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              projectcss.__wab_text,
+                              sty.text__zjlh5
+                            )}
+                          >
+                            {"Destination Link"}
+                          </div>
+                        </GenericButton>
+                        <TextInput
+                          data-plasmic-name={"destinationLinkInput"}
+                          data-plasmic-override={overrides.destinationLinkInput}
+                          className={classNames(
+                            "__wab_instance",
+                            sty.destinationLinkInput
+                          )}
+                          onChange={(...eventArgs) => {
+                            p.generateStateOnChangeProp($state, [
+                              "destinationLinkInput",
+                              "value"
+                            ])((e => e.target?.value).apply(null, eventArgs));
+                          }}
+                          value={
+                            p.generateStateValueProp($state, [
+                              "destinationLinkInput",
+                              "value"
+                            ]) ?? ""
+                          }
+                        />
                       </div>
-                    </GenericButton>
-                    <BodyForm
-                      data-plasmic-name={"form2"}
-                      data-plasmic-override={overrides.form2}
-                      className={classNames("__wab_instance", sty.form2)}
-                    />
-
-                    <GenericButton
-                      data-plasmic-name={"collapseAble3"}
-                      data-plasmic-override={overrides.collapseAble3}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.collapseAble3
-                      )}
-                    >
-                      <Icon2Icon
-                        className={classNames(projectcss.all, sty.svg__waDo)}
-                        role={"img"}
-                      />
-
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text__mQv6M
-                        )}
-                      >
-                        {"Change Image"}
-                      </div>
-                    </GenericButton>
-                    <TitleForm
-                      data-plasmic-name={"form3"}
-                      data-plasmic-override={overrides.form3}
-                      className={classNames("__wab_instance", sty.form3)}
-                    >
-                      {p.renderPlasmicSlot({
-                        defaultContents: "Image Prompt",
-                        value: args.children
-                      })}
-                    </TitleForm>
-                    <GenericButton
-                      data-plasmic-name={"collapseAble4"}
-                      data-plasmic-override={overrides.collapseAble4}
-                      className={classNames(
-                        "__wab_instance",
-                        sty.collapseAble4
-                      )}
-                    >
-                      <Icon2Icon
-                        className={classNames(projectcss.all, sty.svg___61T3I)}
-                        role={"img"}
-                      />
-
-                      <div
-                        className={classNames(
-                          projectcss.all,
-                          projectcss.__wab_text,
-                          sty.text___9E4CK
-                        )}
-                      >
-                        {"Ad Link"}
-                      </div>
-                    </GenericButton>
-                    <TitleForm
-                      data-plasmic-name={"form4"}
-                      data-plasmic-override={overrides.form4}
-                      className={classNames("__wab_instance", sty.form4)}
-                    />
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -478,14 +623,19 @@ const PlasmicDescendants = {
     "resetButton",
     "selectButton",
     "componentList",
+    "changeTitle",
     "collapseAble1",
-    "form1",
+    "titleInput",
+    "changeBody",
+    "collapseAble",
+    "bodyArea",
+    "changeImage",
+    "collapseAble12",
+    "generateImgInput",
+    "genericButton",
+    "changeDestination",
     "collapseAble2",
-    "form2",
-    "collapseAble3",
-    "form3",
-    "collapseAble4",
-    "form4"
+    "destinationLinkInput"
   ],
   h1: ["h1"],
   columns: [
@@ -497,14 +647,19 @@ const PlasmicDescendants = {
     "resetButton",
     "selectButton",
     "componentList",
+    "changeTitle",
     "collapseAble1",
-    "form1",
+    "titleInput",
+    "changeBody",
+    "collapseAble",
+    "bodyArea",
+    "changeImage",
+    "collapseAble12",
+    "generateImgInput",
+    "genericButton",
+    "changeDestination",
     "collapseAble2",
-    "form2",
-    "collapseAble3",
-    "form3",
-    "collapseAble4",
-    "form4"
+    "destinationLinkInput"
   ],
   textInput: ["textInput"],
   generateButton: ["generateButton"],
@@ -514,23 +669,42 @@ const PlasmicDescendants = {
   selectButton: ["selectButton"],
   componentList: [
     "componentList",
+    "changeTitle",
     "collapseAble1",
-    "form1",
+    "titleInput",
+    "changeBody",
+    "collapseAble",
+    "bodyArea",
+    "changeImage",
+    "collapseAble12",
+    "generateImgInput",
+    "genericButton",
+    "changeDestination",
     "collapseAble2",
-    "form2",
-    "collapseAble3",
-    "form3",
-    "collapseAble4",
-    "form4"
+    "destinationLinkInput"
   ],
+  changeTitle: ["changeTitle", "collapseAble1", "titleInput"],
   collapseAble1: ["collapseAble1"],
-  form1: ["form1"],
+  titleInput: ["titleInput"],
+  changeBody: ["changeBody", "collapseAble", "bodyArea"],
+  collapseAble: ["collapseAble"],
+  bodyArea: ["bodyArea"],
+  changeImage: [
+    "changeImage",
+    "collapseAble12",
+    "generateImgInput",
+    "genericButton"
+  ],
+  collapseAble12: ["collapseAble12"],
+  generateImgInput: ["generateImgInput"],
+  genericButton: ["genericButton"],
+  changeDestination: [
+    "changeDestination",
+    "collapseAble2",
+    "destinationLinkInput"
+  ],
   collapseAble2: ["collapseAble2"],
-  form2: ["form2"],
-  collapseAble3: ["collapseAble3"],
-  form3: ["form3"],
-  collapseAble4: ["collapseAble4"],
-  form4: ["form4"]
+  destinationLinkInput: ["destinationLinkInput"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -546,14 +720,19 @@ type NodeDefaultElementType = {
   resetButton: typeof GenericButton;
   selectButton: typeof GenericButton;
   componentList: "div";
+  changeTitle: "div";
   collapseAble1: typeof GenericButton;
-  form1: typeof TitleForm;
+  titleInput: typeof TextInput;
+  changeBody: "div";
+  collapseAble: typeof GenericButton;
+  bodyArea: typeof AntdTextArea;
+  changeImage: "div";
+  collapseAble12: typeof GenericButton;
+  generateImgInput: typeof TextInput;
+  genericButton: typeof GenericButton;
+  changeDestination: "div";
   collapseAble2: typeof GenericButton;
-  form2: typeof BodyForm;
-  collapseAble3: typeof GenericButton;
-  form3: typeof TitleForm;
-  collapseAble4: typeof GenericButton;
-  form4: typeof TitleForm;
+  destinationLinkInput: typeof TextInput;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -625,14 +804,19 @@ export const PlasmicAdPromptSelected = Object.assign(
     resetButton: makeNodeComponent("resetButton"),
     selectButton: makeNodeComponent("selectButton"),
     componentList: makeNodeComponent("componentList"),
+    changeTitle: makeNodeComponent("changeTitle"),
     collapseAble1: makeNodeComponent("collapseAble1"),
-    form1: makeNodeComponent("form1"),
+    titleInput: makeNodeComponent("titleInput"),
+    changeBody: makeNodeComponent("changeBody"),
+    collapseAble: makeNodeComponent("collapseAble"),
+    bodyArea: makeNodeComponent("bodyArea"),
+    changeImage: makeNodeComponent("changeImage"),
+    collapseAble12: makeNodeComponent("collapseAble12"),
+    generateImgInput: makeNodeComponent("generateImgInput"),
+    genericButton: makeNodeComponent("genericButton"),
+    changeDestination: makeNodeComponent("changeDestination"),
     collapseAble2: makeNodeComponent("collapseAble2"),
-    form2: makeNodeComponent("form2"),
-    collapseAble3: makeNodeComponent("collapseAble3"),
-    form3: makeNodeComponent("form3"),
-    collapseAble4: makeNodeComponent("collapseAble4"),
-    form4: makeNodeComponent("form4"),
+    destinationLinkInput: makeNodeComponent("destinationLinkInput"),
 
     // Metadata about props expected for PlasmicAdPromptSelected
     internalVariantProps: PlasmicAdPromptSelected__VariantProps,
