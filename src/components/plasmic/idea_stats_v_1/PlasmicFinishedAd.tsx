@@ -32,6 +32,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import AdTemplate1 from "../../AdTemplate1"; // plasmic-import: mz5eL8luPc/component
 import GenericButton from "../../GenericButton"; // plasmic-import: rRlSjYLvCT/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -52,7 +53,7 @@ export const PlasmicFinishedAd__ArgProps = new Array<ArgPropType>();
 export type PlasmicFinishedAd__OverridesType = {
   root?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
-  img?: p.Flex<typeof p.PlasmicImg>;
+  finalAdTemplate?: p.Flex<typeof AdTemplate1>;
 };
 
 export interface DefaultFinishedAdProps {
@@ -120,21 +121,10 @@ function PlasmicFinishedAd__RenderFunc(props: {
               >
                 {"Publish & Share your Ad"}
               </h1>
-              <p.PlasmicImg
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"100%" as const}
-                loading={"lazy" as const}
-                src={
-                  "https://images.unsplash.com/photo-1655720840699-67e72c0909d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80" as const
-                }
+              <AdTemplate1
+                data-plasmic-name={"finalAdTemplate"}
+                data-plasmic-override={overrides.finalAdTemplate}
+                className={classNames("__wab_instance", sty.finalAdTemplate)}
               />
 
               {true ? (
@@ -170,9 +160,9 @@ function PlasmicFinishedAd__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "img"],
+  root: ["root", "h1", "finalAdTemplate"],
   h1: ["h1"],
-  img: ["img"]
+  finalAdTemplate: ["finalAdTemplate"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -180,7 +170,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   h1: "h1";
-  img: typeof p.PlasmicImg;
+  finalAdTemplate: typeof AdTemplate1;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -244,7 +234,7 @@ export const PlasmicFinishedAd = Object.assign(
   {
     // Helper components rendering sub-elements
     h1: makeNodeComponent("h1"),
-    img: makeNodeComponent("img"),
+    finalAdTemplate: makeNodeComponent("finalAdTemplate"),
 
     // Metadata about props expected for PlasmicFinishedAd
     internalVariantProps: PlasmicFinishedAd__VariantProps,
