@@ -60,15 +60,18 @@ function AdPromptSelected_(
   
     root={{ ref }}
 
+    
+
     adTemplate1={{
       adImgSrc: imgSrc,
 
       // Customization in template.
       title: <h2 className="plasmic_idea_stats_v_1_all__vC+pC plasmic_idea_stats_v_1_h2__TiAPZ PlasmicAdPromptSelected_h2__xlLfB">{titleString}</h2>,
       body: <div className="plasmic_idea_stats_v_1_all__vC+pC PlasmicAdPromptSelected_text__edznr__A+5F-">{bodyString}</div>,
-      callToAction: {
-        children: callToActionString
-      }
+      // callToAction: {
+      //   children: callToActionString
+      // }
+      
     }}
     
     selectButton={{
@@ -77,9 +80,21 @@ function AdPromptSelected_(
       }
     }}
 
-    form1={{
-      children: <TextInput onChange={ (event) => { setTitleString(event.target.value) } } ></TextInput>
+    titleInput={{
+      onChange: (event) => {
+        setTitleString(event.target.value);
+      }
     }}
+
+    bodyArea={{
+      onChange:  (event) => {
+        setBodyString(event.target.value);
+      }
+    }}
+
+    // form1={{
+    //   children: <TextInput onChange={ (event) => { setTitleString(event.target.value) } } ></TextInput>
+    // }}
     
     {...props} />;
 }
