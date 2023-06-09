@@ -22,9 +22,11 @@ import {getAdImg} from "../utils/SharedDataTools"
 //
 // You can also stop extending from DefaultFinishedAdProps altogether and have
 // total control over the props for your component.
-export interface FinishedAdProps extends DefaultFinishedAdProps {}
+export interface FinishedAdProps extends DefaultFinishedAdProps {
+  selectedAdTemplate: any
+}
 
-function FinishedAd_(props: FinishedAdProps, ref: HTMLElementRefOf<"div">) {
+function FinishedAd_({selectedAdTemplate, ...props}: FinishedAdProps, ref: HTMLElementRefOf<"div">) {
   // Use PlasmicFinishedAd to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
