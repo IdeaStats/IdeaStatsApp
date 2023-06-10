@@ -22,9 +22,10 @@ import { HTMLElementRefOf } from "@plasmicapp/react-web";
 // total control over the props for your component.
 export interface AdTemplate1Props extends DefaultAdTemplate1Props {
   onClick?: () => void;
+  componentRef?: React.MutableRefObject<any>;
 }
 
-function AdTemplate1_(props: AdTemplate1Props, ref: HTMLElementRefOf<"button">) {
+function AdTemplate1_({componentRef , ...props}: AdTemplate1Props, ref: HTMLElementRefOf<"button">) {
   // Use PlasmicAdTemplate1 to render this component as it was
   // designed in Plasmic, by activating the appropriate variants,
   // attaching the appropriate event handlers, etc.  You
@@ -40,7 +41,9 @@ function AdTemplate1_(props: AdTemplate1Props, ref: HTMLElementRefOf<"button">) 
   // By default, we are just piping all AdTemplate1Props here, but feel free
   // to do whatever works for you.
 
-  return <PlasmicAdTemplate1 
+  componentRef = React.useRef();
+
+  return <PlasmicAdTemplate1 ref={componentRef} 
     root={{ ref }} {...props} />;
 }
 

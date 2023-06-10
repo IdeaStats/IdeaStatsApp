@@ -55,12 +55,14 @@ function AdPromptSelected_(
   let [titleString, setTitleString] = React.useState("Hello");
   let [bodyString, setBodyString] = React.useState("Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
   let [callToActionString, setCallToActionString] = React.useState("Sign Up");
+  // let [componentRef, setComponentRef]
 
   let templateData = {
     title: titleString,
     body: bodyString,
     callToAction: callToActionString,
-    adImgSrc: imgSrc
+    adImgSrc: imgSrc,
+    componentRef: {}
   }
 
   // Do this only once on startup.
