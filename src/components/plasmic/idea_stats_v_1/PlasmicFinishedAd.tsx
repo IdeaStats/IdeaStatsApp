@@ -54,6 +54,8 @@ export type PlasmicFinishedAd__OverridesType = {
   root?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
   finalAdTemplate?: p.Flex<typeof AdTemplate1>;
+  downloadButton?: p.Flex<typeof GenericButton>;
+  shareButton?: p.Flex<typeof GenericButton>;
 };
 
 export interface DefaultFinishedAdProps {
@@ -158,18 +160,16 @@ function PlasmicFinishedAd__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox__b3Fg9)}
                 >
                   <GenericButton
-                    className={classNames(
-                      "__wab_instance",
-                      sty.genericButton__wbtuI
-                    )}
+                    data-plasmic-name={"downloadButton"}
+                    data-plasmic-override={overrides.downloadButton}
+                    className={classNames("__wab_instance", sty.downloadButton)}
                   >
                     {"Download"}
                   </GenericButton>
                   <GenericButton
-                    className={classNames(
-                      "__wab_instance",
-                      sty.genericButton__qhmO2
-                    )}
+                    data-plasmic-name={"shareButton"}
+                    data-plasmic-override={overrides.shareButton}
+                    className={classNames("__wab_instance", sty.shareButton)}
                   >
                     {"Share"}
                   </GenericButton>
@@ -184,9 +184,11 @@ function PlasmicFinishedAd__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "finalAdTemplate"],
+  root: ["root", "h1", "finalAdTemplate", "downloadButton", "shareButton"],
   h1: ["h1"],
-  finalAdTemplate: ["finalAdTemplate"]
+  finalAdTemplate: ["finalAdTemplate"],
+  downloadButton: ["downloadButton"],
+  shareButton: ["shareButton"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -195,6 +197,8 @@ type NodeDefaultElementType = {
   root: "div";
   h1: "h1";
   finalAdTemplate: typeof AdTemplate1;
+  downloadButton: typeof GenericButton;
+  shareButton: typeof GenericButton;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -259,6 +263,8 @@ export const PlasmicFinishedAd = Object.assign(
     // Helper components rendering sub-elements
     h1: makeNodeComponent("h1"),
     finalAdTemplate: makeNodeComponent("finalAdTemplate"),
+    downloadButton: makeNodeComponent("downloadButton"),
+    shareButton: makeNodeComponent("shareButton"),
 
     // Metadata about props expected for PlasmicFinishedAd
     internalVariantProps: PlasmicFinishedAd__VariantProps,
