@@ -64,6 +64,8 @@ export type PlasmicAdPrompt__OverridesType = {
   refreshButton?: p.Flex<typeof GenericButton>;
   selectButton?: p.Flex<typeof GenericButton>;
   text?: p.Flex<"div">;
+  loadingBox?: p.Flex<"div">;
+  loadingCover?: p.Flex<"div">;
 };
 
 export interface DefaultAdPromptProps {
@@ -229,6 +231,24 @@ function PlasmicAdPrompt__RenderFunc(props: {
               ) : null}
             </div>
           ) : null}
+          {true ? (
+            <div
+              data-plasmic-name={"loadingBox"}
+              data-plasmic-override={overrides.loadingBox}
+              className={classNames(projectcss.all, sty.loadingBox)}
+            >
+              <div
+                data-plasmic-name={"loadingCover"}
+                data-plasmic-override={overrides.loadingCover}
+                className={classNames(projectcss.all, sty.loadingCover)}
+              />
+
+              <IconIcon
+                className={classNames(projectcss.all, sty.svg__xj3N)}
+                role={"img"}
+              />
+            </div>
+          ) : null}
         </div>
       </div>
     </React.Fragment>
@@ -244,7 +264,9 @@ const PlasmicDescendants = {
     "img",
     "refreshButton",
     "selectButton",
-    "text"
+    "text",
+    "loadingBox",
+    "loadingCover"
   ],
   h1: ["h1"],
   textInput: ["textInput"],
@@ -252,7 +274,9 @@ const PlasmicDescendants = {
   img: ["img"],
   refreshButton: ["refreshButton"],
   selectButton: ["selectButton", "text"],
-  text: ["text"]
+  text: ["text"],
+  loadingBox: ["loadingBox", "loadingCover"],
+  loadingCover: ["loadingCover"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -266,6 +290,8 @@ type NodeDefaultElementType = {
   refreshButton: typeof GenericButton;
   selectButton: typeof GenericButton;
   text: "div";
+  loadingBox: "div";
+  loadingCover: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -335,6 +361,8 @@ export const PlasmicAdPrompt = Object.assign(
     refreshButton: makeNodeComponent("refreshButton"),
     selectButton: makeNodeComponent("selectButton"),
     text: makeNodeComponent("text"),
+    loadingBox: makeNodeComponent("loadingBox"),
+    loadingCover: makeNodeComponent("loadingCover"),
 
     // Metadata about props expected for PlasmicAdPrompt
     internalVariantProps: PlasmicAdPrompt__VariantProps,

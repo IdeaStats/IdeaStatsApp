@@ -67,7 +67,6 @@ export type PlasmicAdPromptSelected__OverridesType = {
   textInput?: p.Flex<typeof TextInput>;
   generateButton?: p.Flex<typeof GenerateButton>;
   adTemplate1?: p.Flex<typeof AdTemplate1>;
-  h2?: p.Flex<"h2">;
   resetButton?: p.Flex<typeof GenericButton>;
   selectButton?: p.Flex<typeof GenericButton>;
   componentList?: p.Flex<"div">;
@@ -286,34 +285,6 @@ function PlasmicAdPromptSelected__RenderFunc(props: {
                               "__wab_instance",
                               sty.adTemplate1
                             )}
-                            title={
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text___6MAi2
-                                )}
-                              >
-                                <React.Fragment>
-                                  <React.Fragment>{""}</React.Fragment>
-                                  {
-                                    <h2
-                                      data-plasmic-name={"h2"}
-                                      data-plasmic-override={overrides.h2}
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.h2,
-                                        projectcss.__wab_text,
-                                        sty.h2
-                                      )}
-                                    >
-                                      {"Ad Title"}
-                                    </h2>
-                                  }
-                                  <React.Fragment>{""}</React.Fragment>
-                                </React.Fragment>
-                              </div>
-                            }
                           />
 
                           {true ? (
@@ -695,7 +666,6 @@ const PlasmicDescendants = {
     "textInput",
     "generateButton",
     "adTemplate1",
-    "h2",
     "resetButton",
     "selectButton",
     "componentList",
@@ -722,7 +692,6 @@ const PlasmicDescendants = {
     "textInput",
     "generateButton",
     "adTemplate1",
-    "h2",
     "resetButton",
     "selectButton",
     "componentList",
@@ -745,8 +714,7 @@ const PlasmicDescendants = {
   ],
   textInput: ["textInput"],
   generateButton: ["generateButton"],
-  adTemplate1: ["adTemplate1", "h2"],
-  h2: ["h2"],
+  adTemplate1: ["adTemplate1"],
   resetButton: ["resetButton"],
   selectButton: ["selectButton"],
   componentList: [
@@ -804,7 +772,6 @@ type NodeDefaultElementType = {
   textInput: typeof TextInput;
   generateButton: typeof GenerateButton;
   adTemplate1: typeof AdTemplate1;
-  h2: "h2";
   resetButton: typeof GenericButton;
   selectButton: typeof GenericButton;
   componentList: "div";
@@ -891,7 +858,6 @@ export const PlasmicAdPromptSelected = Object.assign(
     textInput: makeNodeComponent("textInput"),
     generateButton: makeNodeComponent("generateButton"),
     adTemplate1: makeNodeComponent("adTemplate1"),
-    h2: makeNodeComponent("h2"),
     resetButton: makeNodeComponent("resetButton"),
     selectButton: makeNodeComponent("selectButton"),
     componentList: makeNodeComponent("componentList"),
