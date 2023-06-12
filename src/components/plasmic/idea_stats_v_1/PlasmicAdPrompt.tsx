@@ -35,6 +35,7 @@ import {
 import TextInput from "../../TextInput"; // plasmic-import: LW1ZHmZtc1I/component
 import GenerateButton from "../../GenerateButton"; // plasmic-import: Fs5OtDdX5n/component
 import GenericButton from "../../GenericButton"; // plasmic-import: rRlSjYLvCT/component
+import LoadingBox from "../../LoadingBox"; // plasmic-import: NfWt_UBWT-/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -64,8 +65,7 @@ export type PlasmicAdPrompt__OverridesType = {
   refreshButton?: p.Flex<typeof GenericButton>;
   selectButton?: p.Flex<typeof GenericButton>;
   text?: p.Flex<"div">;
-  loadingBox?: p.Flex<"div">;
-  loadingCover?: p.Flex<"div">;
+  loadingBox?: p.Flex<typeof LoadingBox>;
 };
 
 export interface DefaultAdPromptProps {
@@ -232,22 +232,11 @@ function PlasmicAdPrompt__RenderFunc(props: {
             </div>
           ) : null}
           {true ? (
-            <div
+            <LoadingBox
               data-plasmic-name={"loadingBox"}
               data-plasmic-override={overrides.loadingBox}
-              className={classNames(projectcss.all, sty.loadingBox)}
-            >
-              <div
-                data-plasmic-name={"loadingCover"}
-                data-plasmic-override={overrides.loadingCover}
-                className={classNames(projectcss.all, sty.loadingCover)}
-              />
-
-              <IconIcon
-                className={classNames(projectcss.all, sty.svg__xj3N)}
-                role={"img"}
-              />
-            </div>
+              className={classNames("__wab_instance", sty.loadingBox)}
+            />
           ) : null}
         </div>
       </div>
@@ -265,8 +254,7 @@ const PlasmicDescendants = {
     "refreshButton",
     "selectButton",
     "text",
-    "loadingBox",
-    "loadingCover"
+    "loadingBox"
   ],
   h1: ["h1"],
   textInput: ["textInput"],
@@ -275,8 +263,7 @@ const PlasmicDescendants = {
   refreshButton: ["refreshButton"],
   selectButton: ["selectButton", "text"],
   text: ["text"],
-  loadingBox: ["loadingBox", "loadingCover"],
-  loadingCover: ["loadingCover"]
+  loadingBox: ["loadingBox"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -290,8 +277,7 @@ type NodeDefaultElementType = {
   refreshButton: typeof GenericButton;
   selectButton: typeof GenericButton;
   text: "div";
-  loadingBox: "div";
-  loadingCover: "div";
+  loadingBox: typeof LoadingBox;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -362,7 +348,6 @@ export const PlasmicAdPrompt = Object.assign(
     selectButton: makeNodeComponent("selectButton"),
     text: makeNodeComponent("text"),
     loadingBox: makeNodeComponent("loadingBox"),
-    loadingCover: makeNodeComponent("loadingCover"),
 
     // Metadata about props expected for PlasmicAdPrompt
     internalVariantProps: PlasmicAdPrompt__VariantProps,

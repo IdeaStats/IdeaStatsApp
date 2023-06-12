@@ -559,6 +559,19 @@
           "cssFilePath": "plasmic/idea_stats_v_1/PlasmicFinishedAd.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "NfWt_UBWT-",
+          "name": "LoadingBox",
+          "type": "managed",
+          "projectId": "iKm2w5zQkVZvuqT51PP4Eo",
+          "renderModuleFilePath": "plasmic/idea_stats_v_1/PlasmicLoadingBox.tsx",
+          "importSpec": {
+            "modulePath": "LoadingBox.tsx"
+          },
+          "cssFilePath": "plasmic/idea_stats_v_1/PlasmicLoadingBox.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -708,7 +721,8 @@
           "displayName": "hostless-loading-boundary",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ]
+      ],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {
