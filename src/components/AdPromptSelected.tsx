@@ -55,14 +55,15 @@ function AdPromptSelected_(
   let [titleString, setTitleString] = React.useState("Hello");
   let [bodyString, setBodyString] = React.useState("Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
   let [callToActionString, setCallToActionString] = React.useState("Sign Up");
-  // let [componentRef, setComponentRef]
+  let [componentRef, setComponentRef] = React.useState({})
 
   let templateData = {
     title: titleString,
     body: bodyString,
     callToAction: callToActionString,
     adImgSrc: imgSrc,
-    componentRef: {}
+    componentRef: componentRef,
+    setComponentRef: setComponentRef
   }
 
   // Do this only once on startup.
@@ -72,6 +73,7 @@ function AdPromptSelected_(
       setTitleString(selectedAdTemplate.title);
       setBodyString(selectedAdTemplate.body);
       setCallToActionString(selectedAdTemplate.callToAction);
+      setComponentRef(selectedAdTemplate.setComponentRef);
     }
   }, [])
   
@@ -106,7 +108,7 @@ function AdPromptSelected_(
         setCallToActionString(event.target.value);
       }
     }}
-    
+
     {...props} />;
 }
 

@@ -7,6 +7,7 @@ import {
 } from "./plasmic/idea_stats_v_1/PlasmicFinishedAd";
 import { HTMLElementRefOf } from "@plasmicapp/react-web";
 import { renderTemplate1} from "../utils/SharedDataTools"
+import { exportComponentAsJPEG } from "react-component-export-image";
 
 // Your component props start with props for variants and slots you defined
 // in Plasmic, but you can add more here, like event handlers that you can
@@ -45,6 +46,13 @@ function FinishedAd_({selectedAdTemplate, ...props}: FinishedAdProps, ref: HTMLE
           root={{ ref }}
           
           finalAdTemplate={ renderTemplate1( selectedAdTemplate)}
+
+          downloadButton={{ 
+            onClick: () => {
+              console.log(selectedAdTemplate);
+              exportComponentAsJPEG(selectedAdTemplate.componentRef);
+            } 
+          }}
 
           {...props} />;
 }
