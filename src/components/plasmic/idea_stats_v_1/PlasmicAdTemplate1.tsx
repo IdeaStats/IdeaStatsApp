@@ -64,9 +64,9 @@ export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>(
 
 export type PlasmicAdTemplate1__OverridesType = {
   root?: p.Flex<"button">;
+  callToAction?: p.Flex<typeof Button2>;
   img?: p.Flex<typeof p.PlasmicImg>;
   screenCover?: p.Flex<"div">;
-  callToAction?: p.Flex<typeof Button2>;
 };
 
 export interface DefaultAdTemplate1Props {
@@ -169,33 +169,10 @@ function PlasmicAdTemplate1__RenderFunc(props: {
               value: args.title
             })}
           </div>
-          <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
-            <p.PlasmicImg
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
-              alt={""}
-              className={classNames(sty.img)}
-              displayHeight={"100%" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"none" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"100%" as const}
-              loading={"lazy" as const}
-              src={args.adImgSrc}
-            />
-          </div>
-          {true ? (
-            <div
-              data-plasmic-name={"screenCover"}
-              data-plasmic-override={overrides.screenCover}
-              className={classNames(projectcss.all, sty.screenCover)}
-            />
-          ) : null}
           <div className={classNames(projectcss.all, sty.freeBox__oeZcI)}>
             {p.renderPlasmicSlot({
               defaultContents:
-                "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n",
+                "Ad body. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
               value: args.body,
               className: classNames(sty.slotTargetBody)
             })}
@@ -221,6 +198,29 @@ function PlasmicAdTemplate1__RenderFunc(props: {
               value: args.callToAction
             })}
           </Button2>
+          <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
+            <p.PlasmicImg
+              data-plasmic-name={"img"}
+              data-plasmic-override={overrides.img}
+              alt={""}
+              className={classNames(sty.img)}
+              displayHeight={"100%" as const}
+              displayMaxHeight={"none" as const}
+              displayMaxWidth={"none" as const}
+              displayMinHeight={"0" as const}
+              displayMinWidth={"0" as const}
+              displayWidth={"100%" as const}
+              loading={"lazy" as const}
+              src={args.adImgSrc}
+            />
+          </div>
+          {true ? (
+            <div
+              data-plasmic-name={"screenCover"}
+              data-plasmic-override={overrides.screenCover}
+              className={classNames(projectcss.all, sty.screenCover)}
+            />
+          ) : null}
         </div>
       ) : null}
     </button>
@@ -228,19 +228,19 @@ function PlasmicAdTemplate1__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "img", "screenCover", "callToAction"],
+  root: ["root", "callToAction", "img", "screenCover"],
+  callToAction: ["callToAction"],
   img: ["img"],
-  screenCover: ["screenCover"],
-  callToAction: ["callToAction"]
+  screenCover: ["screenCover"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "button";
+  callToAction: typeof Button2;
   img: typeof p.PlasmicImg;
   screenCover: "div";
-  callToAction: typeof Button2;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -303,9 +303,9 @@ export const PlasmicAdTemplate1 = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    callToAction: makeNodeComponent("callToAction"),
     img: makeNodeComponent("img"),
     screenCover: makeNodeComponent("screenCover"),
-    callToAction: makeNodeComponent("callToAction"),
 
     // Metadata about props expected for PlasmicAdTemplate1
     internalVariantProps: PlasmicAdTemplate1__VariantProps,
