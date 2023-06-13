@@ -75,16 +75,16 @@
   max-width: 100%;
   position: relative;
 }
-.img {
+.img__dMiNm {
   object-fit: cover;
   max-width: 100%;
   width: 100%;
   min-width: 0;
 }
-.img > picture > img {
+.img__dMiNm > picture > img {
   object-fit: cover;
 }
-.img > :global(.__wab_img-spacer) > img {
+.img__dMiNm > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .freeBox___2Wc5U {
@@ -122,6 +122,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
+  display: none;
 }
 .svg__smS27 {
   position: relative;
