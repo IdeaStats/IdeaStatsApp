@@ -75,16 +75,16 @@
   max-width: 100%;
   position: relative;
 }
-.img {
+.img___0Ecgp {
   object-fit: cover;
   max-width: 100%;
   width: 100%;
   min-width: 0;
 }
-.img > picture > img {
+.img___0Ecgp > picture > img {
   object-fit: cover;
 }
-.img > :global(.__wab_img-spacer) > img {
+.img___0Ecgp > :global(.__wab_img-spacer) > img {
   object-fit: cover;
 }
 .freeBox___2Wc5U {

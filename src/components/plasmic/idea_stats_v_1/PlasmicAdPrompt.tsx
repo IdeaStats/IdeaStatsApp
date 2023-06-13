@@ -52,16 +52,17 @@ export type PlasmicAdPrompt__VariantsArgs = {};
 type VariantPropType = keyof PlasmicAdPrompt__VariantsArgs;
 export const PlasmicAdPrompt__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicAdPrompt__ArgsType = {};
+export type PlasmicAdPrompt__ArgsType = {
+  imgSlot?: React.ReactNode;
+};
 type ArgPropType = keyof PlasmicAdPrompt__ArgsType;
-export const PlasmicAdPrompt__ArgProps = new Array<ArgPropType>();
+export const PlasmicAdPrompt__ArgProps = new Array<ArgPropType>("imgSlot");
 
 export type PlasmicAdPrompt__OverridesType = {
   root?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
   textInput?: p.Flex<typeof TextInput>;
   generateButton?: p.Flex<typeof GenerateButton>;
-  img?: p.Flex<typeof p.PlasmicImg>;
   refreshButton?: p.Flex<typeof GenericButton>;
   selectButton?: p.Flex<typeof GenericButton>;
   text?: p.Flex<"div">;
@@ -69,6 +70,7 @@ export type PlasmicAdPrompt__OverridesType = {
 };
 
 export interface DefaultAdPromptProps {
+  imgSlot?: React.ReactNode;
   className?: string;
 }
 
@@ -179,23 +181,26 @@ function PlasmicAdPrompt__RenderFunc(props: {
                   />
                 </div>
               ) : null}
-              <p.PlasmicImg
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"auto" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"100%" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"100%" as const}
-                loading={"lazy" as const}
-                src={
-                  "https://images.unsplash.com/photo-1655720840699-67e72c0909d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80" as const
-                }
-              />
+              {p.renderPlasmicSlot({
+                defaultContents: (
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img___0Ecgp)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"100%" as const}
+                    loading={"lazy" as const}
+                    src={
+                      "https://images.unsplash.com/photo-1655720840699-67e72c0909d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80" as const
+                    }
+                  />
+                ),
 
+                value: args.imgSlot
+              })}
               {true ? (
                 <div
                   className={classNames(projectcss.all, sty.freeBox___2Wc5U)}
@@ -250,7 +255,6 @@ const PlasmicDescendants = {
     "h1",
     "textInput",
     "generateButton",
-    "img",
     "refreshButton",
     "selectButton",
     "text",
@@ -259,7 +263,6 @@ const PlasmicDescendants = {
   h1: ["h1"],
   textInput: ["textInput"],
   generateButton: ["generateButton"],
-  img: ["img"],
   refreshButton: ["refreshButton"],
   selectButton: ["selectButton", "text"],
   text: ["text"],
@@ -273,7 +276,6 @@ type NodeDefaultElementType = {
   h1: "h1";
   textInput: typeof TextInput;
   generateButton: typeof GenerateButton;
-  img: typeof p.PlasmicImg;
   refreshButton: typeof GenericButton;
   selectButton: typeof GenericButton;
   text: "div";
@@ -343,7 +345,6 @@ export const PlasmicAdPrompt = Object.assign(
     h1: makeNodeComponent("h1"),
     textInput: makeNodeComponent("textInput"),
     generateButton: makeNodeComponent("generateButton"),
-    img: makeNodeComponent("img"),
     refreshButton: makeNodeComponent("refreshButton"),
     selectButton: makeNodeComponent("selectButton"),
     text: makeNodeComponent("text"),
