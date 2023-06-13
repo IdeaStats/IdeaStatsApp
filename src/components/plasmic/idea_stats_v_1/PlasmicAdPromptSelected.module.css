@@ -208,6 +208,24 @@
 .text__aexHb {
   color: #ededec;
 }
+.img___49Z1N {
+  position: relative;
+  object-fit: cover;
+  max-width: none;
+  left: auto;
+  top: auto;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  min-width: 0;
+  min-height: 0;
+}
+.img___49Z1N > picture > img {
+  object-fit: cover;
+}
+.img___49Z1N > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
 .freeBox__g8XkX {
   display: flex;
   position: relative;

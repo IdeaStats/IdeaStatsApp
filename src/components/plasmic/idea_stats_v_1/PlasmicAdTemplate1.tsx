@@ -53,19 +53,20 @@ export type PlasmicAdTemplate1__ArgsType = {
   body?: React.ReactNode;
   adImgSrc?: React.ComponentProps<typeof p.PlasmicImg>["src"];
   callToAction?: React.ReactNode;
+  imgSlot?: React.ReactNode;
 };
 type ArgPropType = keyof PlasmicAdTemplate1__ArgsType;
 export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>(
   "title",
   "body",
   "adImgSrc",
-  "callToAction"
+  "callToAction",
+  "imgSlot"
 );
 
 export type PlasmicAdTemplate1__OverridesType = {
   root?: p.Flex<"button">;
   callToAction?: p.Flex<typeof Button2>;
-  img?: p.Flex<typeof p.PlasmicImg>;
   screenCover?: p.Flex<"div">;
 };
 
@@ -74,6 +75,7 @@ export interface DefaultAdTemplate1Props {
   body?: React.ReactNode;
   adImgSrc?: React.ComponentProps<typeof p.PlasmicImg>["src"];
   callToAction?: React.ReactNode;
+  imgSlot?: React.ReactNode;
   className?: string;
 }
 
@@ -199,20 +201,26 @@ function PlasmicAdTemplate1__RenderFunc(props: {
             })}
           </Button2>
           <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
-            <p.PlasmicImg
-              data-plasmic-name={"img"}
-              data-plasmic-override={overrides.img}
-              alt={""}
-              className={classNames(sty.img)}
-              displayHeight={"100%" as const}
-              displayMaxHeight={"none" as const}
-              displayMaxWidth={"none" as const}
-              displayMinHeight={"0" as const}
-              displayMinWidth={"0" as const}
-              displayWidth={"100%" as const}
-              loading={"lazy" as const}
-              src={args.adImgSrc}
-            />
+            {p.renderPlasmicSlot({
+              defaultContents: (
+                <p.PlasmicImg
+                  alt={""}
+                  className={classNames(sty.img__aAmit)}
+                  displayHeight={"100%" as const}
+                  displayMaxHeight={"none" as const}
+                  displayMaxWidth={"none" as const}
+                  displayMinHeight={"0" as const}
+                  displayMinWidth={"0" as const}
+                  displayWidth={"100%" as const}
+                  loading={"lazy" as const}
+                  src={
+                    "https://images.unsplash.com/photo-1682685796852-aa311b46f50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" as const
+                  }
+                />
+              ),
+
+              value: args.imgSlot
+            })}
           </div>
           {true ? (
             <div
@@ -228,9 +236,8 @@ function PlasmicAdTemplate1__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "callToAction", "img", "screenCover"],
+  root: ["root", "callToAction", "screenCover"],
   callToAction: ["callToAction"],
-  img: ["img"],
   screenCover: ["screenCover"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -239,7 +246,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "button";
   callToAction: typeof Button2;
-  img: typeof p.PlasmicImg;
   screenCover: "div";
 };
 
@@ -304,7 +310,6 @@ export const PlasmicAdTemplate1 = Object.assign(
   {
     // Helper components rendering sub-elements
     callToAction: makeNodeComponent("callToAction"),
-    img: makeNodeComponent("img"),
     screenCover: makeNodeComponent("screenCover"),
 
     // Metadata about props expected for PlasmicAdTemplate1
