@@ -52,9 +52,11 @@ export type PlasmicAdPrompt__VariantsArgs = {};
 type VariantPropType = keyof PlasmicAdPrompt__VariantsArgs;
 export const PlasmicAdPrompt__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicAdPrompt__ArgsType = {};
+export type PlasmicAdPrompt__ArgsType = {
+  imgSrc?: React.ComponentProps<typeof p.PlasmicImg>["src"];
+};
 type ArgPropType = keyof PlasmicAdPrompt__ArgsType;
-export const PlasmicAdPrompt__ArgProps = new Array<ArgPropType>();
+export const PlasmicAdPrompt__ArgProps = new Array<ArgPropType>("imgSrc");
 
 export type PlasmicAdPrompt__OverridesType = {
   root?: p.Flex<"div">;
@@ -69,6 +71,7 @@ export type PlasmicAdPrompt__OverridesType = {
 };
 
 export interface DefaultAdPromptProps {
+  imgSrc?: React.ComponentProps<typeof p.PlasmicImg>["src"];
   className?: string;
 }
 
@@ -89,7 +92,17 @@ function PlasmicAdPrompt__RenderFunc(props: {
   const { variants, overrides, forNode } = props;
 
   const $ctx = ph.useDataEnv?.() || {};
-  const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+  const args = React.useMemo(
+    () =>
+      Object.assign(
+        {
+          imgSrc:
+            "https://images.unsplash.com/photo-1655720840699-67e72c0909d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80" as const
+        },
+        props.args
+      ),
+    [props.args]
+  );
   const $props = {
     ...args,
     ...variants
@@ -191,9 +204,7 @@ function PlasmicAdPrompt__RenderFunc(props: {
                 displayMinWidth={"0" as const}
                 displayWidth={"100%" as const}
                 loading={"lazy" as const}
-                src={
-                  "https://images.unsplash.com/photo-1655720840699-67e72c0909d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1267&q=80" as const
-                }
+                src={args.imgSrc}
               />
 
               {true ? (
