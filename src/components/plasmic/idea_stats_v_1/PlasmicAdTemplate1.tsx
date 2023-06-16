@@ -63,7 +63,7 @@ export const PlasmicAdTemplate1__ArgProps = new Array<ArgPropType>(
 );
 
 export type PlasmicAdTemplate1__OverridesType = {
-  baseOfTemplate?: p.Flex<"button">;
+  root?: p.Flex<"button">;
   callToAction?: p.Flex<typeof Button2>;
   img?: p.Flex<typeof p.PlasmicImg>;
   screenCover?: p.Flex<"div">;
@@ -118,8 +118,8 @@ function PlasmicAdTemplate1__RenderFunc(props: {
 
   return (
     <button
-      data-plasmic-name={"baseOfTemplate"}
-      data-plasmic-override={overrides.baseOfTemplate}
+      data-plasmic-name={"root"}
+      data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       className={classNames(
@@ -130,13 +130,10 @@ function PlasmicAdTemplate1__RenderFunc(props: {
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
         plasmic_antd_5_hostless_css.plasmic_tokens,
-        sty.baseOfTemplate
+        sty.root
       )}
       onSelect={async event => {
         const $steps = {};
-      }}
-      ref={ref => {
-        $refs["baseOfTemplate"] = ref;
       }}
     >
       {true ? (
@@ -233,7 +230,7 @@ function PlasmicAdTemplate1__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  baseOfTemplate: ["baseOfTemplate", "callToAction", "img", "screenCover"],
+  root: ["root", "callToAction", "img", "screenCover"],
   callToAction: ["callToAction"],
   img: ["img"],
   screenCover: ["screenCover"]
@@ -242,7 +239,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  baseOfTemplate: "button";
+  root: "button";
   callToAction: typeof Button2;
   img: typeof p.PlasmicImg;
   screenCover: "div";
@@ -295,7 +292,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "baseOfTemplate") {
+  if (nodeName === "root") {
     func.displayName = "PlasmicAdTemplate1";
   } else {
     func.displayName = `PlasmicAdTemplate1.${nodeName}`;
@@ -305,7 +302,7 @@ function makeNodeComponent<NodeName extends NodeNameType>(nodeName: NodeName) {
 
 export const PlasmicAdTemplate1 = Object.assign(
   // Top-level PlasmicAdTemplate1 renders the root element
-  makeNodeComponent("baseOfTemplate"),
+  makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
     callToAction: makeNodeComponent("callToAction"),
