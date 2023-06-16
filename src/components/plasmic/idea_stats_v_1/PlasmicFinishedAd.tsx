@@ -166,13 +166,15 @@ function PlasmicFinishedAd__RenderFunc(props: {
                   >
                     {"Download"}
                   </GenericButton>
-                  <GenericButton
-                    data-plasmic-name={"shareButton"}
-                    data-plasmic-override={overrides.shareButton}
-                    className={classNames("__wab_instance", sty.shareButton)}
-                  >
-                    {"Share"}
-                  </GenericButton>
+                  {true ? (
+                    <GenericButton
+                      data-plasmic-name={"shareButton"}
+                      data-plasmic-override={overrides.shareButton}
+                      className={classNames("__wab_instance", sty.shareButton)}
+                    >
+                      {"Share"}
+                    </GenericButton>
+                  ) : null}
                 </p.Stack>
               ) : null}
             </div>

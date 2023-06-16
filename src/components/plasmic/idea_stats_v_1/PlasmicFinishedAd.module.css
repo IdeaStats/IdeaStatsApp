@@ -10,6 +10,7 @@
   align-items: center;
   background: var(--token-sK7ekqvPk);
   padding-bottom: 0px;
+  overflow: auto;
   min-width: 0;
   min-height: 0;
   grid-template-columns:
@@ -48,7 +49,7 @@
   min-width: 0;
 }
 .finalAdTemplate:global(.__wab_instance) {
-  max-width: 100%;
+  max-width: 70%;
   position: relative;
   height: 100%;
   flex-shrink: 0;
@@ -73,17 +74,15 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  width: 100%;
+  width: auto;
   height: auto;
   max-width: 100%;
-  min-width: 0;
   margin: 10px 0px 0px;
 }
 .freeBox__b3Fg9 > :global(.__wab_flex-container) {
   flex-direction: row;
   align-items: stretch;
   justify-content: flex-start;
-  min-width: 0;
   margin-left: calc(0px - 10px);
   width: calc(100% + 10px);
 }
@@ -104,4 +103,5 @@
 .shareButton:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
+  display: none;
 }
