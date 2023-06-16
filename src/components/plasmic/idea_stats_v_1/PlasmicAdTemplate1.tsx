@@ -198,24 +198,22 @@ function PlasmicAdTemplate1__RenderFunc(props: {
               value: args.callToAction
             })}
           </Button2>
-          {true ? (
-            <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
-              <p.PlasmicImg
-                data-plasmic-name={"img"}
-                data-plasmic-override={overrides.img}
-                alt={""}
-                className={classNames(sty.img)}
-                displayHeight={"100%" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"none" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"100%" as const}
-                loading={"lazy" as const}
-                src={args.adImgSrc}
-              />
-            </div>
-          ) : null}
+          <div className={classNames(projectcss.all, sty.freeBox__eWeai)}>
+            <p.PlasmicImg
+              data-plasmic-name={"img"}
+              data-plasmic-override={overrides.img}
+              alt={""}
+              className={classNames(sty.img)}
+              displayHeight={"100%" as const}
+              displayMaxHeight={"none" as const}
+              displayMaxWidth={"none" as const}
+              displayMinHeight={"0" as const}
+              displayMinWidth={"0" as const}
+              displayWidth={"100%" as const}
+              loading={"lazy" as const}
+              src={args.adImgSrc}
+            />
+          </div>
           {true ? (
             <div
               data-plasmic-name={"screenCover"}
